@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Django Smooth
  * @author Jannis Leidel (https://code.djangoproject.com/wiki/TextMate)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Django Smooth" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #989898;
   --gogh-magenta: #F8F8F8;
   --gogh-cyan: #9DF39F;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #234d30;
+  --background-base-lower: #245032;
+  --background-base-lower-alt: #234d30;
+  --background-base-low: #214a2e;
+  --background-base-medium: #214a2e;
+  --background-base-high: #1f452b;
+  --background-base-higher: #2b5538;
+  --background-base-highest: #315a3e;
+  --background-nested-floating: #315a3e;
+  --bg-overlay-chat: #245032;
+  --bg-overlay-home: #214a2e;
+  --bg-overlay-home-card: #234d30;
+  --bg-overlay-app-frame: #1f452b;
+  --bg-overlay-1: #1f452b;
+  --bg-overlay-2: #1f452b;
+  --bg-overlay-3: #1f452b;
+  --bg-overlay-4: #234d30;
+  --bg-overlay-5: #214a2e;
+  --bg-overlay-6: #315a3e;
+  --bg-overlay-color: 36 80 50;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #245032;
   --background-secondary: #234d30;
   --background-secondary-alt: #214a2e;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #234d30;
   /* TEXT */
   --text-normal: #F8F8F8;
+  --text-default: #F8F8F8;
   --text-muted: #a3b5a9;
+  --text-low-contrast: #a3b5a9;
   --text-link: #FD6209;
   --text-brand: #FD6209;
   --header-primary: #F8F8F8;
@@ -44,6 +67,9 @@
   --interactive-hover: #F8F8F8;
   --interactive-active: #F8F8F8;
   --interactive-muted: #839c8b;
+  --interactive-text-default: #a3b5a9;
+  --interactive-text-hover: #F8F8F8;
+  --interactive-text-active: #F8F8F8;
   /* BRAND / ACCENT */
   --brand-experiment: #FD6209;
   --brand-experiment-500: #FD6209;
@@ -57,8 +83,14 @@
   --idle-color: #FFE862;
   --dnd-color: #FD6209;
   --streaming-color: #F8F8F8;
-  --status-green: #41A83E;
-  --status-yellow: #FFE862;
-  --status-red: #FD6209;
-  --status-purple: #F8F8F8;
+  --status-online: #41A83E;
+  --status-idle: #FFE862;
+  --status-dnd: #FD6209;
+  --status-streaming: #F8F8F8;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #1f452b !important;
 }

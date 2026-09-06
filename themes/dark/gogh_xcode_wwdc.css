@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Xcode WWDC
  * @author lunacookies (https://github.com/lunacookies/vim-colors-xcode)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Xcode WWDC" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #8884C5;
   --gogh-magenta: #B73999;
   --gogh-cyan: #00ABA4;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #272a34;
+  --background-base-lower: #292C36;
+  --background-base-lower-alt: #272a34;
+  --background-base-low: #262832;
+  --background-base-medium: #262832;
+  --background-base-high: #23262e;
+  --background-base-higher: #2f323c;
+  --background-base-highest: #363942;
+  --background-nested-floating: #363942;
+  --bg-overlay-chat: #292C36;
+  --bg-overlay-home: #262832;
+  --bg-overlay-home-card: #272a34;
+  --bg-overlay-app-frame: #23262e;
+  --bg-overlay-1: #23262e;
+  --bg-overlay-2: #23262e;
+  --bg-overlay-3: #23262e;
+  --bg-overlay-4: #272a34;
+  --bg-overlay-5: #262832;
+  --bg-overlay-6: #363942;
+  --bg-overlay-color: 41 44 54;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #292C36;
   --background-secondary: #272a34;
   --background-secondary-alt: #262832;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #272a34;
   /* TEXT */
   --text-normal: #E7E8EB;
+  --text-default: #E7E8EB;
   --text-muted: #9b9da3;
+  --text-low-contrast: #9b9da3;
   --text-link: #00ABA4;
   --text-brand: #00ABA4;
   --header-primary: #E7E8EB;
@@ -44,6 +67,9 @@
   --interactive-hover: #E7E8EB;
   --interactive-active: #E7E8EB;
   --interactive-muted: #7e8187;
+  --interactive-text-default: #9b9da3;
+  --interactive-text-hover: #E7E8EB;
+  --interactive-text-active: #E7E8EB;
   /* BRAND / ACCENT */
   --brand-experiment: #00ABA4;
   --brand-experiment-500: #00ABA4;
@@ -57,8 +83,14 @@
   --idle-color: #D28E5D;
   --dnd-color: #BB383A;
   --streaming-color: #B73999;
-  --status-green: #94C66E;
-  --status-yellow: #D28E5D;
-  --status-red: #BB383A;
-  --status-purple: #B73999;
+  --status-online: #94C66E;
+  --status-idle: #D28E5D;
+  --status-dnd: #BB383A;
+  --status-streaming: #B73999;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #23262e !important;
 }

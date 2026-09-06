@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Tempus Warp
  * @author Protesilaos Stavrou (https://protesilaos.com)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Tempus Warp" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #5781EF;
   --gogh-magenta: #DA4EBF;
   --gogh-cyan: #009880;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #001413;
+  --background-base-lower: #001514;
+  --background-base-lower-alt: #001413;
+  --background-base-low: #001312;
+  --background-base-medium: #001312;
+  --background-base-high: #001211;
+  --background-base-higher: #081c1b;
+  --background-base-highest: #0f2322;
+  --background-nested-floating: #0f2322;
+  --bg-overlay-chat: #001514;
+  --bg-overlay-home: #001312;
+  --bg-overlay-home-card: #001413;
+  --bg-overlay-app-frame: #001211;
+  --bg-overlay-1: #001211;
+  --bg-overlay-2: #001211;
+  --bg-overlay-3: #001211;
+  --bg-overlay-4: #001413;
+  --bg-overlay-5: #001312;
+  --bg-overlay-6: #0f2322;
+  --bg-overlay-color: 0 21 20;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #001514;
   --background-secondary: #001413;
   --background-secondary-alt: #001312;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #001413;
   /* TEXT */
   --text-normal: #A29FA0;
+  --text-default: #A29FA0;
   --text-muted: #616868;
+  --text-low-contrast: #616868;
   --text-link: #9F8500;
   --text-brand: #9F8500;
   --header-primary: #A29FA0;
@@ -44,6 +67,9 @@
   --interactive-hover: #A29FA0;
   --interactive-active: #A29FA0;
   --interactive-muted: #495353;
+  --interactive-text-default: #616868;
+  --interactive-text-hover: #A29FA0;
+  --interactive-text-active: #A29FA0;
   /* BRAND / ACCENT */
   --brand-experiment: #9F8500;
   --brand-experiment-500: #9F8500;
@@ -57,8 +83,14 @@
   --idle-color: #9F8500;
   --dnd-color: #FF3737;
   --streaming-color: #DA4EBF;
-  --status-green: #169C16;
-  --status-yellow: #9F8500;
-  --status-red: #FF3737;
-  --status-purple: #DA4EBF;
+  --status-online: #169C16;
+  --status-idle: #9F8500;
+  --status-dnd: #FF3737;
+  --status-streaming: #DA4EBF;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #001211 !important;
 }

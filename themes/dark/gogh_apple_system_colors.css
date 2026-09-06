@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Apple System Colors
  * @author Jeremy Bahadirli (https://github.com/jeremybahadirli)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Apple System Colors" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #0869CB;
   --gogh-magenta: #9647BF;
   --gogh-cyan: #479EC2;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #1d1d1d;
+  --background-base-lower: #1E1E1E;
+  --background-base-lower-alt: #1d1d1d;
+  --background-base-low: #1c1c1c;
+  --background-base-medium: #1c1c1c;
+  --background-base-high: #1a1a1a;
+  --background-base-higher: #252525;
+  --background-base-highest: #2c2c2c;
+  --background-nested-floating: #2c2c2c;
+  --bg-overlay-chat: #1E1E1E;
+  --bg-overlay-home: #1c1c1c;
+  --bg-overlay-home-card: #1d1d1d;
+  --bg-overlay-app-frame: #1a1a1a;
+  --bg-overlay-1: #1a1a1a;
+  --bg-overlay-2: #1a1a1a;
+  --bg-overlay-3: #1a1a1a;
+  --bg-overlay-4: #1d1d1d;
+  --bg-overlay-5: #1c1c1c;
+  --bg-overlay-6: #2c2c2c;
+  --bg-overlay-color: 30 30 30;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #1E1E1E;
   --background-secondary: #1d1d1d;
   --background-secondary-alt: #1c1c1c;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #1d1d1d;
   /* TEXT */
   --text-normal: #FFFFFF;
+  --text-default: #FFFFFF;
   --text-muted: #a5a5a5;
+  --text-low-contrast: #a5a5a5;
   --text-link: #CDAC08;
   --text-brand: #CDAC08;
   --header-primary: #FFFFFF;
@@ -44,6 +67,9 @@
   --interactive-hover: #FFFFFF;
   --interactive-active: #FFFFFF;
   --interactive-muted: #838383;
+  --interactive-text-default: #a5a5a5;
+  --interactive-text-hover: #FFFFFF;
+  --interactive-text-active: #FFFFFF;
   /* BRAND / ACCENT */
   --brand-experiment: #CDAC08;
   --brand-experiment-500: #CDAC08;
@@ -57,8 +83,14 @@
   --idle-color: #CDAC08;
   --dnd-color: #CC372E;
   --streaming-color: #9647BF;
-  --status-green: #26A439;
-  --status-yellow: #CDAC08;
-  --status-red: #CC372E;
-  --status-purple: #9647BF;
+  --status-online: #26A439;
+  --status-idle: #CDAC08;
+  --status-dnd: #CC372E;
+  --status-streaming: #9647BF;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #1a1a1a !important;
 }

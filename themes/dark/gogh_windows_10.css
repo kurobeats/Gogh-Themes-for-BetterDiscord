@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Windows 10
  * @author Fergus Collins (https://github.com/ferguscollins)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Windows 10" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #3B78FF;
   --gogh-magenta: #B4009E;
   --gogh-cyan: #61D6D6;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #0c0c0c;
+  --background-base-lower: #0C0C0C;
+  --background-base-lower-alt: #0c0c0c;
+  --background-base-low: #0b0b0b;
+  --background-base-medium: #0b0b0b;
+  --background-base-high: #0a0a0a;
+  --background-base-higher: #131313;
+  --background-base-highest: #1b1b1b;
+  --background-nested-floating: #1b1b1b;
+  --bg-overlay-chat: #0C0C0C;
+  --bg-overlay-home: #0b0b0b;
+  --bg-overlay-home-card: #0c0c0c;
+  --bg-overlay-app-frame: #0a0a0a;
+  --bg-overlay-1: #0a0a0a;
+  --bg-overlay-2: #0a0a0a;
+  --bg-overlay-3: #0a0a0a;
+  --bg-overlay-4: #0c0c0c;
+  --bg-overlay-5: #0b0b0b;
+  --bg-overlay-6: #1b1b1b;
+  --bg-overlay-color: 12 12 12;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #0C0C0C;
   --background-secondary: #0c0c0c;
   --background-secondary-alt: #0b0b0b;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #0c0c0c;
   /* TEXT */
   --text-normal: #CCCCCC;
+  --text-default: #CCCCCC;
   --text-muted: #7f7f7f;
+  --text-low-contrast: #7f7f7f;
   --text-link: #B4009E;
   --text-brand: #B4009E;
   --header-primary: #CCCCCC;
@@ -44,6 +67,9 @@
   --interactive-hover: #CCCCCC;
   --interactive-active: #CCCCCC;
   --interactive-muted: #626262;
+  --interactive-text-default: #7f7f7f;
+  --interactive-text-hover: #CCCCCC;
+  --interactive-text-active: #CCCCCC;
   /* BRAND / ACCENT */
   --brand-experiment: #B4009E;
   --brand-experiment-500: #B4009E;
@@ -57,8 +83,14 @@
   --idle-color: #F9F1A5;
   --dnd-color: #E74856;
   --streaming-color: #B4009E;
-  --status-green: #16C60C;
-  --status-yellow: #F9F1A5;
-  --status-red: #E74856;
-  --status-purple: #B4009E;
+  --status-online: #16C60C;
+  --status-idle: #F9F1A5;
+  --status-dnd: #E74856;
+  --status-streaming: #B4009E;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #0a0a0a !important;
 }

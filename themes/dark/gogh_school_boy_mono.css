@@ -1,7 +1,7 @@
 /**
  * @name Gogh - School Boy Mono
  * @author BrokenSideViewMirror (https://github.com/BrokenSideViewMirror)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "School Boy Mono" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #BFBFBF;
   --gogh-magenta: #BFBFBF;
   --gogh-cyan: #BFBFBF;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #0b220a;
+  --background-base-lower: #0B230A;
+  --background-base-lower-alt: #0b220a;
+  --background-base-low: #0a2009;
+  --background-base-medium: #0a2009;
+  --background-base-high: #091e09;
+  --background-base-higher: #122a11;
+  --background-base-highest: #1a3019;
+  --background-nested-floating: #1a3019;
+  --bg-overlay-chat: #0B230A;
+  --bg-overlay-home: #0a2009;
+  --bg-overlay-home-card: #0b220a;
+  --bg-overlay-app-frame: #091e09;
+  --bg-overlay-1: #091e09;
+  --bg-overlay-2: #091e09;
+  --bg-overlay-3: #091e09;
+  --bg-overlay-4: #0b220a;
+  --bg-overlay-5: #0a2009;
+  --bg-overlay-6: #1a3019;
+  --bg-overlay-color: 11 35 10;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #0B230A;
   --background-secondary: #0b220a;
   --background-secondary-alt: #0a2009;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #0b220a;
   /* TEXT */
   --text-normal: #BFBFBF;
+  --text-default: #BFBFBF;
   --text-muted: #778177;
+  --text-low-contrast: #778177;
   --text-link: #BFBFBF;
   --text-brand: #BFBFBF;
   --header-primary: #BFBFBF;
@@ -44,6 +67,9 @@
   --interactive-hover: #BFBFBF;
   --interactive-active: #BFBFBF;
   --interactive-muted: #5c695b;
+  --interactive-text-default: #778177;
+  --interactive-text-hover: #BFBFBF;
+  --interactive-text-active: #BFBFBF;
   /* BRAND / ACCENT */
   --brand-experiment: #BFBFBF;
   --brand-experiment-500: #BFBFBF;
@@ -57,8 +83,14 @@
   --idle-color: #BFBFBF;
   --dnd-color: #BFBFBF;
   --streaming-color: #BFBFBF;
-  --status-green: #BFBFBF;
-  --status-yellow: #BFBFBF;
-  --status-red: #BFBFBF;
-  --status-purple: #BFBFBF;
+  --status-online: #BFBFBF;
+  --status-idle: #BFBFBF;
+  --status-dnd: #BFBFBF;
+  --status-streaming: #BFBFBF;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #091e09 !important;
 }

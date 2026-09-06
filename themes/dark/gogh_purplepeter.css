@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Purplepeter
  * @author DeChamp (https://github.com/dechamp)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Purplepeter" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #66D9EF;
   --gogh-magenta: #E78FCD;
   --gogh-cyan: #BA8CFF;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #281947;
+  --background-base-lower: #2A1A4A;
+  --background-base-lower-alt: #281947;
+  --background-base-low: #271844;
+  --background-base-medium: #271844;
+  --background-base-high: #241640;
+  --background-base-higher: #30214f;
+  --background-base-highest: #372855;
+  --background-nested-floating: #372855;
+  --bg-overlay-chat: #2A1A4A;
+  --bg-overlay-home: #271844;
+  --bg-overlay-home-card: #281947;
+  --bg-overlay-app-frame: #241640;
+  --bg-overlay-1: #241640;
+  --bg-overlay-2: #241640;
+  --bg-overlay-3: #241640;
+  --bg-overlay-4: #281947;
+  --bg-overlay-5: #271844;
+  --bg-overlay-6: #372855;
+  --bg-overlay-color: 42 26 74;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #2A1A4A;
   --background-secondary: #281947;
   --background-secondary-alt: #271844;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #281947;
   /* TEXT */
   --text-normal: #ECE7FA;
+  --text-default: #ECE7FA;
   --text-muted: #9e95b4;
+  --text-low-contrast: #9e95b4;
   --text-link: #66D9EF;
   --text-brand: #66D9EF;
   --header-primary: #ECE7FA;
@@ -44,6 +67,9 @@
   --interactive-hover: #ECE7FA;
   --interactive-active: #ECE7FA;
   --interactive-muted: #817699;
+  --interactive-text-default: #9e95b4;
+  --interactive-text-hover: #ECE7FA;
+  --interactive-text-active: #ECE7FA;
   /* BRAND / ACCENT */
   --brand-experiment: #66D9EF;
   --brand-experiment-500: #66D9EF;
@@ -57,8 +83,14 @@
   --idle-color: #EFDFAC;
   --dnd-color: #FF796D;
   --streaming-color: #E78FCD;
-  --status-green: #99B481;
-  --status-yellow: #EFDFAC;
-  --status-red: #FF796D;
-  --status-purple: #E78FCD;
+  --status-online: #99B481;
+  --status-idle: #EFDFAC;
+  --status-dnd: #FF796D;
+  --status-streaming: #E78FCD;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #241640 !important;
 }

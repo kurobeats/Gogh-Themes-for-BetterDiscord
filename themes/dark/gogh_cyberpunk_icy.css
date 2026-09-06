@@ -1,7 +1,7 @@
 /**
  * @name Gogh - cyberpunk-icy
  * @author Murderlon (https://github.com/Murderlon/cyberpunk-iterm)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "cyberpunk-icy" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #7B2FFF;
   --gogh-magenta: #FF00FF;
   --gogh-cyan: #00FFFF;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #0a0a0e;
+  --background-base-lower: #0A0A0F;
+  --background-base-lower-alt: #0a0a0e;
+  --background-base-low: #09090e;
+  --background-base-medium: #09090e;
+  --background-base-high: #09090d;
+  --background-base-higher: #111116;
+  --background-base-highest: #19191d;
+  --background-nested-floating: #19191d;
+  --bg-overlay-chat: #0A0A0F;
+  --bg-overlay-home: #09090e;
+  --bg-overlay-home-card: #0a0a0e;
+  --bg-overlay-app-frame: #09090d;
+  --bg-overlay-1: #09090d;
+  --bg-overlay-2: #09090d;
+  --bg-overlay-3: #09090d;
+  --bg-overlay-4: #0a0a0e;
+  --bg-overlay-5: #09090e;
+  --bg-overlay-6: #19191d;
+  --bg-overlay-color: 10 10 15;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #0A0A0F;
   --background-secondary: #0a0a0e;
   --background-secondary-alt: #09090e;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #0a0a0e;
   /* TEXT */
   --text-normal: #D4B3F7;
+  --text-default: #D4B3F7;
   --text-muted: #836f9a;
+  --text-low-contrast: #836f9a;
   --text-link: #FF0055;
   --text-brand: #FF0055;
   --header-primary: #D4B3F7;
@@ -44,6 +67,9 @@
   --interactive-hover: #D4B3F7;
   --interactive-active: #D4B3F7;
   --interactive-muted: #655677;
+  --interactive-text-default: #836f9a;
+  --interactive-text-hover: #D4B3F7;
+  --interactive-text-active: #D4B3F7;
   /* BRAND / ACCENT */
   --brand-experiment: #FF0055;
   --brand-experiment-500: #FF0055;
@@ -57,8 +83,14 @@
   --idle-color: #FFFC00;
   --dnd-color: #FF0055;
   --streaming-color: #FF00FF;
-  --status-green: #00FF9F;
-  --status-yellow: #FFFC00;
-  --status-red: #FF0055;
-  --status-purple: #FF00FF;
+  --status-online: #00FF9F;
+  --status-idle: #FFFC00;
+  --status-dnd: #FF0055;
+  --status-streaming: #FF00FF;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #09090d !important;
 }

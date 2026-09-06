@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Seoulism
  * @author Lee Yunjin (https://oborona.zip)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Seoulism" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #2D5CE6;
   --gogh-magenta: #9C5CEB;
   --gogh-cyan: #2C9DD6;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #0f1013;
+  --background-base-lower: #101114;
+  --background-base-lower-alt: #0f1013;
+  --background-base-low: #0f1012;
+  --background-base-medium: #0f1012;
+  --background-base-high: #0e0f11;
+  --background-base-higher: #17181b;
+  --background-base-highest: #1e1f22;
+  --background-nested-floating: #1e1f22;
+  --bg-overlay-chat: #101114;
+  --bg-overlay-home: #0f1012;
+  --bg-overlay-home-card: #0f1013;
+  --bg-overlay-app-frame: #0e0f11;
+  --bg-overlay-1: #0e0f11;
+  --bg-overlay-2: #0e0f11;
+  --bg-overlay-3: #0e0f11;
+  --bg-overlay-4: #0f1013;
+  --bg-overlay-5: #0f1012;
+  --bg-overlay-6: #1e1f22;
+  --bg-overlay-color: 16 17 20;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #101114;
   --background-secondary: #0f1013;
   --background-secondary-alt: #0f1012;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #0f1013;
   /* TEXT */
   --text-normal: #ECECE9;
+  --text-default: #ECECE9;
   --text-muted: #949494;
+  --text-low-contrast: #949494;
   --text-link: #22D2B5;
   --text-brand: #22D2B5;
   --header-primary: #ECECE9;
@@ -44,6 +67,9 @@
   --interactive-hover: #ECECE9;
   --interactive-active: #ECECE9;
   --interactive-muted: #737474;
+  --interactive-text-default: #949494;
+  --interactive-text-hover: #ECECE9;
+  --interactive-text-active: #ECECE9;
   /* BRAND / ACCENT */
   --brand-experiment: #22D2B5;
   --brand-experiment-500: #22D2B5;
@@ -57,8 +83,14 @@
   --idle-color: #FF9F3E;
   --dnd-color: #E94536;
   --streaming-color: #9C5CEB;
-  --status-green: #22D2B5;
-  --status-yellow: #FF9F3E;
-  --status-red: #E94536;
-  --status-purple: #9C5CEB;
+  --status-online: #22D2B5;
+  --status-idle: #FF9F3E;
+  --status-dnd: #E94536;
+  --status-streaming: #9C5CEB;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #0e0f11 !important;
 }

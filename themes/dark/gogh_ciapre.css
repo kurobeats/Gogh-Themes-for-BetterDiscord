@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Ciapre
  * @author zdj (https://github.com/zdj/themes/tree/master/iterm2)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Ciapre" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #576D8C;
   --gogh-magenta: #724D7C;
   --gogh-cyan: #5C4F4B;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #181b25;
+  --background-base-lower: #191C27;
+  --background-base-lower-alt: #181b25;
+  --background-base-low: #171a24;
+  --background-base-medium: #171a24;
+  --background-base-high: #161822;
+  --background-base-higher: #20232d;
+  --background-base-highest: #272a34;
+  --background-nested-floating: #272a34;
+  --bg-overlay-chat: #191C27;
+  --bg-overlay-home: #171a24;
+  --bg-overlay-home-card: #181b25;
+  --bg-overlay-app-frame: #161822;
+  --bg-overlay-1: #161822;
+  --bg-overlay-2: #161822;
+  --bg-overlay-3: #161822;
+  --bg-overlay-4: #181b25;
+  --bg-overlay-5: #171a24;
+  --bg-overlay-6: #272a34;
+  --bg-overlay-color: 25 28 39;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #191C27;
   --background-secondary: #181b25;
   --background-secondary-alt: #171a24;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #181b25;
   /* TEXT */
   --text-normal: #AEA47A;
+  --text-default: #AEA47A;
   --text-muted: #726e59;
+  --text-low-contrast: #726e59;
   --text-link: #810009;
   --text-brand: #810009;
   --header-primary: #AEA47A;
@@ -44,6 +67,9 @@
   --interactive-hover: #AEA47A;
   --interactive-active: #AEA47A;
   --interactive-muted: #5c594c;
+  --interactive-text-default: #726e59;
+  --interactive-text-hover: #AEA47A;
+  --interactive-text-active: #AEA47A;
   /* BRAND / ACCENT */
   --brand-experiment: #810009;
   --brand-experiment-500: #810009;
@@ -57,8 +83,14 @@
   --idle-color: #CC8B3F;
   --dnd-color: #810009;
   --streaming-color: #724D7C;
-  --status-green: #48513B;
-  --status-yellow: #CC8B3F;
-  --status-red: #810009;
-  --status-purple: #724D7C;
+  --status-online: #48513B;
+  --status-idle: #CC8B3F;
+  --status-dnd: #810009;
+  --status-streaming: #724D7C;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #161822 !important;
 }

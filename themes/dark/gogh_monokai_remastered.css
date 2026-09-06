@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Monokai Remastered
  * @author Monokai (https://monokai.com/)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Monokai Remastered" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #9D65FF;
   --gogh-magenta: #F4005F;
   --gogh-cyan: #58D1EB;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #0c0c0c;
+  --background-base-lower: #0C0C0C;
+  --background-base-lower-alt: #0c0c0c;
+  --background-base-low: #0b0b0b;
+  --background-base-medium: #0b0b0b;
+  --background-base-high: #0a0a0a;
+  --background-base-higher: #131313;
+  --background-base-highest: #1b1b1b;
+  --background-nested-floating: #1b1b1b;
+  --bg-overlay-chat: #0C0C0C;
+  --bg-overlay-home: #0b0b0b;
+  --bg-overlay-home-card: #0c0c0c;
+  --bg-overlay-app-frame: #0a0a0a;
+  --bg-overlay-1: #0a0a0a;
+  --bg-overlay-2: #0a0a0a;
+  --bg-overlay-3: #0a0a0a;
+  --bg-overlay-4: #0c0c0c;
+  --bg-overlay-5: #0b0b0b;
+  --bg-overlay-6: #1b1b1b;
+  --bg-overlay-color: 12 12 12;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #0C0C0C;
   --background-secondary: #0c0c0c;
   --background-secondary-alt: #0b0b0b;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #0c0c0c;
   /* TEXT */
   --text-normal: #D9D9D9;
+  --text-default: #D9D9D9;
   --text-muted: #878787;
+  --text-low-contrast: #878787;
   --text-link: #F4005F;
   --text-brand: #F4005F;
   --header-primary: #D9D9D9;
@@ -44,6 +67,9 @@
   --interactive-hover: #D9D9D9;
   --interactive-active: #D9D9D9;
   --interactive-muted: #686868;
+  --interactive-text-default: #878787;
+  --interactive-text-hover: #D9D9D9;
+  --interactive-text-active: #D9D9D9;
   /* BRAND / ACCENT */
   --brand-experiment: #F4005F;
   --brand-experiment-500: #F4005F;
@@ -57,8 +83,14 @@
   --idle-color: #FD971F;
   --dnd-color: #F4005F;
   --streaming-color: #F4005F;
-  --status-green: #98E024;
-  --status-yellow: #FD971F;
-  --status-red: #F4005F;
-  --status-purple: #F4005F;
+  --status-online: #98E024;
+  --status-idle: #FD971F;
+  --status-dnd: #F4005F;
+  --status-streaming: #F4005F;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #0a0a0a !important;
 }

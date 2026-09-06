@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Purple People Eater
  * @author Gogh
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Purple People Eater" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #A5D6FF;
   --gogh-magenta: #6EB0E8;
   --gogh-cyan: #C09AEB;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #151a21;
+  --background-base-lower: #161B22;
+  --background-base-lower-alt: #151a21;
+  --background-base-low: #14191f;
+  --background-base-medium: #14191f;
+  --background-base-high: #13171d;
+  --background-base-higher: #1d2229;
+  --background-base-highest: #24292f;
+  --background-nested-floating: #24292f;
+  --bg-overlay-chat: #161B22;
+  --bg-overlay-home: #14191f;
+  --bg-overlay-home-card: #151a21;
+  --bg-overlay-app-frame: #13171d;
+  --bg-overlay-1: #13171d;
+  --bg-overlay-2: #13171d;
+  --bg-overlay-3: #13171d;
+  --bg-overlay-4: #151a21;
+  --bg-overlay-5: #14191f;
+  --bg-overlay-6: #24292f;
+  --bg-overlay-color: 22 27 34;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #161B22;
   --background-secondary: #151a21;
   --background-secondary-alt: #14191f;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #151a21;
   /* TEXT */
   --text-normal: #C9D1D9;
+  --text-default: #C9D1D9;
   --text-muted: #818890;
+  --text-low-contrast: #818890;
   --text-link: #E34C26;
   --text-brand: #E34C26;
   --header-primary: #C9D1D9;
@@ -44,6 +67,9 @@
   --interactive-hover: #C9D1D9;
   --interactive-active: #C9D1D9;
   --interactive-muted: #676d74;
+  --interactive-text-default: #818890;
+  --interactive-text-hover: #C9D1D9;
+  --interactive-text-active: #C9D1D9;
   /* BRAND / ACCENT */
   --brand-experiment: #E34C26;
   --brand-experiment-500: #E34C26;
@@ -57,8 +83,14 @@
   --idle-color: #ED9A51;
   --dnd-color: #E34C26;
   --streaming-color: #6EB0E8;
-  --status-green: #238636;
-  --status-yellow: #ED9A51;
-  --status-red: #E34C26;
-  --status-purple: #6EB0E8;
+  --status-online: #238636;
+  --status-idle: #ED9A51;
+  --status-dnd: #E34C26;
+  --status-streaming: #6EB0E8;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #13171d !important;
 }

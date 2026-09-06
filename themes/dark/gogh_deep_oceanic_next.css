@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Deep Oceanic Next
  * @author spearkkk (https://github.com/spearkkk)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Deep Oceanic Next" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #568CCF;
   --gogh-magenta: #8B66D6;
   --gogh-cyan: #4FB7AE;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #001b1e;
+  --background-base-lower: #001C1F;
+  --background-base-lower-alt: #001b1e;
+  --background-base-low: #001a1d;
+  --background-base-medium: #001a1d;
+  --background-base-high: #00181b;
+  --background-base-higher: #082326;
+  --background-base-highest: #0f2a2c;
+  --background-nested-floating: #0f2a2c;
+  --bg-overlay-chat: #001C1F;
+  --bg-overlay-home: #001a1d;
+  --bg-overlay-home-card: #001b1e;
+  --bg-overlay-app-frame: #00181b;
+  --bg-overlay-1: #00181b;
+  --bg-overlay-2: #00181b;
+  --bg-overlay-3: #00181b;
+  --bg-overlay-4: #001b1e;
+  --bg-overlay-5: #001a1d;
+  --bg-overlay-6: #0f2a2c;
+  --bg-overlay-color: 0 28 31;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #001C1F;
   --background-secondary: #001b1e;
   --background-secondary-alt: #001a1d;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #001b1e;
   /* TEXT */
   --text-normal: #D4E1E8;
+  --text-default: #D4E1E8;
   --text-muted: #7f9298;
+  --text-low-contrast: #7f9298;
   --text-link: #D3464D;
   --text-brand: #D3464D;
   --header-primary: #D4E1E8;
@@ -44,6 +67,9 @@
   --interactive-hover: #D4E1E8;
   --interactive-active: #D4E1E8;
   --interactive-muted: #5f7579;
+  --interactive-text-default: #7f9298;
+  --interactive-text-hover: #D4E1E8;
+  --interactive-text-active: #D4E1E8;
   /* BRAND / ACCENT */
   --brand-experiment: #D3464D;
   --brand-experiment-500: #D3464D;
@@ -57,8 +83,14 @@
   --idle-color: #F3B863;
   --dnd-color: #D3464D;
   --streaming-color: #8B66D6;
-  --status-green: #63B784;
-  --status-yellow: #F3B863;
-  --status-red: #D3464D;
-  --status-purple: #8B66D6;
+  --status-online: #63B784;
+  --status-idle: #F3B863;
+  --status-dnd: #D3464D;
+  --status-streaming: #8B66D6;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #00181b !important;
 }

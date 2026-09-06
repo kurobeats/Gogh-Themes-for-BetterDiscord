@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Serendipity Midnight
  * @author Michael Andreuzza (https://github.com/michael-andreuzza)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Serendipity Midnight" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #94B8FF;
   --gogh-magenta: #9CCFD8;
   --gogh-cyan: #F8D2C9;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #141624;
+  --background-base-lower: #151726;
+  --background-base-lower-alt: #141624;
+  --background-base-low: #131523;
+  --background-base-medium: #131523;
+  --background-base-high: #121421;
+  --background-base-higher: #1c1e2d;
+  --background-base-highest: #232533;
+  --background-nested-floating: #232533;
+  --bg-overlay-chat: #151726;
+  --bg-overlay-home: #131523;
+  --bg-overlay-home-card: #141624;
+  --bg-overlay-app-frame: #121421;
+  --bg-overlay-1: #121421;
+  --bg-overlay-2: #121421;
+  --bg-overlay-3: #121421;
+  --bg-overlay-4: #141624;
+  --bg-overlay-5: #131523;
+  --bg-overlay-6: #232533;
+  --bg-overlay-color: 21 23 38;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #151726;
   --background-secondary: #141624;
   --background-secondary-alt: #131523;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #141624;
   /* TEXT */
   --text-normal: #DEE0EF;
+  --text-default: #DEE0EF;
   --text-muted: #8e909f;
+  --text-low-contrast: #8e909f;
   --text-link: #5BA2D0;
   --text-brand: #5BA2D0;
   --header-primary: #DEE0EF;
@@ -44,6 +67,9 @@
   --interactive-hover: #DEE0EF;
   --interactive-active: #DEE0EF;
   --interactive-muted: #6f7180;
+  --interactive-text-default: #8e909f;
+  --interactive-text-hover: #DEE0EF;
+  --interactive-text-active: #DEE0EF;
   /* BRAND / ACCENT */
   --brand-experiment: #5BA2D0;
   --brand-experiment-500: #5BA2D0;
@@ -57,8 +83,14 @@
   --idle-color: #A78BFA;
   --dnd-color: #EE8679;
   --streaming-color: #9CCFD8;
-  --status-green: #5BA2D0;
-  --status-yellow: #A78BFA;
-  --status-red: #EE8679;
-  --status-purple: #9CCFD8;
+  --status-online: #5BA2D0;
+  --status-idle: #A78BFA;
+  --status-dnd: #EE8679;
+  --status-streaming: #9CCFD8;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #121421 !important;
 }

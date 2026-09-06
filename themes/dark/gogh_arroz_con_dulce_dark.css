@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Arroz Con Dulce Dark
  * @author Richard Martinez
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Arroz Con Dulce Dark" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #B99AC8;
   --gogh-magenta: #D58AB4;
   --gogh-cyan: #D98276;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #20130e;
+  --background-base-lower: #21140F;
+  --background-base-lower-alt: #20130e;
+  --background-base-low: #1e120e;
+  --background-base-medium: #1e120e;
+  --background-base-high: #1c110d;
+  --background-base-higher: #281b16;
+  --background-base-highest: #2e221d;
+  --background-nested-floating: #2e221d;
+  --bg-overlay-chat: #21140F;
+  --bg-overlay-home: #1e120e;
+  --bg-overlay-home-card: #20130e;
+  --bg-overlay-app-frame: #1c110d;
+  --bg-overlay-1: #1c110d;
+  --bg-overlay-2: #1c110d;
+  --bg-overlay-3: #1c110d;
+  --bg-overlay-4: #20130e;
+  --bg-overlay-5: #1e120e;
+  --bg-overlay-6: #2e221d;
+  --bg-overlay-color: 33 20 15;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #21140F;
   --background-secondary: #20130e;
   --background-secondary-alt: #1e120e;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #20130e;
   /* TEXT */
   --text-normal: #F2DFC0;
+  --text-default: #F2DFC0;
   --text-muted: #9e8e79;
+  --text-low-contrast: #9e8e79;
   --text-link: #D9A441;
   --text-brand: #D9A441;
   --header-primary: #F2DFC0;
@@ -44,6 +67,9 @@
   --interactive-hover: #F2DFC0;
   --interactive-active: #F2DFC0;
   --interactive-muted: #7f6f5f;
+  --interactive-text-default: #9e8e79;
+  --interactive-text-hover: #F2DFC0;
+  --interactive-text-active: #F2DFC0;
   /* BRAND / ACCENT */
   --brand-experiment: #D9A441;
   --brand-experiment-500: #D9A441;
@@ -57,8 +83,14 @@
   --idle-color: #D9A441;
   --dnd-color: #E07A8A;
   --streaming-color: #D58AB4;
-  --status-green: #D47A50;
-  --status-yellow: #D9A441;
-  --status-red: #E07A8A;
-  --status-purple: #D58AB4;
+  --status-online: #D47A50;
+  --status-idle: #D9A441;
+  --status-dnd: #E07A8A;
+  --status-streaming: #D58AB4;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #1c110d !important;
 }

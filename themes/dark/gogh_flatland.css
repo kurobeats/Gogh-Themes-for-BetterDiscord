@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Flatland
  * @author realchaseadams (http://www.snip2code.com/Snippet/148193/Flatland-color-scheme-for-iTerm2)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Flatland" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #5096BE;
   --gogh-magenta: #695ABC;
   --gogh-cyan: #D63865;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #1c1e20;
+  --background-base-lower: #1D1F21;
+  --background-base-lower-alt: #1c1e20;
+  --background-base-low: #1b1d1e;
+  --background-base-medium: #1b1d1e;
+  --background-base-high: #191b1c;
+  --background-base-higher: #242628;
+  --background-base-highest: #2b2c2e;
+  --background-nested-floating: #2b2c2e;
+  --bg-overlay-chat: #1D1F21;
+  --bg-overlay-home: #1b1d1e;
+  --bg-overlay-home-card: #1c1e20;
+  --bg-overlay-app-frame: #191b1c;
+  --bg-overlay-1: #191b1c;
+  --bg-overlay-2: #191b1c;
+  --bg-overlay-3: #191b1c;
+  --bg-overlay-4: #1c1e20;
+  --bg-overlay-5: #1b1d1e;
+  --bg-overlay-6: #2b2c2e;
+  --bg-overlay-color: 29 31 33;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #1D1F21;
   --background-secondary: #1c1e20;
   --background-secondary-alt: #1b1d1e;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #1c1e20;
   /* TEXT */
   --text-normal: #B8DBEF;
+  --text-default: #B8DBEF;
   --text-muted: #7a909d;
+  --text-low-contrast: #7a909d;
   --text-link: #F18339;
   --text-brand: #F18339;
   --header-primary: #B8DBEF;
@@ -44,6 +67,9 @@
   --interactive-hover: #B8DBEF;
   --interactive-active: #B8DBEF;
   --interactive-muted: #63747e;
+  --interactive-text-default: #7a909d;
+  --interactive-text-hover: #B8DBEF;
+  --interactive-text-active: #B8DBEF;
   /* BRAND / ACCENT */
   --brand-experiment: #F18339;
   --brand-experiment-500: #F18339;
@@ -57,8 +83,14 @@
   --idle-color: #F4EF6D;
   --dnd-color: #F18339;
   --streaming-color: #695ABC;
-  --status-green: #9FD364;
-  --status-yellow: #F4EF6D;
-  --status-red: #F18339;
-  --status-purple: #695ABC;
+  --status-online: #9FD364;
+  --status-idle: #F4EF6D;
+  --status-dnd: #F18339;
+  --status-streaming: #695ABC;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #191b1c !important;
 }

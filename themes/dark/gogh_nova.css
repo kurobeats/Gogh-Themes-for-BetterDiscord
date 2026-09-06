@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Nova
  * @author George Essig, Trevor D. Miller (https://github.com/gessig)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Nova" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #83AFE5;
   --gogh-magenta: #9A93E1;
   --gogh-cyan: #F2C38F;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #3a4952;
+  --background-base-lower: #3C4C55;
+  --background-base-lower-alt: #3a4952;
+  --background-base-low: #37464e;
+  --background-base-medium: #37464e;
+  --background-base-high: #344149;
+  --background-base-higher: #42515a;
+  --background-base-highest: #48575f;
+  --background-nested-floating: #48575f;
+  --bg-overlay-chat: #3C4C55;
+  --bg-overlay-home: #37464e;
+  --bg-overlay-home-card: #3a4952;
+  --bg-overlay-app-frame: #344149;
+  --bg-overlay-1: #344149;
+  --bg-overlay-2: #344149;
+  --bg-overlay-3: #344149;
+  --bg-overlay-4: #3a4952;
+  --bg-overlay-5: #37464e;
+  --bg-overlay-6: #48575f;
+  --bg-overlay-color: 60 76 85;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #3C4C55;
   --background-secondary: #3a4952;
   --background-secondary-alt: #37464e;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #3a4952;
   /* TEXT */
   --text-normal: #C5D4DD;
+  --text-default: #C5D4DD;
   --text-muted: #8e9ea7;
+  --text-low-contrast: #8e9ea7;
   --text-link: #83AFE5;
   --text-brand: #83AFE5;
   --header-primary: #C5D4DD;
@@ -44,6 +67,9 @@
   --interactive-hover: #C5D4DD;
   --interactive-active: #C5D4DD;
   --interactive-muted: #7a8992;
+  --interactive-text-default: #8e9ea7;
+  --interactive-text-hover: #C5D4DD;
+  --interactive-text-active: #C5D4DD;
   /* BRAND / ACCENT */
   --brand-experiment: #83AFE5;
   --brand-experiment-500: #83AFE5;
@@ -57,8 +83,14 @@
   --idle-color: #A8CE93;
   --dnd-color: #83AFE5;
   --streaming-color: #9A93E1;
-  --status-green: #7FC1CA;
-  --status-yellow: #A8CE93;
-  --status-red: #83AFE5;
-  --status-purple: #9A93E1;
+  --status-online: #7FC1CA;
+  --status-idle: #A8CE93;
+  --status-dnd: #83AFE5;
+  --status-streaming: #9A93E1;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #344149 !important;
 }

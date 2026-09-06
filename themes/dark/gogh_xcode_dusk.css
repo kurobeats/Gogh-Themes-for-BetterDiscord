@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Xcode Dusk
  * @author Elsa Gonsiorowski (https://github.com/gonsie)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Xcode Dusk" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #790EAD;
   --gogh-magenta: #B21889;
   --gogh-cyan: #00A0BE;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #262933;
+  --background-base-lower: #282B35;
+  --background-base-lower-alt: #262933;
+  --background-base-low: #252831;
+  --background-base-medium: #252831;
+  --background-base-high: #22252e;
+  --background-base-higher: #2e313b;
+  --background-base-highest: #353841;
+  --background-nested-floating: #353841;
+  --bg-overlay-chat: #282B35;
+  --bg-overlay-home: #252831;
+  --bg-overlay-home-card: #262933;
+  --bg-overlay-app-frame: #22252e;
+  --bg-overlay-1: #22252e;
+  --bg-overlay-2: #22252e;
+  --bg-overlay-3: #22252e;
+  --bg-overlay-4: #262933;
+  --bg-overlay-5: #252831;
+  --bg-overlay-6: #353841;
+  --bg-overlay-color: 40 43 53;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #282B35;
   --background-secondary: #262933;
   --background-secondary-alt: #252831;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #262933;
   /* TEXT */
   --text-normal: #939599;
+  --text-default: #939599;
   --text-muted: #686b71;
+  --text-low-contrast: #686b71;
   --text-link: #DF0002;
   --text-brand: #DF0002;
   --header-primary: #939599;
@@ -44,6 +67,9 @@
   --interactive-hover: #939599;
   --interactive-active: #939599;
   --interactive-muted: #585b62;
+  --interactive-text-default: #686b71;
+  --interactive-text-hover: #939599;
+  --interactive-text-active: #939599;
   /* BRAND / ACCENT */
   --brand-experiment: #DF0002;
   --brand-experiment-500: #DF0002;
@@ -57,8 +83,14 @@
   --idle-color: #438288;
   --dnd-color: #B21889;
   --streaming-color: #B21889;
-  --status-green: #DF0002;
-  --status-yellow: #438288;
-  --status-red: #B21889;
-  --status-purple: #B21889;
+  --status-online: #DF0002;
+  --status-idle: #438288;
+  --status-dnd: #B21889;
+  --status-streaming: #B21889;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #22252e !important;
 }

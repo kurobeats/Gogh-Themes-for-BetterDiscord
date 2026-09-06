@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Molokai Lost
  * @author Gogh
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Molokai Lost" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #D08010;
   --gogh-magenta: #FF0087;
   --gogh-cyan: #D0A843;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #1a1c1d;
+  --background-base-lower: #1B1D1E;
+  --background-base-lower-alt: #1a1c1d;
+  --background-base-low: #191b1c;
+  --background-base-medium: #191b1c;
+  --background-base-high: #17191a;
+  --background-base-higher: #222425;
+  --background-base-highest: #292b2c;
+  --background-nested-floating: #292b2c;
+  --bg-overlay-chat: #1B1D1E;
+  --bg-overlay-home: #191b1c;
+  --bg-overlay-home-card: #1a1c1d;
+  --bg-overlay-app-frame: #17191a;
+  --bg-overlay-1: #17191a;
+  --bg-overlay-2: #17191a;
+  --bg-overlay-3: #17191a;
+  --bg-overlay-4: #1a1c1d;
+  --bg-overlay-5: #191b1c;
+  --bg-overlay-6: #292b2c;
+  --bg-overlay-color: 27 29 30;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #1B1D1E;
   --background-secondary: #1a1c1d;
   --background-secondary-alt: #191b1c;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #1a1c1d;
   /* TEXT */
   --text-normal: #BBBBBB;
+  --text-default: #BBBBBB;
   --text-muted: #7b7c7c;
+  --text-low-contrast: #7b7c7c;
   --text-link: #FF0087;
   --text-brand: #FF0087;
   --header-primary: #BBBBBB;
@@ -44,6 +67,9 @@
   --interactive-hover: #BBBBBB;
   --interactive-active: #BBBBBB;
   --interactive-muted: #636465;
+  --interactive-text-default: #7b7c7c;
+  --interactive-text-hover: #BBBBBB;
+  --interactive-text-active: #BBBBBB;
   /* BRAND / ACCENT */
   --brand-experiment: #FF0087;
   --brand-experiment-500: #FF0087;
@@ -57,8 +83,14 @@
   --idle-color: #60D4DF;
   --dnd-color: #7325FA;
   --streaming-color: #FF0087;
-  --status-green: #23E298;
-  --status-yellow: #60D4DF;
-  --status-red: #7325FA;
-  --status-purple: #FF0087;
+  --status-online: #23E298;
+  --status-idle: #60D4DF;
+  --status-dnd: #7325FA;
+  --status-streaming: #FF0087;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #17191a !important;
 }

@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Green Phosphor CRT
  * @author PoshPalette (https://github.com/livlign/posh-palette)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Green Phosphor CRT" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #00CC44;
   --gogh-magenta: #00FF88;
   --gogh-cyan: #66FFAA;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #0b0e0b;
+  --background-base-lower: #0B0F0B;
+  --background-base-lower-alt: #0b0e0b;
+  --background-base-low: #0a0e0a;
+  --background-base-medium: #0a0e0a;
+  --background-base-high: #090d09;
+  --background-base-higher: #121612;
+  --background-base-highest: #1a1d1a;
+  --background-nested-floating: #1a1d1a;
+  --bg-overlay-chat: #0B0F0B;
+  --bg-overlay-home: #0a0e0a;
+  --bg-overlay-home-card: #0b0e0b;
+  --bg-overlay-app-frame: #090d09;
+  --bg-overlay-1: #090d09;
+  --bg-overlay-2: #090d09;
+  --bg-overlay-3: #090d09;
+  --bg-overlay-4: #0b0e0b;
+  --bg-overlay-5: #0a0e0a;
+  --bg-overlay-6: #1a1d1a;
+  --bg-overlay-color: 11 15 11;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #0B0F0B;
   --background-secondary: #0b0e0b;
   --background-secondary-alt: #0a0e0a;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #0b0e0b;
   /* TEXT */
   --text-normal: #33FF33;
+  --text-default: #33FF33;
   --text-muted: #239f23;
+  --text-low-contrast: #239f23;
   --text-link: #00AA00;
   --text-brand: #00AA00;
   --header-primary: #33FF33;
@@ -44,6 +67,9 @@
   --interactive-hover: #33FF33;
   --interactive-active: #33FF33;
   --interactive-muted: #1d7b1d;
+  --interactive-text-default: #239f23;
+  --interactive-text-hover: #33FF33;
+  --interactive-text-active: #33FF33;
   /* BRAND / ACCENT */
   --brand-experiment: #00AA00;
   --brand-experiment-500: #00AA00;
@@ -57,8 +83,14 @@
   --idle-color: #66FF66;
   --dnd-color: #00AA00;
   --streaming-color: #00FF88;
-  --status-green: #33FF33;
-  --status-yellow: #66FF66;
-  --status-red: #00AA00;
-  --status-purple: #00FF88;
+  --status-online: #33FF33;
+  --status-idle: #66FF66;
+  --status-dnd: #00AA00;
+  --status-streaming: #00FF88;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #090d09 !important;
 }

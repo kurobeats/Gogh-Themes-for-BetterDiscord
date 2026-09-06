@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Hot Dog Stand
  * @author Gogh
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Hot Dog Stand" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #000000;
   --gogh-magenta: #FFFF54;
   --gogh-cyan: #FFFFFF;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #e13122;
+  --background-base-lower: #EA3323;
+  --background-base-lower-alt: #e13122;
+  --background-base-low: #d72f20;
+  --background-base-medium: #d72f20;
+  --background-base-high: #c92c1e;
+  --background-base-higher: #eb392a;
+  --background-base-highest: #eb3f30;
+  --background-nested-floating: #eb3f30;
+  --bg-overlay-chat: #EA3323;
+  --bg-overlay-home: #d72f20;
+  --bg-overlay-home-card: #e13122;
+  --bg-overlay-app-frame: #c92c1e;
+  --bg-overlay-1: #c92c1e;
+  --bg-overlay-2: #c92c1e;
+  --bg-overlay-3: #c92c1e;
+  --bg-overlay-4: #e13122;
+  --bg-overlay-5: #d72f20;
+  --bg-overlay-6: #eb3f30;
+  --bg-overlay-color: 234 51 35;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #EA3323;
   --background-secondary: #e13122;
   --background-secondary-alt: #d72f20;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #e13122;
   /* TEXT */
   --text-normal: #FFFFFF;
+  --text-default: #FFFFFF;
   --text-muted: #f7ada7;
+  --text-low-contrast: #f7ada7;
   --text-link: #FFFF54;
   --text-brand: #FFFF54;
   --header-primary: #FFFFFF;
@@ -44,6 +67,9 @@
   --interactive-hover: #FFFFFF;
   --interactive-active: #FFFFFF;
   --interactive-muted: #f38f86;
+  --interactive-text-default: #f7ada7;
+  --interactive-text-hover: #FFFFFF;
+  --interactive-text-active: #FFFFFF;
   /* BRAND / ACCENT */
   --brand-experiment: #FFFF54;
   --brand-experiment-500: #FFFF54;
@@ -57,8 +83,14 @@
   --idle-color: #FFFF54;
   --dnd-color: #FFFF54;
   --streaming-color: #FFFF54;
-  --status-green: #FFFF54;
-  --status-yellow: #FFFF54;
-  --status-red: #FFFF54;
-  --status-purple: #FFFF54;
+  --status-online: #FFFF54;
+  --status-idle: #FFFF54;
+  --status-dnd: #FFFF54;
+  --status-streaming: #FFFF54;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #c92c1e !important;
 }

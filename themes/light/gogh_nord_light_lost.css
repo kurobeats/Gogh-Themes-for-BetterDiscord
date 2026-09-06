@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Nord Light Lost
  * @author Gogh
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Nord Light Lost" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,11 +16,32 @@
   --gogh-blue: #439ECF;
   --gogh-magenta: #D961DC;
   --gogh-cyan: #00B1BE;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #e2e1e8;
+  --background-base-lower: #EBEAF2;
+  --background-base-lower-alt: #e2e1e8;
+  --background-base-low: #d8d7df;
+  --background-base-medium: #d8d7df;
+  --background-base-high: #cfced5;
+  --background-base-higher: #f5f4f8;
+  --background-base-highest: #ffffff;
+  --background-nested-floating: #ffffff;
+  --bg-overlay-chat: #EBEAF2;
+  --bg-overlay-home: #d8d7df;
+  --bg-overlay-home-card: #e2e1e8;
+  --bg-overlay-app-frame: #cfced5;
+  --bg-overlay-1: #cfced5;
+  --bg-overlay-2: #cfced5;
+  --bg-overlay-3: #cfced5;
+  --bg-overlay-4: #e2e1e8;
+  --bg-overlay-5: #d8d7df;
+  --bg-overlay-6: #ffffff;
+  --bg-overlay-color: 235 234 242;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #EBEAF2;
   --background-secondary: #e2e1e8;
   --background-secondary-alt: #d8d7df;
-  --background-tertiary: #cac9d0;
+  --background-tertiary: #cfced5;
   --background-floating: #ffffff;
   --background-mobile-primary: #EBEAF2;
   --background-mobile-secondary: #e2e1e8;
@@ -30,12 +51,14 @@
   --background-modifier-active: #dbdae1;
   --background-modifier-selected: #d6d5dc;
   --background-modifier-accent: #c8d3e0;
-  --scrollbar-thin-thumb: #cac9d0;
-  --scrollbar-auto-thumb: #cac9d0;
+  --scrollbar-thin-thumb: #cfced5;
+  --scrollbar-auto-thumb: #cfced5;
   --scrollbar-auto-track: #e2e1e8;
   /* TEXT */
   --text-normal: #004F7C;
+  --text-default: #004F7C;
   --text-muted: #5e8dab;
+  --text-low-contrast: #5e8dab;
   --text-link: #00B1BE;
   --text-brand: #00B1BE;
   --header-primary: #004F7C;
@@ -44,6 +67,9 @@
   --interactive-hover: #004F7C;
   --interactive-active: #004F7C;
   --interactive-muted: #81a4bd;
+  --interactive-text-default: #5e8dab;
+  --interactive-text-hover: #004F7C;
+  --interactive-text-active: #004F7C;
   /* BRAND / ACCENT */
   --brand-experiment: #00B1BE;
   --brand-experiment-500: #00B1BE;
@@ -57,8 +83,14 @@
   --idle-color: #DAB752;
   --dnd-color: #E64569;
   --streaming-color: #D961DC;
-  --status-green: #069F5F;
-  --status-yellow: #DAB752;
-  --status-red: #E64569;
-  --status-purple: #D961DC;
+  --status-online: #069F5F;
+  --status-idle: #DAB752;
+  --status-dnd: #E64569;
+  --status-streaming: #D961DC;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #cfced5 !important;
 }

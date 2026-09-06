@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Tempus Night
  * @author Protesilaos Stavrou (https://protesilaos.com)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Tempus Night" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #5FB8FF;
   --gogh-magenta: #EF91DF;
   --gogh-cyan: #1DC5C3;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #191919;
+  --background-base-lower: #1A1A1A;
+  --background-base-lower-alt: #191919;
+  --background-base-low: #181818;
+  --background-base-medium: #181818;
+  --background-base-high: #161616;
+  --background-base-higher: #212121;
+  --background-base-highest: #282828;
+  --background-nested-floating: #282828;
+  --bg-overlay-chat: #1A1A1A;
+  --bg-overlay-home: #181818;
+  --bg-overlay-home-card: #191919;
+  --bg-overlay-app-frame: #161616;
+  --bg-overlay-1: #161616;
+  --bg-overlay-2: #161616;
+  --bg-overlay-3: #161616;
+  --bg-overlay-4: #191919;
+  --bg-overlay-5: #181818;
+  --bg-overlay-6: #282828;
+  --bg-overlay-color: 26 26 26;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #1A1A1A;
   --background-secondary: #191919;
   --background-secondary-alt: #181818;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #191919;
   /* TEXT */
   --text-normal: #E0E0E0;
+  --text-default: #E0E0E0;
   --text-muted: #919191;
+  --text-low-contrast: #919191;
   --text-link: #C5B300;
   --text-brand: #C5B300;
   --header-primary: #E0E0E0;
@@ -44,6 +67,9 @@
   --interactive-hover: #E0E0E0;
   --interactive-active: #E0E0E0;
   --interactive-muted: #737373;
+  --interactive-text-default: #919191;
+  --interactive-text-hover: #E0E0E0;
+  --interactive-text-active: #E0E0E0;
   /* BRAND / ACCENT */
   --brand-experiment: #C5B300;
   --brand-experiment-500: #C5B300;
@@ -57,8 +83,14 @@
   --idle-color: #C5B300;
   --dnd-color: #FF929F;
   --streaming-color: #EF91DF;
-  --status-green: #5FC940;
-  --status-yellow: #C5B300;
-  --status-red: #FF929F;
-  --status-purple: #EF91DF;
+  --status-online: #5FC940;
+  --status-idle: #C5B300;
+  --status-dnd: #FF929F;
+  --status-streaming: #EF91DF;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #161616 !important;
 }

@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Firefox Dev
  * @author Or3stis (https://github.com/Or3stis)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Firefox Dev" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #359DDF;
   --gogh-magenta: #D75CFF;
   --gogh-cyan: #4B73A2;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #0d0f10;
+  --background-base-lower: #0E1011;
+  --background-base-lower-alt: #0d0f10;
+  --background-base-low: #0d0f10;
+  --background-base-medium: #0d0f10;
+  --background-base-high: #0c0e0f;
+  --background-base-higher: #151718;
+  --background-base-highest: #1c1e1f;
+  --background-nested-floating: #1c1e1f;
+  --bg-overlay-chat: #0E1011;
+  --bg-overlay-home: #0d0f10;
+  --bg-overlay-home-card: #0d0f10;
+  --bg-overlay-app-frame: #0c0e0f;
+  --bg-overlay-1: #0c0e0f;
+  --bg-overlay-2: #0c0e0f;
+  --bg-overlay-3: #0c0e0f;
+  --bg-overlay-4: #0d0f10;
+  --bg-overlay-5: #0d0f10;
+  --bg-overlay-6: #1c1e1f;
+  --bg-overlay-color: 14 16 17;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #0E1011;
   --background-secondary: #0d0f10;
   --background-secondary-alt: #0d0f10;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #0d0f10;
   /* TEXT */
   --text-normal: #7C8FA4;
+  --text-default: #7C8FA4;
   --text-muted: #505c69;
+  --text-low-contrast: #505c69;
   --text-link: #A57706;
   --text-brand: #A57706;
   --header-primary: #7C8FA4;
@@ -44,6 +67,9 @@
   --interactive-hover: #7C8FA4;
   --interactive-active: #7C8FA4;
   --interactive-muted: #3f4953;
+  --interactive-text-default: #505c69;
+  --interactive-text-hover: #7C8FA4;
+  --interactive-text-active: #7C8FA4;
   /* BRAND / ACCENT */
   --brand-experiment: #A57706;
   --brand-experiment-500: #A57706;
@@ -57,8 +83,14 @@
   --idle-color: #A57706;
   --dnd-color: #E63853;
   --streaming-color: #D75CFF;
-  --status-green: #5EB83C;
-  --status-yellow: #A57706;
-  --status-red: #E63853;
-  --status-purple: #D75CFF;
+  --status-online: #5EB83C;
+  --status-idle: #A57706;
+  --status-dnd: #E63853;
+  --status-streaming: #D75CFF;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #0c0e0f !important;
 }

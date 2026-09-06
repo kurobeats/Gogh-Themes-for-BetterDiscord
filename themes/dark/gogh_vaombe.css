@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Vaombe
  * @author Daniel Perez (https://www.github.com/sysaloe)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Vaombe" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #28405C;
   --gogh-magenta: #46285C;
   --gogh-cyan: #346666;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #010a08;
+  --background-base-lower: #010A08;
+  --background-base-lower-alt: #010a08;
+  --background-base-low: #010907;
+  --background-base-medium: #010907;
+  --background-base-high: #010907;
+  --background-base-higher: #09110f;
+  --background-base-highest: #101917;
+  --background-nested-floating: #101917;
+  --bg-overlay-chat: #010A08;
+  --bg-overlay-home: #010907;
+  --bg-overlay-home-card: #010a08;
+  --bg-overlay-app-frame: #010907;
+  --bg-overlay-1: #010907;
+  --bg-overlay-2: #010907;
+  --bg-overlay-3: #010907;
+  --bg-overlay-4: #010a08;
+  --bg-overlay-5: #010907;
+  --bg-overlay-6: #101917;
+  --bg-overlay-color: 1 10 8;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #010A08;
   --background-secondary: #010a08;
   --background-secondary-alt: #010907;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #010a08;
   /* TEXT */
   --text-normal: #F5FFFD;
+  --text-default: #F5FFFD;
   --text-muted: #939d9b;
+  --text-low-contrast: #939d9b;
   --text-link: #7A6322;
   --text-brand: #7A6322;
   --header-primary: #F5FFFD;
@@ -44,6 +67,9 @@
   --interactive-hover: #F5FFFD;
   --interactive-active: #F5FFFD;
   --interactive-muted: #6f7876;
+  --interactive-text-default: #939d9b;
+  --interactive-text-hover: #F5FFFD;
+  --interactive-text-active: #F5FFFD;
   /* BRAND / ACCENT */
   --brand-experiment: #7A6322;
   --brand-experiment-500: #7A6322;
@@ -57,8 +83,14 @@
   --idle-color: #7A6322;
   --dnd-color: #8F3232;
   --streaming-color: #46285C;
-  --status-green: #3B5C3B;
-  --status-yellow: #7A6322;
-  --status-red: #8F3232;
-  --status-purple: #46285C;
+  --status-online: #3B5C3B;
+  --status-idle: #7A6322;
+  --status-dnd: #8F3232;
+  --status-streaming: #46285C;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #010907 !important;
 }

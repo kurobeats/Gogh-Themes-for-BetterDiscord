@@ -17,7 +17,7 @@ DATA_FILE = "data/themes-min.json"
 TEMPLATE = """/**
  * @name Gogh - {name}
  * @author {author}
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "{name}" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -32,7 +32,28 @@ TEMPLATE = """/**
   --gogh-blue: {c5};
   --gogh-magenta: {c6};
   --gogh-cyan: {c7};
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: {bg2};
+  --background-base-lower: {bg1};
+  --background-base-lower-alt: {bg2};
+  --background-base-low: {bg3};
+  --background-base-medium: {bg3};
+  --background-base-high: {bg4};
+  --background-base-higher: {bghigher};
+  --background-base-highest: {bg5};
+  --background-nested-floating: {bg5};
+  --bg-overlay-chat: {bg1};
+  --bg-overlay-home: {bg3};
+  --bg-overlay-home-card: {bg2};
+  --bg-overlay-app-frame: {bg4};
+  --bg-overlay-1: {bg4};
+  --bg-overlay-2: {bg4};
+  --bg-overlay-3: {bg4};
+  --bg-overlay-4: {bg2};
+  --bg-overlay-5: {bg3};
+  --bg-overlay-6: {bg5};
+  --bg-overlay-color: {bgrgb};
+  /* BACKGROUNDS - legacy vars */
   --background-primary: {bg1};
   --background-secondary: {bg2};
   --background-secondary-alt: {bg3};
@@ -51,7 +72,9 @@ TEMPLATE = """/**
   --scrollbar-auto-track: {bg2};
   /* TEXT */
   --text-normal: {fg};
+  --text-default: {fg};
   --text-muted: {muted};
+  --text-low-contrast: {muted};
   --text-link: {accent};
   --text-brand: {accent};
   --header-primary: {fg};
@@ -60,6 +83,9 @@ TEMPLATE = """/**
   --interactive-hover: {fg};
   --interactive-active: {fg};
   --interactive-muted: {imuted};
+  --interactive-text-default: {muted};
+  --interactive-text-hover: {fg};
+  --interactive-text-active: {fg};
   /* BRAND / ACCENT */
   --brand-experiment: {accent};
   --brand-experiment-500: {accent};
@@ -73,10 +99,16 @@ TEMPLATE = """/**
   --idle-color: {c4};
   --dnd-color: {c2};
   --streaming-color: {c6};
-  --status-green: {c3};
-  --status-yellow: {c4};
-  --status-red: {c2};
-  --status-purple: {c6};
+  --status-online: {c3};
+  --status-idle: {c4};
+  --status-dnd: {c2};
+  --status-streaming: {c6};
+}}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {{
+  background: {bg4} !important;
 }}"""
 
 
@@ -93,9 +125,12 @@ def mix(hex_color, target, pct):
         clamp(r + (tr - r) * f), clamp(g + (tg - g) * f), clamp(b + (tb - b) * f))
 
 
+def rgb_triplet(hex_color):
+    return " ".join(str(int(hex_color[i:i + 2], 16)) for i in (1, 3, 5))
+
+
 def saturation(hex_color):
     r, g, b = (int(hex_color[i:i + 2], 16) / 255 for i in (1, 3, 5))
-    _, _, _ = colorsys.rgb_to_hsv(r, g, b)
     return colorsys.rgb_to_hsv(r, g, b)[1]
 
 
@@ -111,15 +146,17 @@ def build(theme):
     if theme["variant"] == "dark":
         bg1 = bg                                  # chat area
         bg2 = mix(bg, "#000000", 4)               # sidebars / textarea
-        bg3 = mix(bg, "#000000", 8)
-        bg4 = mix(bg, "#000000", 14)              # deepest (server list)
+        bg3 = mix(bg, "#000000", 8)               # panels / user area
+        bg4 = mix(bg, "#000000", 14)              # guild list / app frame
         bg5 = mix(bg, "#ffffff", 6)               # popouts/floating
+        bghigher = mix(bg, "#ffffff", 3)
     else:
-        bg1 = bg
-        bg2 = mix(bg, "#000000", 4)
-        bg3 = mix(bg, "#000000", 8)
-        bg4 = mix(bg, "#000000", 14)
-        bg5 = "#ffffff"
+        bg1 = bg                                  # chat area
+        bg2 = mix(bg, "#000000", 4)               # sidebars / textarea
+        bg3 = mix(bg, "#000000", 8)               # panels / user area
+        bg4 = mix(bg, "#000000", 12)              # guild list / app frame
+        bg5 = "#ffffff"                           # popouts/floating
+        bghigher = mix(bg, "#ffffff", 50)
     muted = mix(fg, bg, 40)
     imuted = mix(fg, bg, 55)
     accent_darker = mix(accent, "#000000", 25)
@@ -127,7 +164,8 @@ def build(theme):
         name=theme["name"], author=theme.get("author") or "Gogh",
         bg=bg, fg=fg, accent=accent, c2=colors[0], c3=colors[1], c4=colors[2],
         c5=colors[3], c6=colors[4], c7=colors[5],
-        bg1=bg1, bg2=bg2, bg3=bg3, bg4=bg4, bg5=bg5,
+        bg1=bg1, bg2=bg2, bg3=bg3, bg4=bg4, bg5=bg5, bghigher=bghigher,
+        bgrgb=rgb_triplet(bg1),
         bghover=mix(bg1, fg, 6) if theme["variant"] == "dark" else mix(bg1, "#000000", 4),
         bgactive=mix(bg1, fg, 10) if theme["variant"] == "dark" else mix(bg1, "#000000", 7),
         bgselected=mix(bg1, fg, 12) if theme["variant"] == "dark" else mix(bg1, "#000000", 9),

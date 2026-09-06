@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Pandora
  * @author milosmatic (https://github.com/milosmatic/Pandora-iterm)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Pandora" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #338F86;
   --gogh-magenta: #9414E6;
   --gogh-cyan: #23D7D7;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #131d40;
+  --background-base-lower: #141E43;
+  --background-base-lower-alt: #131d40;
+  --background-base-low: #121c3e;
+  --background-base-medium: #121c3e;
+  --background-base-high: #111a3a;
+  --background-base-higher: #1b2549;
+  --background-base-highest: #222c4e;
+  --background-nested-floating: #222c4e;
+  --bg-overlay-chat: #141E43;
+  --bg-overlay-home: #121c3e;
+  --bg-overlay-home-card: #131d40;
+  --bg-overlay-app-frame: #111a3a;
+  --bg-overlay-1: #111a3a;
+  --bg-overlay-2: #111a3a;
+  --bg-overlay-3: #111a3a;
+  --bg-overlay-4: #131d40;
+  --bg-overlay-5: #121c3e;
+  --bg-overlay-6: #222c4e;
+  --bg-overlay-color: 20 30 67;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #141E43;
   --background-secondary: #131d40;
   --background-secondary-alt: #121c3e;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #131d40;
   /* TEXT */
   --text-normal: #E1E1E1;
+  --text-default: #E1E1E1;
   --text-muted: #8f93a2;
+  --text-low-contrast: #8f93a2;
   --text-link: #9414E6;
   --text-brand: #9414E6;
   --header-primary: #E1E1E1;
@@ -44,6 +67,9 @@
   --interactive-hover: #E1E1E1;
   --interactive-active: #E1E1E1;
   --interactive-muted: #70768a;
+  --interactive-text-default: #8f93a2;
+  --interactive-text-hover: #E1E1E1;
+  --interactive-text-active: #E1E1E1;
   /* BRAND / ACCENT */
   --brand-experiment: #9414E6;
   --brand-experiment-500: #9414E6;
@@ -57,8 +83,14 @@
   --idle-color: #FFAD29;
   --dnd-color: #FF4242;
   --streaming-color: #9414E6;
-  --status-green: #74AF68;
-  --status-yellow: #FFAD29;
-  --status-red: #FF4242;
-  --status-purple: #9414E6;
+  --status-online: #74AF68;
+  --status-idle: #FFAD29;
+  --status-dnd: #FF4242;
+  --status-streaming: #9414E6;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #111a3a !important;
 }

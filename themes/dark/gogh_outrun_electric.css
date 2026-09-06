@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Outrun Electric
  * @author samrap (https://github.com/samrap/outrun-theme-vscode)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Outrun Electric" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #1EA8FC;
   --gogh-magenta: #FF2AFC;
   --gogh-cyan: #42C6FF;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #0c0a1f;
+  --background-base-lower: #0C0A20;
+  --background-base-lower-alt: #0c0a1f;
+  --background-base-low: #0b091d;
+  --background-base-medium: #0b091d;
+  --background-base-high: #0a091c;
+  --background-base-higher: #131127;
+  --background-base-highest: #1b192d;
+  --background-nested-floating: #1b192d;
+  --bg-overlay-chat: #0C0A20;
+  --bg-overlay-home: #0b091d;
+  --bg-overlay-home-card: #0c0a1f;
+  --bg-overlay-app-frame: #0a091c;
+  --bg-overlay-1: #0a091c;
+  --bg-overlay-2: #0a091c;
+  --bg-overlay-3: #0a091c;
+  --bg-overlay-4: #0c0a1f;
+  --bg-overlay-5: #0b091d;
+  --bg-overlay-6: #1b192d;
+  --bg-overlay-color: 12 10 32;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #0C0A20;
   --background-secondary: #0c0a1f;
   --background-secondary-alt: #0b091d;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #0c0a1f;
   /* TEXT */
   --text-normal: #F2F3F7;
+  --text-default: #F2F3F7;
   --text-muted: #9696a1;
+  --text-low-contrast: #9696a1;
   --text-link: #FFD400;
   --text-brand: #FFD400;
   --header-primary: #F2F3F7;
@@ -44,6 +67,9 @@
   --interactive-hover: #F2F3F7;
   --interactive-active: #F2F3F7;
   --interactive-muted: #737381;
+  --interactive-text-default: #9696a1;
+  --interactive-text-hover: #F2F3F7;
+  --interactive-text-active: #F2F3F7;
   /* BRAND / ACCENT */
   --brand-experiment: #FFD400;
   --brand-experiment-500: #FFD400;
@@ -57,8 +83,14 @@
   --idle-color: #FFD400;
   --dnd-color: #E61F44;
   --streaming-color: #FF2AFC;
-  --status-green: #A7DA1E;
-  --status-yellow: #FFD400;
-  --status-red: #E61F44;
-  --status-purple: #FF2AFC;
+  --status-online: #A7DA1E;
+  --status-idle: #FFD400;
+  --status-dnd: #E61F44;
+  --status-streaming: #FF2AFC;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #0a091c !important;
 }

@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Bright Lights
  * @author tw15egan (https://github.com/tw15egan)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Bright Lights" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #76D4FF;
   --gogh-magenta: #BA76E7;
   --gogh-cyan: #6CBFB5;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #181818;
+  --background-base-lower: #191919;
+  --background-base-lower-alt: #181818;
+  --background-base-low: #171717;
+  --background-base-medium: #171717;
+  --background-base-high: #161616;
+  --background-base-higher: #202020;
+  --background-base-highest: #272727;
+  --background-nested-floating: #272727;
+  --bg-overlay-chat: #191919;
+  --bg-overlay-home: #171717;
+  --bg-overlay-home-card: #181818;
+  --bg-overlay-app-frame: #161616;
+  --bg-overlay-1: #161616;
+  --bg-overlay-2: #161616;
+  --bg-overlay-3: #161616;
+  --bg-overlay-4: #181818;
+  --bg-overlay-5: #171717;
+  --bg-overlay-6: #272727;
+  --bg-overlay-color: 25 25 25;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #191919;
   --background-secondary: #181818;
   --background-secondary-alt: #171717;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #181818;
   /* TEXT */
   --text-normal: #B3C9D7;
+  --text-default: #B3C9D7;
   --text-muted: #75838b;
+  --text-low-contrast: #75838b;
   --text-link: #FF355B;
   --text-brand: #FF355B;
   --header-primary: #B3C9D7;
@@ -44,6 +67,9 @@
   --interactive-hover: #B3C9D7;
   --interactive-active: #B3C9D7;
   --interactive-muted: #5e686e;
+  --interactive-text-default: #75838b;
+  --interactive-text-hover: #B3C9D7;
+  --interactive-text-active: #B3C9D7;
   /* BRAND / ACCENT */
   --brand-experiment: #FF355B;
   --brand-experiment-500: #FF355B;
@@ -57,8 +83,14 @@
   --idle-color: #FFC251;
   --dnd-color: #FF355B;
   --streaming-color: #BA76E7;
-  --status-green: #B7E876;
-  --status-yellow: #FFC251;
-  --status-red: #FF355B;
-  --status-purple: #BA76E7;
+  --status-online: #B7E876;
+  --status-idle: #FFC251;
+  --status-dnd: #FF355B;
+  --status-streaming: #BA76E7;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #161616 !important;
 }

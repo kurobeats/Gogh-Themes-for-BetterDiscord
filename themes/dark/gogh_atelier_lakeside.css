@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Atelier Lakeside
  * @author Bram de Haan (http://atelierbram.github.io/syntax-highlighting/atelier-schemes/lakeside)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Atelier Lakeside" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #257FAD;
   --gogh-magenta: #6B6BB8;
   --gogh-cyan: #2D8F6F;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #151a1c;
+  --background-base-lower: #161B1D;
+  --background-base-lower-alt: #151a1c;
+  --background-base-low: #14191b;
+  --background-base-medium: #14191b;
+  --background-base-high: #131719;
+  --background-base-higher: #1d2224;
+  --background-base-highest: #24292b;
+  --background-nested-floating: #24292b;
+  --bg-overlay-chat: #161B1D;
+  --bg-overlay-home: #14191b;
+  --bg-overlay-home-card: #151a1c;
+  --bg-overlay-app-frame: #131719;
+  --bg-overlay-1: #131719;
+  --bg-overlay-2: #131719;
+  --bg-overlay-3: #131719;
+  --bg-overlay-4: #151a1c;
+  --bg-overlay-5: #14191b;
+  --bg-overlay-6: #24292b;
+  --bg-overlay-color: 22 27 29;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #161B1D;
   --background-secondary: #151a1c;
   --background-secondary-alt: #14191b;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #151a1c;
   /* TEXT */
   --text-normal: #7195A8;
+  --text-default: #7195A8;
   --text-muted: #4d6470;
+  --text-low-contrast: #4d6470;
   --text-link: #8A8A0F;
   --text-brand: #8A8A0F;
   --header-primary: #7195A8;
@@ -44,6 +67,9 @@
   --interactive-hover: #7195A8;
   --interactive-active: #7195A8;
   --interactive-muted: #3f525c;
+  --interactive-text-default: #4d6470;
+  --interactive-text-hover: #7195A8;
+  --interactive-text-active: #7195A8;
   /* BRAND / ACCENT */
   --brand-experiment: #8A8A0F;
   --brand-experiment-500: #8A8A0F;
@@ -57,8 +83,14 @@
   --idle-color: #8A8A0F;
   --dnd-color: #D22D72;
   --streaming-color: #6B6BB8;
-  --status-green: #568C3B;
-  --status-yellow: #8A8A0F;
-  --status-red: #D22D72;
-  --status-purple: #6B6BB8;
+  --status-online: #568C3B;
+  --status-idle: #8A8A0F;
+  --status-dnd: #D22D72;
+  --status-streaming: #6B6BB8;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #131719 !important;
 }

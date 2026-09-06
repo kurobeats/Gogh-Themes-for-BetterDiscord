@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Osaka Jade
  * @author Charles Kellogg
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Osaka Jade" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #509475;
   --gogh-magenta: #D2689C;
   --gogh-cyan: #2DD5B7;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #101b17;
+  --background-base-lower: #111C18;
+  --background-base-lower-alt: #101b17;
+  --background-base-low: #101a16;
+  --background-base-medium: #101a16;
+  --background-base-high: #0f1815;
+  --background-base-higher: #18231f;
+  --background-base-highest: #1f2a26;
+  --background-nested-floating: #1f2a26;
+  --bg-overlay-chat: #111C18;
+  --bg-overlay-home: #101a16;
+  --bg-overlay-home-card: #101b17;
+  --bg-overlay-app-frame: #0f1815;
+  --bg-overlay-1: #0f1815;
+  --bg-overlay-2: #0f1815;
+  --bg-overlay-3: #0f1815;
+  --bg-overlay-4: #101b17;
+  --bg-overlay-5: #101a16;
+  --bg-overlay-6: #1f2a26;
+  --bg-overlay-color: 17 28 24;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #111C18;
   --background-secondary: #101b17;
   --background-secondary-alt: #101a16;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #101b17;
   /* TEXT */
   --text-normal: #C1C497;
+  --text-default: #C1C497;
   --text-muted: #7b8164;
+  --text-low-contrast: #7b8164;
   --text-link: #2DD5B7;
   --text-brand: #2DD5B7;
   --header-primary: #C1C497;
@@ -44,6 +67,9 @@
   --interactive-hover: #C1C497;
   --interactive-active: #C1C497;
   --interactive-muted: #606851;
+  --interactive-text-default: #7b8164;
+  --interactive-text-hover: #C1C497;
+  --interactive-text-active: #C1C497;
   /* BRAND / ACCENT */
   --brand-experiment: #2DD5B7;
   --brand-experiment-500: #2DD5B7;
@@ -57,8 +83,14 @@
   --idle-color: #459451;
   --dnd-color: #FF5345;
   --streaming-color: #D2689C;
-  --status-green: #549E6A;
-  --status-yellow: #459451;
-  --status-red: #FF5345;
-  --status-purple: #D2689C;
+  --status-online: #549E6A;
+  --status-idle: #459451;
+  --status-dnd: #FF5345;
+  --status-streaming: #D2689C;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #0f1815 !important;
 }

@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Tarot
  * @author ed (https://codeberg.org/ed)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Tarot" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #6E6080;
   --gogh-magenta: #A45782;
   --gogh-cyan: #8C9785;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #0d091c;
+  --background-base-lower: #0E091D;
+  --background-base-lower-alt: #0d091c;
+  --background-base-low: #0d081b;
+  --background-base-medium: #0d081b;
+  --background-base-high: #0c0819;
+  --background-base-higher: #151024;
+  --background-base-highest: #1c182b;
+  --background-nested-floating: #1c182b;
+  --bg-overlay-chat: #0E091D;
+  --bg-overlay-home: #0d081b;
+  --bg-overlay-home-card: #0d091c;
+  --bg-overlay-app-frame: #0c0819;
+  --bg-overlay-1: #0c0819;
+  --bg-overlay-2: #0c0819;
+  --bg-overlay-3: #0c0819;
+  --bg-overlay-4: #0d091c;
+  --bg-overlay-5: #0d081b;
+  --bg-overlay-6: #1c182b;
+  --bg-overlay-color: 14 9 29;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #0E091D;
   --background-secondary: #0d091c;
   --background-secondary-alt: #0d081b;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #0d091c;
   /* TEXT */
   --text-normal: #AA556F;
+  --text-default: #AA556F;
   --text-muted: #6c374e;
+  --text-low-contrast: #6c374e;
   --text-link: #C53253;
   --text-brand: #C53253;
   --header-primary: #AA556F;
@@ -44,6 +67,9 @@
   --interactive-hover: #AA556F;
   --interactive-active: #AA556F;
   --interactive-muted: #542b42;
+  --interactive-text-default: #6c374e;
+  --interactive-text-hover: #AA556F;
+  --interactive-text-active: #AA556F;
   /* BRAND / ACCENT */
   --brand-experiment: #C53253;
   --brand-experiment-500: #C53253;
@@ -57,8 +83,14 @@
   --idle-color: #FF6565;
   --dnd-color: #C53253;
   --streaming-color: #A45782;
-  --status-green: #A68E5A;
-  --status-yellow: #FF6565;
-  --status-red: #C53253;
-  --status-purple: #A45782;
+  --status-online: #A68E5A;
+  --status-idle: #FF6565;
+  --status-dnd: #C53253;
+  --status-streaming: #A45782;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #0c0819 !important;
 }

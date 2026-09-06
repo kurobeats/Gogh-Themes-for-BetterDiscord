@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Red Planet
  * @author ibrokemypie (https://github.com/ibrokemypie)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Red Planet" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #69819E;
   --gogh-magenta: #896492;
   --gogh-cyan: #5B8390;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #212121;
+  --background-base-lower: #222222;
+  --background-base-lower-alt: #212121;
+  --background-base-low: #1f1f1f;
+  --background-base-medium: #1f1f1f;
+  --background-base-high: #1d1d1d;
+  --background-base-higher: #292929;
+  --background-base-highest: #2f2f2f;
+  --background-nested-floating: #2f2f2f;
+  --bg-overlay-chat: #222222;
+  --bg-overlay-home: #1f1f1f;
+  --bg-overlay-home-card: #212121;
+  --bg-overlay-app-frame: #1d1d1d;
+  --bg-overlay-1: #1d1d1d;
+  --bg-overlay-2: #1d1d1d;
+  --bg-overlay-3: #1d1d1d;
+  --bg-overlay-4: #212121;
+  --bg-overlay-5: #1f1f1f;
+  --bg-overlay-6: #2f2f2f;
+  --bg-overlay-color: 34 34 34;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #222222;
   --background-secondary: #212121;
   --background-secondary-alt: #1f1f1f;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #212121;
   /* TEXT */
   --text-normal: #C2B790;
+  --text-default: #C2B790;
   --text-muted: #827b64;
+  --text-low-contrast: #827b64;
   --text-link: #8C3432;
   --text-brand: #8C3432;
   --header-primary: #C2B790;
@@ -44,6 +67,9 @@
   --interactive-hover: #C2B790;
   --interactive-active: #C2B790;
   --interactive-muted: #6a6554;
+  --interactive-text-default: #827b64;
+  --interactive-text-hover: #C2B790;
+  --interactive-text-active: #C2B790;
   /* BRAND / ACCENT */
   --brand-experiment: #8C3432;
   --brand-experiment-500: #8C3432;
@@ -57,8 +83,14 @@
   --idle-color: #E8BF6A;
   --dnd-color: #8C3432;
   --streaming-color: #896492;
-  --status-green: #728271;
-  --status-yellow: #E8BF6A;
-  --status-red: #8C3432;
-  --status-purple: #896492;
+  --status-online: #728271;
+  --status-idle: #E8BF6A;
+  --status-dnd: #8C3432;
+  --status-streaming: #896492;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #1d1d1d !important;
 }

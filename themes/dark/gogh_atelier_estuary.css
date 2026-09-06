@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Atelier Estuary
  * @author Bram de Haan (http://atelierbram.github.io/syntax-highlighting/atelier-schemes/estuary)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Atelier Estuary" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #36A166;
   --gogh-magenta: #5F9182;
   --gogh-cyan: #5B9D48;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #21211a;
+  --background-base-lower: #22221B;
+  --background-base-lower-alt: #21211a;
+  --background-base-low: #1f1f19;
+  --background-base-medium: #1f1f19;
+  --background-base-high: #1d1d17;
+  --background-base-higher: #292922;
+  --background-base-highest: #2f2f29;
+  --background-nested-floating: #2f2f29;
+  --bg-overlay-chat: #22221B;
+  --bg-overlay-home: #1f1f19;
+  --bg-overlay-home-card: #21211a;
+  --bg-overlay-app-frame: #1d1d17;
+  --bg-overlay-1: #1d1d17;
+  --bg-overlay-2: #1d1d17;
+  --bg-overlay-3: #1d1d17;
+  --bg-overlay-4: #21211a;
+  --bg-overlay-5: #1f1f19;
+  --bg-overlay-6: #2f2f29;
+  --bg-overlay-color: 34 34 27;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #22221B;
   --background-secondary: #21211a;
   --background-secondary-alt: #1f1f19;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #21211a;
   /* TEXT */
   --text-normal: #878573;
+  --text-default: #878573;
   --text-muted: #5f5d50;
+  --text-low-contrast: #5f5d50;
   --text-link: #A5980D;
   --text-brand: #A5980D;
   --header-primary: #878573;
@@ -44,6 +67,9 @@
   --interactive-hover: #878573;
   --interactive-active: #878573;
   --interactive-muted: #4f4f43;
+  --interactive-text-default: #5f5d50;
+  --interactive-text-hover: #878573;
+  --interactive-text-active: #878573;
   /* BRAND / ACCENT */
   --brand-experiment: #A5980D;
   --brand-experiment-500: #A5980D;
@@ -57,8 +83,14 @@
   --idle-color: #A5980D;
   --dnd-color: #BA6236;
   --streaming-color: #5F9182;
-  --status-green: #7D9726;
-  --status-yellow: #A5980D;
-  --status-red: #BA6236;
-  --status-purple: #5F9182;
+  --status-online: #7D9726;
+  --status-idle: #A5980D;
+  --status-dnd: #BA6236;
+  --status-streaming: #5F9182;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #1d1d17 !important;
 }

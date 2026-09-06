@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Karma Dark HC
  * @author Sreetam Das (https://github.com/sreetamdas)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Karma Dark HC" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #61DCEB;
   --gogh-magenta: #B9A3EE;
   --gogh-cyan: #61DCEB;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #000000;
+  --background-base-lower: #000000;
+  --background-base-lower-alt: #000000;
+  --background-base-low: #000000;
+  --background-base-medium: #000000;
+  --background-base-high: #000000;
+  --background-base-higher: #080808;
+  --background-base-highest: #0f0f0f;
+  --background-nested-floating: #0f0f0f;
+  --bg-overlay-chat: #000000;
+  --bg-overlay-home: #000000;
+  --bg-overlay-home-card: #000000;
+  --bg-overlay-app-frame: #000000;
+  --bg-overlay-1: #000000;
+  --bg-overlay-2: #000000;
+  --bg-overlay-3: #000000;
+  --bg-overlay-4: #000000;
+  --bg-overlay-5: #000000;
+  --bg-overlay-6: #0f0f0f;
+  --bg-overlay-color: 0 0 0;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #000000;
   --background-secondary: #000000;
   --background-secondary-alt: #000000;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #000000;
   /* TEXT */
   --text-normal: #FFFFFF;
+  --text-default: #FFFFFF;
   --text-muted: #999999;
+  --text-low-contrast: #999999;
   --text-link: #FF5C87;
   --text-brand: #FF5C87;
   --header-primary: #FFFFFF;
@@ -44,6 +67,9 @@
   --interactive-hover: #FFFFFF;
   --interactive-active: #FFFFFF;
   --interactive-muted: #737373;
+  --interactive-text-default: #999999;
+  --interactive-text-hover: #FFFFFF;
+  --interactive-text-active: #FFFFFF;
   /* BRAND / ACCENT */
   --brand-experiment: #FF5C87;
   --brand-experiment-500: #FF5C87;
@@ -57,8 +83,14 @@
   --idle-color: #FCE566;
   --dnd-color: #FF5C87;
   --streaming-color: #B9A3EE;
-  --status-green: #80E598;
-  --status-yellow: #FCE566;
-  --status-red: #FF5C87;
-  --status-purple: #B9A3EE;
+  --status-online: #80E598;
+  --status-idle: #FCE566;
+  --status-dnd: #FF5C87;
+  --status-streaming: #B9A3EE;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #000000 !important;
 }

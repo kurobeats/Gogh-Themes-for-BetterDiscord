@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Chinoiserie Morandi
  * @author Di Wang (https://cs.cmu.edu/~diw3)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Chinoiserie Morandi" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #839EC9;
   --gogh-magenta: #98A1D8;
   --gogh-cyan: #5E8C9B;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #1c1c1c;
+  --background-base-lower: #1D1D1D;
+  --background-base-lower-alt: #1c1c1c;
+  --background-base-low: #1b1b1b;
+  --background-base-medium: #1b1b1b;
+  --background-base-high: #191919;
+  --background-base-higher: #242424;
+  --background-base-highest: #2b2b2b;
+  --background-nested-floating: #2b2b2b;
+  --bg-overlay-chat: #1D1D1D;
+  --bg-overlay-home: #1b1b1b;
+  --bg-overlay-home-card: #1c1c1c;
+  --bg-overlay-app-frame: #191919;
+  --bg-overlay-1: #191919;
+  --bg-overlay-2: #191919;
+  --bg-overlay-3: #191919;
+  --bg-overlay-4: #1c1c1c;
+  --bg-overlay-5: #1b1b1b;
+  --bg-overlay-6: #2b2b2b;
+  --bg-overlay-color: 29 29 29;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #1D1D1D;
   --background-secondary: #1c1c1c;
   --background-secondary-alt: #1b1b1b;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #1c1c1c;
   /* TEXT */
   --text-normal: #C4CBCF;
+  --text-default: #C4CBCF;
   --text-muted: #818588;
+  --text-low-contrast: #818588;
   --text-link: #C06061;
   --text-brand: #C06061;
   --header-primary: #C4CBCF;
@@ -44,6 +67,9 @@
   --interactive-hover: #C4CBCF;
   --interactive-active: #C4CBCF;
   --interactive-muted: #686b6d;
+  --interactive-text-default: #818588;
+  --interactive-text-hover: #C4CBCF;
+  --interactive-text-active: #C4CBCF;
   /* BRAND / ACCENT */
   --brand-experiment: #C06061;
   --brand-experiment-500: #C06061;
@@ -57,8 +83,14 @@
   --idle-color: #E5BC84;
   --dnd-color: #C06061;
   --streaming-color: #98A1D8;
-  --status-green: #8CA07B;
-  --status-yellow: #E5BC84;
-  --status-red: #C06061;
-  --status-purple: #98A1D8;
+  --status-online: #8CA07B;
+  --status-idle: #E5BC84;
+  --status-dnd: #C06061;
+  --status-streaming: #98A1D8;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #191919 !important;
 }

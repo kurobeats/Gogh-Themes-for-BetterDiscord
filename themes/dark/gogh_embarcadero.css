@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Embarcadero
  * @author Thomas Leon Highbaugh
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Embarcadero" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #4080D0;
   --gogh-magenta: #A070D0;
   --gogh-cyan: #02EFEF;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #24282d;
+  --background-base-lower: #252A2F;
+  --background-base-lower-alt: #24282d;
+  --background-base-low: #22272b;
+  --background-base-medium: #22272b;
+  --background-base-high: #202428;
+  --background-base-higher: #2c3035;
+  --background-base-highest: #32373b;
+  --background-nested-floating: #32373b;
+  --bg-overlay-chat: #252A2F;
+  --bg-overlay-home: #22272b;
+  --bg-overlay-home-card: #24282d;
+  --bg-overlay-app-frame: #202428;
+  --bg-overlay-1: #202428;
+  --bg-overlay-2: #202428;
+  --bg-overlay-3: #202428;
+  --bg-overlay-4: #24282d;
+  --bg-overlay-5: #22272b;
+  --bg-overlay-6: #32373b;
+  --bg-overlay-color: 37 42 47;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #252A2F;
   --background-secondary: #24282d;
   --background-secondary-alt: #22272b;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #24282d;
   /* TEXT */
   --text-normal: #BCBDC0;
+  --text-default: #BCBDC0;
   --text-muted: #808286;
+  --text-low-contrast: #808286;
   --text-link: #02EFEF;
   --text-brand: #02EFEF;
   --header-primary: #BCBDC0;
@@ -44,6 +67,9 @@
   --interactive-hover: #BCBDC0;
   --interactive-active: #BCBDC0;
   --interactive-muted: #696c70;
+  --interactive-text-default: #808286;
+  --interactive-text-hover: #BCBDC0;
+  --interactive-text-active: #BCBDC0;
   /* BRAND / ACCENT */
   --brand-experiment: #02EFEF;
   --brand-experiment-500: #02EFEF;
@@ -57,8 +83,14 @@
   --idle-color: #EB824D;
   --dnd-color: #ED5D86;
   --streaming-color: #A070D0;
-  --status-green: #20C290;
-  --status-yellow: #EB824D;
-  --status-red: #ED5D86;
-  --status-purple: #A070D0;
+  --status-online: #20C290;
+  --status-idle: #EB824D;
+  --status-dnd: #ED5D86;
+  --status-streaming: #A070D0;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #202428 !important;
 }

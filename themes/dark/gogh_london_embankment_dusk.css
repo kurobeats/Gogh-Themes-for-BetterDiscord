@@ -1,7 +1,7 @@
 /**
  * @name Gogh - London Embankment Dusk
  * @author Scott Matthews (https://github.com/scottmatthews7)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "London Embankment Dusk" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #5E87B3;
   --gogh-magenta: #9B86A8;
   --gogh-cyan: #82A8B8;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #151e2a;
+  --background-base-lower: #161F2C;
+  --background-base-lower-alt: #151e2a;
+  --background-base-low: #141d28;
+  --background-base-medium: #141d28;
+  --background-base-high: #131b26;
+  --background-base-higher: #1d2632;
+  --background-base-highest: #242c39;
+  --background-nested-floating: #242c39;
+  --bg-overlay-chat: #161F2C;
+  --bg-overlay-home: #141d28;
+  --bg-overlay-home-card: #151e2a;
+  --bg-overlay-app-frame: #131b26;
+  --bg-overlay-1: #131b26;
+  --bg-overlay-2: #131b26;
+  --bg-overlay-3: #131b26;
+  --bg-overlay-4: #151e2a;
+  --bg-overlay-5: #141d28;
+  --bg-overlay-6: #242c39;
+  --bg-overlay-color: 22 31 44;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #161F2C;
   --background-secondary: #151e2a;
   --background-secondary-alt: #141d28;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #151e2a;
   /* TEXT */
   --text-normal: #E8EEF2;
+  --text-default: #E8EEF2;
   --text-muted: #949ba3;
+  --text-low-contrast: #949ba3;
   --text-link: #C5573F;
   --text-brand: #C5573F;
   --header-primary: #E8EEF2;
@@ -44,6 +67,9 @@
   --interactive-hover: #E8EEF2;
   --interactive-active: #E8EEF2;
   --interactive-muted: #747c85;
+  --interactive-text-default: #949ba3;
+  --interactive-text-hover: #E8EEF2;
+  --interactive-text-active: #E8EEF2;
   /* BRAND / ACCENT */
   --brand-experiment: #C5573F;
   --brand-experiment-500: #C5573F;
@@ -57,8 +83,14 @@
   --idle-color: #E2BD5C;
   --dnd-color: #C5573F;
   --streaming-color: #9B86A8;
-  --status-green: #6A8E85;
-  --status-yellow: #E2BD5C;
-  --status-red: #C5573F;
-  --status-purple: #9B86A8;
+  --status-online: #6A8E85;
+  --status-idle: #E2BD5C;
+  --status-dnd: #C5573F;
+  --status-streaming: #9B86A8;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #131b26 !important;
 }

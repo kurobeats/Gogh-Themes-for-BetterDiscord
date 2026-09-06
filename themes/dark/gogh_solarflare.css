@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Solarflare
  * @author Chuck Harmston (https://chuck.harmston.ch)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Solarflare" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #33B5E1;
   --gogh-magenta: #A363D5;
   --gogh-cyan: #52CBB0;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #17242d;
+  --background-base-lower: #18262F;
+  --background-base-lower-alt: #17242d;
+  --background-base-low: #16232b;
+  --background-base-medium: #16232b;
+  --background-base-high: #152128;
+  --background-base-higher: #1f2d35;
+  --background-base-highest: #26333b;
+  --background-nested-floating: #26333b;
+  --bg-overlay-chat: #18262F;
+  --bg-overlay-home: #16232b;
+  --bg-overlay-home-card: #17242d;
+  --bg-overlay-app-frame: #152128;
+  --bg-overlay-1: #152128;
+  --bg-overlay-2: #152128;
+  --bg-overlay-3: #152128;
+  --bg-overlay-4: #17242d;
+  --bg-overlay-5: #16232b;
+  --bg-overlay-6: #26333b;
+  --bg-overlay-color: 24 38 47;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #18262F;
   --background-secondary: #17242d;
   --background-secondary-alt: #16232b;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #17242d;
   /* TEXT */
   --text-normal: #A6AFB8;
+  --text-default: #A6AFB8;
   --text-muted: #6d7881;
+  --text-low-contrast: #6d7881;
   --text-link: #E4B51C;
   --text-brand: #E4B51C;
   --header-primary: #A6AFB8;
@@ -44,6 +67,9 @@
   --interactive-hover: #A6AFB8;
   --interactive-active: #A6AFB8;
   --interactive-muted: #58646d;
+  --interactive-text-default: #6d7881;
+  --interactive-text-hover: #A6AFB8;
+  --interactive-text-active: #A6AFB8;
   /* BRAND / ACCENT */
   --brand-experiment: #E4B51C;
   --brand-experiment-500: #E4B51C;
@@ -57,8 +83,14 @@
   --idle-color: #E4B51C;
   --dnd-color: #EF5253;
   --streaming-color: #A363D5;
-  --status-green: #7CC844;
-  --status-yellow: #E4B51C;
-  --status-red: #EF5253;
-  --status-purple: #A363D5;
+  --status-online: #7CC844;
+  --status-idle: #E4B51C;
+  --status-dnd: #EF5253;
+  --status-streaming: #A363D5;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #152128 !important;
 }

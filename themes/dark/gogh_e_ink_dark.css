@@ -1,7 +1,7 @@
 /**
  * @name Gogh - E Ink Dark
  * @author Algilbert Gomez (https://github.com/alexxGmZ)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "E Ink Dark" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #868686;
   --gogh-magenta: #5E5E5E;
   --gogh-cyan: #B8B8B8;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #313131;
+  --background-base-lower: #333333;
+  --background-base-lower-alt: #313131;
+  --background-base-low: #2f2f2f;
+  --background-base-medium: #2f2f2f;
+  --background-base-high: #2c2c2c;
+  --background-base-higher: #393939;
+  --background-base-highest: #3f3f3f;
+  --background-nested-floating: #3f3f3f;
+  --bg-overlay-chat: #333333;
+  --bg-overlay-home: #2f2f2f;
+  --bg-overlay-home-card: #313131;
+  --bg-overlay-app-frame: #2c2c2c;
+  --bg-overlay-1: #2c2c2c;
+  --bg-overlay-2: #2c2c2c;
+  --bg-overlay-3: #2c2c2c;
+  --bg-overlay-4: #313131;
+  --bg-overlay-5: #2f2f2f;
+  --bg-overlay-6: #3f3f3f;
+  --bg-overlay-color: 51 51 51;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #333333;
   --background-secondary: #313131;
   --background-secondary-alt: #2f2f2f;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #313131;
   /* TEXT */
   --text-normal: #C2C2C2;
+  --text-default: #C2C2C2;
   --text-muted: #898989;
+  --text-low-contrast: #898989;
   --text-link: #CCCCCC;
   --text-brand: #CCCCCC;
   --header-primary: #C2C2C2;
@@ -44,6 +67,9 @@
   --interactive-hover: #C2C2C2;
   --interactive-active: #C2C2C2;
   --interactive-muted: #737373;
+  --interactive-text-default: #898989;
+  --interactive-text-hover: #C2C2C2;
+  --interactive-text-active: #C2C2C2;
   /* BRAND / ACCENT */
   --brand-experiment: #CCCCCC;
   --brand-experiment-500: #CCCCCC;
@@ -57,8 +83,14 @@
   --idle-color: #7C7C7C;
   --dnd-color: #CCCCCC;
   --streaming-color: #5E5E5E;
-  --status-green: #686868;
-  --status-yellow: #7C7C7C;
-  --status-red: #CCCCCC;
-  --status-purple: #5E5E5E;
+  --status-online: #686868;
+  --status-idle: #7C7C7C;
+  --status-dnd: #CCCCCC;
+  --status-streaming: #5E5E5E;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #2c2c2c !important;
 }

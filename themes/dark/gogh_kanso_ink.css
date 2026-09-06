@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Kanso Ink
  * @author webhooked (https://github.com/webhooked)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Kanso Ink" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #8BA4B0;
   --gogh-magenta: #A292A3;
   --gogh-cyan: #8EA4A2;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #13161c;
+  --background-base-lower: #14171D;
+  --background-base-lower-alt: #13161c;
+  --background-base-low: #12151b;
+  --background-base-medium: #12151b;
+  --background-base-high: #111419;
+  --background-base-higher: #1b1e24;
+  --background-base-highest: #22252b;
+  --background-nested-floating: #22252b;
+  --bg-overlay-chat: #14171D;
+  --bg-overlay-home: #12151b;
+  --bg-overlay-home-card: #13161c;
+  --bg-overlay-app-frame: #111419;
+  --bg-overlay-1: #111419;
+  --bg-overlay-2: #111419;
+  --bg-overlay-3: #111419;
+  --bg-overlay-4: #13161c;
+  --bg-overlay-5: #12151b;
+  --bg-overlay-6: #22252b;
+  --bg-overlay-color: 20 23 29;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #14171D;
   --background-secondary: #13161c;
   --background-secondary-alt: #12151b;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #13161c;
   /* TEXT */
   --text-normal: #C5C9C7;
+  --text-default: #C5C9C7;
   --text-muted: #7e8283;
+  --text-low-contrast: #7e8283;
   --text-link: #C4746E;
   --text-brand: #C4746E;
   --header-primary: #C5C9C7;
@@ -44,6 +67,9 @@
   --interactive-hover: #C5C9C7;
   --interactive-active: #C5C9C7;
   --interactive-muted: #646769;
+  --interactive-text-default: #7e8283;
+  --interactive-text-hover: #C5C9C7;
+  --interactive-text-active: #C5C9C7;
   /* BRAND / ACCENT */
   --brand-experiment: #C4746E;
   --brand-experiment-500: #C4746E;
@@ -57,8 +83,14 @@
   --idle-color: #C4B28A;
   --dnd-color: #C4746E;
   --streaming-color: #A292A3;
-  --status-green: #8A9A7B;
-  --status-yellow: #C4B28A;
-  --status-red: #C4746E;
-  --status-purple: #A292A3;
+  --status-online: #8A9A7B;
+  --status-idle: #C4B28A;
+  --status-dnd: #C4746E;
+  --status-streaming: #A292A3;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #111419 !important;
 }

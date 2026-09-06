@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Firefly Traditional
  * @author Seunghun Thomas Lee (https://github.com/stlee42)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Firefly Traditional" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #5A63FF;
   --gogh-magenta: #D53AD2;
   --gogh-cyan: #33BBC7;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #000000;
+  --background-base-lower: #000000;
+  --background-base-lower-alt: #000000;
+  --background-base-low: #000000;
+  --background-base-medium: #000000;
+  --background-base-high: #000000;
+  --background-base-higher: #080808;
+  --background-base-highest: #0f0f0f;
+  --background-nested-floating: #0f0f0f;
+  --bg-overlay-chat: #000000;
+  --bg-overlay-home: #000000;
+  --bg-overlay-home-card: #000000;
+  --bg-overlay-app-frame: #000000;
+  --bg-overlay-1: #000000;
+  --bg-overlay-2: #000000;
+  --bg-overlay-3: #000000;
+  --bg-overlay-4: #000000;
+  --bg-overlay-5: #000000;
+  --bg-overlay-6: #0f0f0f;
+  --bg-overlay-color: 0 0 0;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #000000;
   --background-secondary: #000000;
   --background-secondary-alt: #000000;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #000000;
   /* TEXT */
   --text-normal: #F5F5F5;
+  --text-default: #F5F5F5;
   --text-muted: #939393;
+  --text-low-contrast: #939393;
   --text-link: #C23720;
   --text-brand: #C23720;
   --header-primary: #F5F5F5;
@@ -44,6 +67,9 @@
   --interactive-hover: #F5F5F5;
   --interactive-active: #F5F5F5;
   --interactive-muted: #6e6e6e;
+  --interactive-text-default: #939393;
+  --interactive-text-hover: #F5F5F5;
+  --interactive-text-active: #F5F5F5;
   /* BRAND / ACCENT */
   --brand-experiment: #C23720;
   --brand-experiment-500: #C23720;
@@ -57,8 +83,14 @@
   --idle-color: #AFAD24;
   --dnd-color: #C23720;
   --streaming-color: #D53AD2;
-  --status-green: #33BC26;
-  --status-yellow: #AFAD24;
-  --status-red: #C23720;
-  --status-purple: #D53AD2;
+  --status-online: #33BC26;
+  --status-idle: #AFAD24;
+  --status-dnd: #C23720;
+  --status-streaming: #D53AD2;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #000000 !important;
 }

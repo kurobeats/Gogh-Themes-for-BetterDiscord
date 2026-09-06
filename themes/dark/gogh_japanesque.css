@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Japanesque
  * @author aereal (https://github.com/aereal/dotfiles/blob/master/colors/Japanesque/Japanesque.itermcolors)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Japanesque" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #4C9AD4;
   --gogh-magenta: #A57FC4;
   --gogh-cyan: #389AAD;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #1d1d1d;
+  --background-base-lower: #1E1E1E;
+  --background-base-lower-alt: #1d1d1d;
+  --background-base-low: #1c1c1c;
+  --background-base-medium: #1c1c1c;
+  --background-base-high: #1a1a1a;
+  --background-base-higher: #252525;
+  --background-base-highest: #2c2c2c;
+  --background-nested-floating: #2c2c2c;
+  --bg-overlay-chat: #1E1E1E;
+  --bg-overlay-home: #1c1c1c;
+  --bg-overlay-home-card: #1d1d1d;
+  --bg-overlay-app-frame: #1a1a1a;
+  --bg-overlay-1: #1a1a1a;
+  --bg-overlay-2: #1a1a1a;
+  --bg-overlay-3: #1a1a1a;
+  --bg-overlay-4: #1d1d1d;
+  --bg-overlay-5: #1c1c1c;
+  --bg-overlay-6: #2c2c2c;
+  --bg-overlay-color: 30 30 30;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #1E1E1E;
   --background-secondary: #1d1d1d;
   --background-secondary-alt: #1c1c1c;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #1d1d1d;
   /* TEXT */
   --text-normal: #F7F6EC;
+  --text-default: #F7F6EC;
   --text-muted: #a0a09a;
+  --text-low-contrast: #a0a09a;
   --text-link: #E9B32A;
   --text-brand: #E9B32A;
   --header-primary: #F7F6EC;
@@ -44,6 +67,9 @@
   --interactive-hover: #F7F6EC;
   --interactive-active: #F7F6EC;
   --interactive-muted: #807f7b;
+  --interactive-text-default: #a0a09a;
+  --interactive-text-hover: #F7F6EC;
+  --interactive-text-active: #F7F6EC;
   /* BRAND / ACCENT */
   --brand-experiment: #E9B32A;
   --brand-experiment-500: #E9B32A;
@@ -57,8 +83,14 @@
   --idle-color: #E9B32A;
   --dnd-color: #CF3F61;
   --streaming-color: #A57FC4;
-  --status-green: #7BB75B;
-  --status-yellow: #E9B32A;
-  --status-red: #CF3F61;
-  --status-purple: #A57FC4;
+  --status-online: #7BB75B;
+  --status-idle: #E9B32A;
+  --status-dnd: #CF3F61;
+  --status-streaming: #A57FC4;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #1a1a1a !important;
 }

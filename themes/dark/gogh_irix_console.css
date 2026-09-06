@@ -1,7 +1,7 @@
 /**
  * @name Gogh - IRIX Console
  * @author Skeeve (https://github.com/Skeeve)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "IRIX Console" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #0739E2;
   --gogh-magenta: #911F9C;
   --gogh-cyan: #4497DF;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #0c0c0c;
+  --background-base-lower: #0C0C0C;
+  --background-base-lower-alt: #0c0c0c;
+  --background-base-low: #0b0b0b;
+  --background-base-medium: #0b0b0b;
+  --background-base-high: #0a0a0a;
+  --background-base-higher: #131313;
+  --background-base-highest: #1b1b1b;
+  --background-nested-floating: #1b1b1b;
+  --bg-overlay-chat: #0C0C0C;
+  --bg-overlay-home: #0b0b0b;
+  --bg-overlay-home-card: #0c0c0c;
+  --bg-overlay-app-frame: #0a0a0a;
+  --bg-overlay-1: #0a0a0a;
+  --bg-overlay-2: #0a0a0a;
+  --bg-overlay-3: #0a0a0a;
+  --bg-overlay-4: #0c0c0c;
+  --bg-overlay-5: #0b0b0b;
+  --bg-overlay-6: #1b1b1b;
+  --bg-overlay-color: 12 12 12;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #0C0C0C;
   --background-secondary: #0c0c0c;
   --background-secondary-alt: #0b0b0b;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #0c0c0c;
   /* TEXT */
   --text-normal: #F2F2F2;
+  --text-default: #F2F2F2;
   --text-muted: #969696;
+  --text-low-contrast: #969696;
   --text-link: #0739E2;
   --text-brand: #0739E2;
   --header-primary: #F2F2F2;
@@ -44,6 +67,9 @@
   --interactive-hover: #F2F2F2;
   --interactive-active: #F2F2F2;
   --interactive-muted: #737373;
+  --interactive-text-default: #969696;
+  --interactive-text-hover: #F2F2F2;
+  --interactive-text-active: #F2F2F2;
   /* BRAND / ACCENT */
   --brand-experiment: #0739E2;
   --brand-experiment-500: #0739E2;
@@ -57,8 +83,14 @@
   --idle-color: #C29D28;
   --dnd-color: #D42426;
   --streaming-color: #911F9C;
-  --status-green: #37A327;
-  --status-yellow: #C29D28;
-  --status-red: #D42426;
-  --status-purple: #911F9C;
+  --status-online: #37A327;
+  --status-idle: #C29D28;
+  --status-dnd: #D42426;
+  --status-streaming: #911F9C;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #0a0a0a !important;
 }

@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Firewatch
  * @author Sebastian Szturo (https://github.com/SebastianSzturo)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Firewatch" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #4D89C4;
   --gogh-magenta: #D55119;
   --gogh-cyan: #44A8B6;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #1d1f25;
+  --background-base-lower: #1E2027;
+  --background-base-lower-alt: #1d1f25;
+  --background-base-low: #1c1d24;
+  --background-base-medium: #1c1d24;
+  --background-base-high: #1a1c22;
+  --background-base-higher: #25272d;
+  --background-base-highest: #2c2d34;
+  --background-nested-floating: #2c2d34;
+  --bg-overlay-chat: #1E2027;
+  --bg-overlay-home: #1c1d24;
+  --bg-overlay-home-card: #1d1f25;
+  --bg-overlay-app-frame: #1a1c22;
+  --bg-overlay-1: #1a1c22;
+  --bg-overlay-2: #1a1c22;
+  --bg-overlay-3: #1a1c22;
+  --bg-overlay-4: #1d1f25;
+  --bg-overlay-5: #1c1d24;
+  --bg-overlay-6: #2c2d34;
+  --bg-overlay-color: 30 32 39;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #1E2027;
   --background-secondary: #1d1f25;
   --background-secondary-alt: #1c1d24;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #1d1f25;
   /* TEXT */
   --text-normal: #9BA2B2;
+  --text-default: #9BA2B2;
   --text-muted: #696e7a;
+  --text-low-contrast: #696e7a;
   --text-link: #D55119;
   --text-brand: #D55119;
   --header-primary: #9BA2B2;
@@ -44,6 +67,9 @@
   --interactive-hover: #9BA2B2;
   --interactive-active: #9BA2B2;
   --interactive-muted: #565a66;
+  --interactive-text-default: #696e7a;
+  --interactive-text-hover: #9BA2B2;
+  --interactive-text-active: #9BA2B2;
   /* BRAND / ACCENT */
   --brand-experiment: #D55119;
   --brand-experiment-500: #D55119;
@@ -57,8 +83,14 @@
   --idle-color: #DFB563;
   --dnd-color: #D95360;
   --streaming-color: #D55119;
-  --status-green: #5AB977;
-  --status-yellow: #DFB563;
-  --status-red: #D95360;
-  --status-purple: #D55119;
+  --status-online: #5AB977;
+  --status-idle: #DFB563;
+  --status-dnd: #D95360;
+  --status-streaming: #D55119;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #1a1c22 !important;
 }

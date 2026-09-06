@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Flexoki Dark
  * @author kepano (https://stephango.com/flexoki)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Flexoki Dark" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #4385BE;
   --gogh-magenta: #CE5D97;
   --gogh-cyan: #3AA99F;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #0f0e0e;
+  --background-base-lower: #100F0F;
+  --background-base-lower-alt: #0f0e0e;
+  --background-base-low: #0f0e0e;
+  --background-base-medium: #0f0e0e;
+  --background-base-high: #0e0d0d;
+  --background-base-higher: #171616;
+  --background-base-highest: #1e1d1d;
+  --background-nested-floating: #1e1d1d;
+  --bg-overlay-chat: #100F0F;
+  --bg-overlay-home: #0f0e0e;
+  --bg-overlay-home-card: #0f0e0e;
+  --bg-overlay-app-frame: #0e0d0d;
+  --bg-overlay-1: #0e0d0d;
+  --bg-overlay-2: #0e0d0d;
+  --bg-overlay-3: #0e0d0d;
+  --bg-overlay-4: #0f0e0e;
+  --bg-overlay-5: #0f0e0e;
+  --bg-overlay-6: #1e1d1d;
+  --bg-overlay-color: 16 15 15;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #100F0F;
   --background-secondary: #0f0e0e;
   --background-secondary-alt: #0f0e0e;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #0f0e0e;
   /* TEXT */
   --text-normal: #CECDC3;
+  --text-default: #CECDC3;
   --text-muted: #82817b;
+  --text-low-contrast: #82817b;
   --text-link: #D0A215;
   --text-brand: #D0A215;
   --header-primary: #CECDC3;
@@ -44,6 +67,9 @@
   --interactive-hover: #CECDC3;
   --interactive-active: #CECDC3;
   --interactive-muted: #656460;
+  --interactive-text-default: #82817b;
+  --interactive-text-hover: #CECDC3;
+  --interactive-text-active: #CECDC3;
   /* BRAND / ACCENT */
   --brand-experiment: #D0A215;
   --brand-experiment-500: #D0A215;
@@ -57,8 +83,14 @@
   --idle-color: #D0A215;
   --dnd-color: #D14D41;
   --streaming-color: #CE5D97;
-  --status-green: #879A39;
-  --status-yellow: #D0A215;
-  --status-red: #D14D41;
-  --status-purple: #CE5D97;
+  --status-online: #879A39;
+  --status-idle: #D0A215;
+  --status-dnd: #D14D41;
+  --status-streaming: #CE5D97;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #0e0d0d !important;
 }

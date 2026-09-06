@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Noctis Uva
  * @author Liviu Schera (https://github.com/liviuschera)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Noctis Uva" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #49ACE9;
   --gogh-magenta: #DF769B;
   --gogh-cyan: #49D6E9;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #27243d;
+  --background-base-lower: #292640;
+  --background-base-lower-alt: #27243d;
+  --background-base-low: #26233b;
+  --background-base-medium: #26233b;
+  --background-base-high: #232137;
+  --background-base-higher: #2f2d46;
+  --background-base-highest: #36334b;
+  --background-nested-floating: #36334b;
+  --bg-overlay-chat: #292640;
+  --bg-overlay-home: #26233b;
+  --bg-overlay-home-card: #27243d;
+  --bg-overlay-app-frame: #232137;
+  --bg-overlay-1: #232137;
+  --bg-overlay-2: #232137;
+  --bg-overlay-3: #232137;
+  --bg-overlay-4: #27243d;
+  --bg-overlay-5: #26233b;
+  --bg-overlay-6: #36334b;
+  --bg-overlay-color: 41 38 64;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #292640;
   --background-secondary: #27243d;
   --background-secondary-alt: #26233b;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #27243d;
   /* TEXT */
   --text-normal: #C5C2D6;
+  --text-default: #C5C2D6;
   --text-muted: #87849a;
+  --text-low-contrast: #87849a;
   --text-link: #E66533;
   --text-brand: #E66533;
   --header-primary: #C5C2D6;
@@ -44,6 +67,9 @@
   --interactive-hover: #C5C2D6;
   --interactive-active: #C5C2D6;
   --interactive-muted: #6f6c84;
+  --interactive-text-default: #87849a;
+  --interactive-text-hover: #C5C2D6;
+  --interactive-text-active: #C5C2D6;
   /* BRAND / ACCENT */
   --brand-experiment: #E66533;
   --brand-experiment-500: #E66533;
@@ -57,8 +83,14 @@
   --idle-color: #E4B781;
   --dnd-color: #E66533;
   --streaming-color: #DF769B;
-  --status-green: #49E9A6;
-  --status-yellow: #E4B781;
-  --status-red: #E66533;
-  --status-purple: #DF769B;
+  --status-online: #49E9A6;
+  --status-idle: #E4B781;
+  --status-dnd: #E66533;
+  --status-streaming: #DF769B;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #232137 !important;
 }

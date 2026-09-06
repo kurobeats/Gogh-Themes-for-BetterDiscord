@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Heeler
  * @author tacolegs2004 (https://github.com/tacolegs2004)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Heeler" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #6DA3EC;
   --gogh-magenta: #FD9BC1;
   --gogh-cyan: #FE9D6E;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #201e41;
+  --background-base-lower: #211F44;
+  --background-base-lower-alt: #201e41;
+  --background-base-low: #1e1d3f;
+  --background-base-medium: #1e1d3f;
+  --background-base-high: #1c1b3a;
+  --background-base-higher: #28264a;
+  --background-base-highest: #2e2c4f;
+  --background-nested-floating: #2e2c4f;
+  --bg-overlay-chat: #211F44;
+  --bg-overlay-home: #1e1d3f;
+  --bg-overlay-home-card: #201e41;
+  --bg-overlay-app-frame: #1c1b3a;
+  --bg-overlay-1: #1c1b3a;
+  --bg-overlay-2: #1c1b3a;
+  --bg-overlay-3: #1c1b3a;
+  --bg-overlay-4: #201e41;
+  --bg-overlay-5: #1e1d3f;
+  --bg-overlay-6: #2e2c4f;
+  --bg-overlay-color: 33 31 68;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #211F44;
   --background-secondary: #201e41;
   --background-secondary-alt: #1e1d3f;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #201e41;
   /* TEXT */
   --text-normal: #FDFDFD;
+  --text-default: #FDFDFD;
   --text-muted: #a5a4b3;
+  --text-low-contrast: #a5a4b3;
   --text-link: #D3573B;
   --text-brand: #D3573B;
   --header-primary: #FDFDFD;
@@ -44,6 +67,9 @@
   --interactive-hover: #FDFDFD;
   --interactive-active: #FDFDFD;
   --interactive-muted: #848397;
+  --interactive-text-default: #a5a4b3;
+  --interactive-text-hover: #FDFDFD;
+  --interactive-text-active: #FDFDFD;
   /* BRAND / ACCENT */
   --brand-experiment: #D3573B;
   --brand-experiment-500: #D3573B;
@@ -57,8 +83,14 @@
   --idle-color: #EECF75;
   --dnd-color: #D3573B;
   --streaming-color: #FD9BC1;
-  --status-green: #C1D041;
-  --status-yellow: #EECF75;
-  --status-red: #D3573B;
-  --status-purple: #FD9BC1;
+  --status-online: #C1D041;
+  --status-idle: #EECF75;
+  --status-dnd: #D3573B;
+  --status-streaming: #FD9BC1;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #1c1b3a !important;
 }

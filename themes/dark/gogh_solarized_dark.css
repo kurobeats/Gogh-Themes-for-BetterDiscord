@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Solarized Dark
  * @author Ethan Schoonover (https://github.com/altercation/solarized)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Solarized Dark" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #2176C7;
   --gogh-magenta: #C61C6F;
   --gogh-cyan: #259286;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #001d25;
+  --background-base-lower: #001E27;
+  --background-base-lower-alt: #001d25;
+  --background-base-low: #001c24;
+  --background-base-medium: #001c24;
+  --background-base-high: #001a22;
+  --background-base-higher: #08252d;
+  --background-base-highest: #0f2c34;
+  --background-nested-floating: #0f2c34;
+  --bg-overlay-chat: #001E27;
+  --bg-overlay-home: #001c24;
+  --bg-overlay-home-card: #001d25;
+  --bg-overlay-app-frame: #001a22;
+  --bg-overlay-1: #001a22;
+  --bg-overlay-2: #001a22;
+  --bg-overlay-3: #001a22;
+  --bg-overlay-4: #001d25;
+  --bg-overlay-5: #001c24;
+  --bg-overlay-6: #0f2c34;
+  --bg-overlay-color: 0 30 39;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #001E27;
   --background-secondary: #001d25;
   --background-secondary-alt: #001c24;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #001d25;
   /* TEXT */
   --text-normal: #708284;
+  --text-default: #708284;
   --text-muted: #435a5f;
+  --text-low-contrast: #435a5f;
   --text-link: #738A05;
   --text-brand: #738A05;
   --header-primary: #708284;
@@ -44,6 +67,9 @@
   --interactive-hover: #708284;
   --interactive-active: #708284;
   --interactive-muted: #324b51;
+  --interactive-text-default: #435a5f;
+  --interactive-text-hover: #708284;
+  --interactive-text-active: #708284;
   /* BRAND / ACCENT */
   --brand-experiment: #738A05;
   --brand-experiment-500: #738A05;
@@ -57,8 +83,14 @@
   --idle-color: #A57706;
   --dnd-color: #D11C24;
   --streaming-color: #C61C6F;
-  --status-green: #738A05;
-  --status-yellow: #A57706;
-  --status-red: #D11C24;
-  --status-purple: #C61C6F;
+  --status-online: #738A05;
+  --status-idle: #A57706;
+  --status-dnd: #D11C24;
+  --status-streaming: #C61C6F;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #001a22 !important;
 }

@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Tomorrow Night Bright
  * @author Chris Kempson (http://chriskempson.com)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Tomorrow Night Bright" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #7AA6DA;
   --gogh-magenta: #C397D8;
   --gogh-cyan: #70C0B1;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #000000;
+  --background-base-lower: #000000;
+  --background-base-lower-alt: #000000;
+  --background-base-low: #000000;
+  --background-base-medium: #000000;
+  --background-base-high: #000000;
+  --background-base-higher: #080808;
+  --background-base-highest: #0f0f0f;
+  --background-nested-floating: #0f0f0f;
+  --bg-overlay-chat: #000000;
+  --bg-overlay-home: #000000;
+  --bg-overlay-home-card: #000000;
+  --bg-overlay-app-frame: #000000;
+  --bg-overlay-1: #000000;
+  --bg-overlay-2: #000000;
+  --bg-overlay-3: #000000;
+  --bg-overlay-4: #000000;
+  --bg-overlay-5: #000000;
+  --bg-overlay-6: #0f0f0f;
+  --bg-overlay-color: 0 0 0;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #000000;
   --background-secondary: #000000;
   --background-secondary-alt: #000000;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #000000;
   /* TEXT */
   --text-normal: #EAEAEA;
+  --text-default: #EAEAEA;
   --text-muted: #8c8c8c;
+  --text-low-contrast: #8c8c8c;
   --text-link: #E7C547;
   --text-brand: #E7C547;
   --header-primary: #EAEAEA;
@@ -44,6 +67,9 @@
   --interactive-hover: #EAEAEA;
   --interactive-active: #EAEAEA;
   --interactive-muted: #696969;
+  --interactive-text-default: #8c8c8c;
+  --interactive-text-hover: #EAEAEA;
+  --interactive-text-active: #EAEAEA;
   /* BRAND / ACCENT */
   --brand-experiment: #E7C547;
   --brand-experiment-500: #E7C547;
@@ -57,8 +83,14 @@
   --idle-color: #E7C547;
   --dnd-color: #D54E53;
   --streaming-color: #C397D8;
-  --status-green: #B9CA4A;
-  --status-yellow: #E7C547;
-  --status-red: #D54E53;
-  --status-purple: #C397D8;
+  --status-online: #B9CA4A;
+  --status-idle: #E7C547;
+  --status-dnd: #D54E53;
+  --status-streaming: #C397D8;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #000000 !important;
 }

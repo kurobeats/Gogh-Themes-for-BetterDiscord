@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Synth Wave84 Python
  * @author Dio Lin (Dionysus326)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Synth Wave84 Python" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #03EDF9;
   --gogh-magenta: #B30065;
   --gogh-cyan: #03EDF9;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #0f0a23;
+  --background-base-lower: #100A24;
+  --background-base-lower-alt: #0f0a23;
+  --background-base-low: #0f0921;
+  --background-base-medium: #0f0921;
+  --background-base-high: #0e091f;
+  --background-base-higher: #17112b;
+  --background-base-highest: #1e1931;
+  --background-nested-floating: #1e1931;
+  --bg-overlay-chat: #100A24;
+  --bg-overlay-home: #0f0921;
+  --bg-overlay-home-card: #0f0a23;
+  --bg-overlay-app-frame: #0e091f;
+  --bg-overlay-1: #0e091f;
+  --bg-overlay-2: #0e091f;
+  --bg-overlay-3: #0e091f;
+  --bg-overlay-4: #0f0a23;
+  --bg-overlay-5: #0f0921;
+  --bg-overlay-6: #1e1931;
+  --bg-overlay-color: 16 10 36;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #100A24;
   --background-secondary: #0f0a23;
   --background-secondary-alt: #0f0921;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #0f0a23;
   /* TEXT */
   --text-normal: #FFADE8;
+  --text-default: #FFADE8;
   --text-muted: #9f6c9a;
+  --text-low-contrast: #9f6c9a;
   --text-link: #B30065;
   --text-brand: #B30065;
   --header-primary: #FFADE8;
@@ -44,6 +67,9 @@
   --interactive-hover: #FFADE8;
   --interactive-active: #FFADE8;
   --interactive-muted: #7c537c;
+  --interactive-text-default: #9f6c9a;
+  --interactive-text-hover: #FFADE8;
+  --interactive-text-active: #FFADE8;
   /* BRAND / ACCENT */
   --brand-experiment: #B30065;
   --brand-experiment-500: #B30065;
@@ -57,8 +83,14 @@
   --idle-color: #FFD83D;
   --dnd-color: #FF2331;
   --streaming-color: #B30065;
-  --status-green: #37F39E;
-  --status-yellow: #FFD83D;
-  --status-red: #FF2331;
-  --status-purple: #B30065;
+  --status-online: #37F39E;
+  --status-idle: #FFD83D;
+  --status-dnd: #FF2331;
+  --status-streaming: #B30065;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #0e091f !important;
 }

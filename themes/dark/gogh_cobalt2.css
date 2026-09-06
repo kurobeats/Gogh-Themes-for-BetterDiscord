@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Cobalt2
  * @author wesbos (https://github.com/wesbos/Cobalt2-iterm)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Cobalt2" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #1460D2;
   --gogh-magenta: #FF005D;
   --gogh-cyan: #00BBBB;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #122536;
+  --background-base-lower: #132738;
+  --background-base-lower-alt: #122536;
+  --background-base-low: #112434;
+  --background-base-medium: #112434;
+  --background-base-high: #102230;
+  --background-base-higher: #1a2d3e;
+  --background-base-highest: #213444;
+  --background-nested-floating: #213444;
+  --bg-overlay-chat: #132738;
+  --bg-overlay-home: #112434;
+  --bg-overlay-home-card: #122536;
+  --bg-overlay-app-frame: #102230;
+  --bg-overlay-1: #102230;
+  --bg-overlay-2: #102230;
+  --bg-overlay-3: #102230;
+  --bg-overlay-4: #122536;
+  --bg-overlay-5: #112434;
+  --bg-overlay-6: #213444;
+  --bg-overlay-color: 19 39 56;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #132738;
   --background-secondary: #122536;
   --background-secondary-alt: #112434;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #122536;
   /* TEXT */
   --text-normal: #FFFFFF;
+  --text-default: #FFFFFF;
   --text-muted: #a1a9af;
+  --text-low-contrast: #a1a9af;
   --text-link: #FF0000;
   --text-brand: #FF0000;
   --header-primary: #FFFFFF;
@@ -44,6 +67,9 @@
   --interactive-hover: #FFFFFF;
   --interactive-active: #FFFFFF;
   --interactive-muted: #7d8892;
+  --interactive-text-default: #a1a9af;
+  --interactive-text-hover: #FFFFFF;
+  --interactive-text-active: #FFFFFF;
   /* BRAND / ACCENT */
   --brand-experiment: #FF0000;
   --brand-experiment-500: #FF0000;
@@ -57,8 +83,14 @@
   --idle-color: #FFE50A;
   --dnd-color: #FF0000;
   --streaming-color: #FF005D;
-  --status-green: #38DE21;
-  --status-yellow: #FFE50A;
-  --status-red: #FF0000;
-  --status-purple: #FF005D;
+  --status-online: #38DE21;
+  --status-idle: #FFE50A;
+  --status-dnd: #FF0000;
+  --status-streaming: #FF005D;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #102230 !important;
 }

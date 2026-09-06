@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Patina Dark
  * @author lmarkmann (https://github.com/lmarkmann)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Patina Dark" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #6DB3C2;
   --gogh-magenta: #C98A7D;
   --gogh-cyan: #5DA9A7;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #111111;
+  --background-base-lower: #121212;
+  --background-base-lower-alt: #111111;
+  --background-base-low: #111111;
+  --background-base-medium: #111111;
+  --background-base-high: #0f0f0f;
+  --background-base-higher: #191919;
+  --background-base-highest: #202020;
+  --background-nested-floating: #202020;
+  --bg-overlay-chat: #121212;
+  --bg-overlay-home: #111111;
+  --bg-overlay-home-card: #111111;
+  --bg-overlay-app-frame: #0f0f0f;
+  --bg-overlay-1: #0f0f0f;
+  --bg-overlay-2: #0f0f0f;
+  --bg-overlay-3: #0f0f0f;
+  --bg-overlay-4: #111111;
+  --bg-overlay-5: #111111;
+  --bg-overlay-6: #202020;
+  --bg-overlay-color: 18 18 18;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #121212;
   --background-secondary: #111111;
   --background-secondary-alt: #111111;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #111111;
   /* TEXT */
   --text-normal: #DBD7CA;
+  --text-default: #DBD7CA;
   --text-muted: #8b8880;
+  --text-low-contrast: #8b8880;
   --text-link: #E6CC77;
   --text-brand: #E6CC77;
   --header-primary: #DBD7CA;
@@ -44,6 +67,9 @@
   --interactive-hover: #DBD7CA;
   --interactive-active: #DBD7CA;
   --interactive-muted: #6c6b65;
+  --interactive-text-default: #8b8880;
+  --interactive-text-hover: #DBD7CA;
+  --interactive-text-active: #DBD7CA;
   /* BRAND / ACCENT */
   --brand-experiment: #E6CC77;
   --brand-experiment-500: #E6CC77;
@@ -57,8 +83,14 @@
   --idle-color: #E6CC77;
   --dnd-color: #CB7676;
   --streaming-color: #C98A7D;
-  --status-green: #4D9375;
-  --status-yellow: #E6CC77;
-  --status-red: #CB7676;
-  --status-purple: #C98A7D;
+  --status-online: #4D9375;
+  --status-idle: #E6CC77;
+  --status-dnd: #CB7676;
+  --status-streaming: #C98A7D;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #0f0f0f !important;
 }

@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Gruvbox Dark Pale
  * @author Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Gruvbox Dark Pale" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #83ADAD;
   --gogh-magenta: #D485AD;
   --gogh-cyan: #85AD85;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #242424;
+  --background-base-lower: #262626;
+  --background-base-lower-alt: #242424;
+  --background-base-low: #232323;
+  --background-base-medium: #232323;
+  --background-base-high: #212121;
+  --background-base-higher: #2d2d2d;
+  --background-base-highest: #333333;
+  --background-nested-floating: #333333;
+  --bg-overlay-chat: #262626;
+  --bg-overlay-home: #232323;
+  --bg-overlay-home-card: #242424;
+  --bg-overlay-app-frame: #212121;
+  --bg-overlay-1: #212121;
+  --bg-overlay-2: #212121;
+  --bg-overlay-3: #212121;
+  --bg-overlay-4: #242424;
+  --bg-overlay-5: #232323;
+  --bg-overlay-6: #333333;
+  --bg-overlay-color: 38 38 38;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #262626;
   --background-secondary: #242424;
   --background-secondary-alt: #232323;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #242424;
   /* TEXT */
   --text-normal: #DAB997;
+  --text-default: #DAB997;
   --text-muted: #927e6a;
+  --text-low-contrast: #927e6a;
   --text-link: #AFAF00;
   --text-brand: #AFAF00;
   --header-primary: #DAB997;
@@ -44,6 +67,9 @@
   --interactive-hover: #DAB997;
   --interactive-active: #DAB997;
   --interactive-muted: #776859;
+  --interactive-text-default: #927e6a;
+  --interactive-text-hover: #DAB997;
+  --interactive-text-active: #DAB997;
   /* BRAND / ACCENT */
   --brand-experiment: #AFAF00;
   --brand-experiment-500: #AFAF00;
@@ -57,8 +83,14 @@
   --idle-color: #FFAF00;
   --dnd-color: #D75F5F;
   --streaming-color: #D485AD;
-  --status-green: #AFAF00;
-  --status-yellow: #FFAF00;
-  --status-red: #D75F5F;
-  --status-purple: #D485AD;
+  --status-online: #AFAF00;
+  --status-idle: #FFAF00;
+  --status-dnd: #D75F5F;
+  --status-streaming: #D485AD;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #212121 !important;
 }

@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Cyberpunk Scarlet Protocol
  * @author garrettmroberts (https://github.com/garrettmroberts)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Cyberpunk Scarlet Protocol" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #306FB1;
   --gogh-magenta: #BA3EC1;
   --gogh-cyan: #59C2C6;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #0f1015;
+  --background-base-lower: #101116;
+  --background-base-lower-alt: #0f1015;
+  --background-base-low: #0f1014;
+  --background-base-medium: #0f1014;
+  --background-base-high: #0e0f13;
+  --background-base-higher: #17181d;
+  --background-base-highest: #1e1f24;
+  --background-nested-floating: #1e1f24;
+  --bg-overlay-chat: #101116;
+  --bg-overlay-home: #0f1014;
+  --bg-overlay-home-card: #0f1015;
+  --bg-overlay-app-frame: #0e0f13;
+  --bg-overlay-1: #0e0f13;
+  --bg-overlay-2: #0e0f13;
+  --bg-overlay-3: #0e0f13;
+  --bg-overlay-4: #0f1015;
+  --bg-overlay-5: #0f1014;
+  --bg-overlay-6: #1e1f24;
+  --bg-overlay-color: 16 17 22;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #101116;
   --background-secondary: #0f1015;
   --background-secondary-alt: #0f1014;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #0f1015;
   /* TEXT */
   --text-normal: #D13554;
+  --text-default: #D13554;
   --text-muted: #84273b;
+  --text-low-contrast: #84273b;
   --text-link: #EA3356;
   --text-brand: #EA3356;
   --header-primary: #D13554;
@@ -44,6 +67,9 @@
   --interactive-hover: #D13554;
   --interactive-active: #D13554;
   --interactive-muted: #672132;
+  --interactive-text-default: #84273b;
+  --interactive-text-hover: #D13554;
+  --interactive-text-active: #D13554;
   /* BRAND / ACCENT */
   --brand-experiment: #EA3356;
   --brand-experiment-500: #EA3356;
@@ -57,8 +83,14 @@
   --idle-color: #FAF968;
   --dnd-color: #EA3356;
   --streaming-color: #BA3EC1;
-  --status-green: #64D98C;
-  --status-yellow: #FAF968;
-  --status-red: #EA3356;
-  --status-purple: #BA3EC1;
+  --status-online: #64D98C;
+  --status-idle: #FAF968;
+  --status-dnd: #EA3356;
+  --status-streaming: #BA3EC1;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #0e0f13 !important;
 }

@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Dark Plus
  * @author FredHappyface (https://github.com/fredHappyface)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Dark Plus" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #2472C8;
   --gogh-magenta: #BC3FBC;
   --gogh-cyan: #11A8CD;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #0d0d0d;
+  --background-base-lower: #0E0E0E;
+  --background-base-lower-alt: #0d0d0d;
+  --background-base-low: #0d0d0d;
+  --background-base-medium: #0d0d0d;
+  --background-base-high: #0c0c0c;
+  --background-base-higher: #151515;
+  --background-base-highest: #1c1c1c;
+  --background-nested-floating: #1c1c1c;
+  --bg-overlay-chat: #0E0E0E;
+  --bg-overlay-home: #0d0d0d;
+  --bg-overlay-home-card: #0d0d0d;
+  --bg-overlay-app-frame: #0c0c0c;
+  --bg-overlay-1: #0c0c0c;
+  --bg-overlay-2: #0c0c0c;
+  --bg-overlay-3: #0c0c0c;
+  --bg-overlay-4: #0d0d0d;
+  --bg-overlay-5: #0d0d0d;
+  --bg-overlay-6: #1c1c1c;
+  --bg-overlay-color: 14 14 14;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #0E0E0E;
   --background-secondary: #0d0d0d;
   --background-secondary-alt: #0d0d0d;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #0d0d0d;
   /* TEXT */
   --text-normal: #C5C5C5;
+  --text-default: #C5C5C5;
   --text-muted: #7c7c7c;
+  --text-low-contrast: #7c7c7c;
   --text-link: #0DBC79;
   --text-brand: #0DBC79;
   --header-primary: #C5C5C5;
@@ -44,6 +67,9 @@
   --interactive-hover: #C5C5C5;
   --interactive-active: #C5C5C5;
   --interactive-muted: #606060;
+  --interactive-text-default: #7c7c7c;
+  --interactive-text-hover: #C5C5C5;
+  --interactive-text-active: #C5C5C5;
   /* BRAND / ACCENT */
   --brand-experiment: #0DBC79;
   --brand-experiment-500: #0DBC79;
@@ -57,8 +83,14 @@
   --idle-color: #3B8EEA;
   --dnd-color: #CD3131;
   --streaming-color: #BC3FBC;
-  --status-green: #0DBC79;
-  --status-yellow: #3B8EEA;
-  --status-red: #CD3131;
-  --status-purple: #BC3FBC;
+  --status-online: #0DBC79;
+  --status-idle: #3B8EEA;
+  --status-dnd: #CD3131;
+  --status-streaming: #BC3FBC;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #0c0c0c !important;
 }

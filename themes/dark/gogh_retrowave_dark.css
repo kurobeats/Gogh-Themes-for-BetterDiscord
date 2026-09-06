@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Retrowave Dark
  * @author BrokenSideViewMirror (https://github.com/BrokenSideViewMirror)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Retrowave Dark" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #6A9FD8;
   --gogh-magenta: #ED80B1;
   --gogh-cyan: #8CBEB2;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #58484e;
+  --background-base-lower: #5C4B51;
+  --background-base-lower-alt: #58484e;
+  --background-base-low: #55454b;
+  --background-base-medium: #55454b;
+  --background-base-high: #4f4046;
+  --background-base-higher: #615056;
+  --background-base-highest: #66565b;
+  --background-nested-floating: #66565b;
+  --bg-overlay-chat: #5C4B51;
+  --bg-overlay-home: #55454b;
+  --bg-overlay-home-card: #58484e;
+  --bg-overlay-app-frame: #4f4046;
+  --bg-overlay-1: #4f4046;
+  --bg-overlay-2: #4f4046;
+  --bg-overlay-3: #4f4046;
+  --bg-overlay-4: #58484e;
+  --bg-overlay-5: #55454b;
+  --bg-overlay-6: #66565b;
+  --bg-overlay-color: 92 75 81;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #5C4B51;
   --background-secondary: #58484e;
   --background-secondary-alt: #55454b;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #58484e;
   /* TEXT */
   --text-normal: #F3B562;
+  --text-default: #F3B562;
   --text-muted: #b78b5b;
+  --text-low-contrast: #b78b5b;
   --text-link: #F06060;
   --text-brand: #F06060;
   --header-primary: #F3B562;
@@ -44,6 +67,9 @@
   --interactive-hover: #F3B562;
   --interactive-active: #F3B562;
   --interactive-muted: #a07b59;
+  --interactive-text-default: #b78b5b;
+  --interactive-text-hover: #F3B562;
+  --interactive-text-active: #F3B562;
   /* BRAND / ACCENT */
   --brand-experiment: #F06060;
   --brand-experiment-500: #F06060;
@@ -57,8 +83,14 @@
   --idle-color: #F3B562;
   --dnd-color: #F06060;
   --streaming-color: #ED80B1;
-  --status-green: #A5D164;
-  --status-yellow: #F3B562;
-  --status-red: #F06060;
-  --status-purple: #ED80B1;
+  --status-online: #A5D164;
+  --status-idle: #F3B562;
+  --status-dnd: #F06060;
+  --status-streaming: #ED80B1;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #4f4046 !important;
 }

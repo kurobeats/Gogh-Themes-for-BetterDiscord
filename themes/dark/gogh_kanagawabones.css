@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Kanagawabones
  * @author rebelot (https://github.com/rebelot)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Kanagawabones" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #7EB3C9;
   --gogh-magenta: #957FB8;
   --gogh-cyan: #7EB3C9;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #1e1e26;
+  --background-base-lower: #1F1F28;
+  --background-base-lower-alt: #1e1e26;
+  --background-base-low: #1d1d25;
+  --background-base-medium: #1d1d25;
+  --background-base-high: #1b1b22;
+  --background-base-higher: #26262e;
+  --background-base-highest: #2c2c35;
+  --background-nested-floating: #2c2c35;
+  --bg-overlay-chat: #1F1F28;
+  --bg-overlay-home: #1d1d25;
+  --bg-overlay-home-card: #1e1e26;
+  --bg-overlay-app-frame: #1b1b22;
+  --bg-overlay-1: #1b1b22;
+  --bg-overlay-2: #1b1b22;
+  --bg-overlay-3: #1b1b22;
+  --bg-overlay-4: #1e1e26;
+  --bg-overlay-5: #1d1d25;
+  --bg-overlay-6: #2c2c35;
+  --bg-overlay-color: 31 31 40;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #1F1F28;
   --background-secondary: #1e1e26;
   --background-secondary-alt: #1d1d25;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #1e1e26;
   /* TEXT */
   --text-normal: #DDD8BB;
+  --text-default: #DDD8BB;
   --text-muted: #918e80;
+  --text-low-contrast: #918e80;
   --text-link: #E46A78;
   --text-brand: #E46A78;
   --header-primary: #DDD8BB;
@@ -44,6 +67,9 @@
   --interactive-hover: #DDD8BB;
   --interactive-active: #DDD8BB;
   --interactive-muted: #74726a;
+  --interactive-text-default: #918e80;
+  --interactive-text-hover: #DDD8BB;
+  --interactive-text-active: #DDD8BB;
   /* BRAND / ACCENT */
   --brand-experiment: #E46A78;
   --brand-experiment-500: #E46A78;
@@ -57,8 +83,14 @@
   --idle-color: #E5C283;
   --dnd-color: #E46A78;
   --streaming-color: #957FB8;
-  --status-green: #98BC6D;
-  --status-yellow: #E5C283;
-  --status-red: #E46A78;
-  --status-purple: #957FB8;
+  --status-online: #98BC6D;
+  --status-idle: #E5C283;
+  --status-dnd: #E46A78;
+  --status-streaming: #957FB8;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #1b1b22 !important;
 }

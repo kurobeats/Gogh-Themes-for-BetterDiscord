@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Spacegray Eighties
  * @author mhkeller (https://github.com/mhkeller/spacegray-eighties-iterm)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Spacegray Eighties" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #5486C0;
   --gogh-magenta: #BF83C1;
   --gogh-cyan: #57C2C1;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #212121;
+  --background-base-lower: #222222;
+  --background-base-lower-alt: #212121;
+  --background-base-low: #1f1f1f;
+  --background-base-medium: #1f1f1f;
+  --background-base-high: #1d1d1d;
+  --background-base-higher: #292929;
+  --background-base-highest: #2f2f2f;
+  --background-nested-floating: #2f2f2f;
+  --bg-overlay-chat: #222222;
+  --bg-overlay-home: #1f1f1f;
+  --bg-overlay-home-card: #212121;
+  --bg-overlay-app-frame: #1d1d1d;
+  --bg-overlay-1: #1d1d1d;
+  --bg-overlay-2: #1d1d1d;
+  --bg-overlay-3: #1d1d1d;
+  --bg-overlay-4: #212121;
+  --bg-overlay-5: #1f1f1f;
+  --bg-overlay-6: #2f2f2f;
+  --bg-overlay-color: 34 34 34;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #222222;
   --background-secondary: #212121;
   --background-secondary-alt: #1f1f1f;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #212121;
   /* TEXT */
   --text-normal: #BDBAAE;
+  --text-default: #BDBAAE;
   --text-muted: #7f7d76;
+  --text-low-contrast: #7f7d76;
   --text-link: #FEC254;
   --text-brand: #FEC254;
   --header-primary: #BDBAAE;
@@ -44,6 +67,9 @@
   --interactive-hover: #BDBAAE;
   --interactive-active: #BDBAAE;
   --interactive-muted: #686661;
+  --interactive-text-default: #7f7d76;
+  --interactive-text-hover: #BDBAAE;
+  --interactive-text-active: #BDBAAE;
   /* BRAND / ACCENT */
   --brand-experiment: #FEC254;
   --brand-experiment-500: #FEC254;
@@ -57,8 +83,14 @@
   --idle-color: #FEC254;
   --dnd-color: #EC5F67;
   --streaming-color: #BF83C1;
-  --status-green: #81A764;
-  --status-yellow: #FEC254;
-  --status-red: #EC5F67;
-  --status-purple: #BF83C1;
+  --status-online: #81A764;
+  --status-idle: #FEC254;
+  --status-dnd: #EC5F67;
+  --status-streaming: #BF83C1;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #1d1d1d !important;
 }

@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Shades Of Purple
  * @author fr3fou (https://github.com/fr3fou)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Shades Of Purple" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #6943FF;
   --gogh-magenta: #FF2C70;
   --gogh-cyan: #00C5C7;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #1d1c3d;
+  --background-base-lower: #1E1D40;
+  --background-base-lower-alt: #1d1c3d;
+  --background-base-low: #1c1b3b;
+  --background-base-medium: #1c1b3b;
+  --background-base-high: #1a1937;
+  --background-base-higher: #252446;
+  --background-base-highest: #2c2b4b;
+  --background-nested-floating: #2c2b4b;
+  --bg-overlay-chat: #1E1D40;
+  --bg-overlay-home: #1c1b3b;
+  --bg-overlay-home-card: #1d1c3d;
+  --bg-overlay-app-frame: #1a1937;
+  --bg-overlay-1: #1a1937;
+  --bg-overlay-2: #1a1937;
+  --bg-overlay-3: #1a1937;
+  --bg-overlay-4: #1d1c3d;
+  --bg-overlay-5: #1c1b3b;
+  --bg-overlay-6: #2c2b4b;
+  --bg-overlay-color: 30 29 64;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #1E1D40;
   --background-secondary: #1d1c3d;
   --background-secondary-alt: #1c1b3b;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #1d1c3d;
   /* TEXT */
   --text-normal: #FFFFFF;
+  --text-default: #FFFFFF;
   --text-muted: #a5a5b3;
+  --text-low-contrast: #a5a5b3;
   --text-link: #3AD900;
   --text-brand: #3AD900;
   --header-primary: #FFFFFF;
@@ -44,6 +67,9 @@
   --interactive-hover: #FFFFFF;
   --interactive-active: #FFFFFF;
   --interactive-muted: #838396;
+  --interactive-text-default: #a5a5b3;
+  --interactive-text-hover: #FFFFFF;
+  --interactive-text-active: #FFFFFF;
   /* BRAND / ACCENT */
   --brand-experiment: #3AD900;
   --brand-experiment-500: #3AD900;
@@ -57,8 +83,14 @@
   --idle-color: #FFE700;
   --dnd-color: #D90429;
   --streaming-color: #FF2C70;
-  --status-green: #3AD900;
-  --status-yellow: #FFE700;
-  --status-red: #D90429;
-  --status-purple: #FF2C70;
+  --status-online: #3AD900;
+  --status-idle: #FFE700;
+  --status-dnd: #D90429;
+  --status-streaming: #FF2C70;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #1a1937 !important;
 }

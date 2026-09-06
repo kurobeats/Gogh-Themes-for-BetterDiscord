@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Blue Berry Pie
  * @author murmurlilia (https://www.instagram.com/the.julias/)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Blue Berry Pie" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #90A5BD;
   --gogh-magenta: #9D54A7;
   --gogh-cyan: #7E83CC;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #1b0c26;
+  --background-base-lower: #1C0C28;
+  --background-base-lower-alt: #1b0c26;
+  --background-base-low: #1a0b25;
+  --background-base-medium: #1a0b25;
+  --background-base-high: #180a22;
+  --background-base-higher: #23132e;
+  --background-base-highest: #2a1b35;
+  --background-nested-floating: #2a1b35;
+  --bg-overlay-chat: #1C0C28;
+  --bg-overlay-home: #1a0b25;
+  --bg-overlay-home-card: #1b0c26;
+  --bg-overlay-app-frame: #180a22;
+  --bg-overlay-1: #180a22;
+  --bg-overlay-2: #180a22;
+  --bg-overlay-3: #180a22;
+  --bg-overlay-4: #1b0c26;
+  --bg-overlay-5: #1a0b25;
+  --bg-overlay-6: #2a1b35;
+  --bg-overlay-color: 28 12 40;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #1C0C28;
   --background-secondary: #1b0c26;
   --background-secondary-alt: #1a0b25;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #1b0c26;
   /* TEXT */
   --text-normal: #BABAB9;
+  --text-default: #BABAB9;
   --text-muted: #7b747f;
+  --text-low-contrast: #7b747f;
   --text-link: #99246E;
   --text-brand: #99246E;
   --header-primary: #BABAB9;
@@ -44,6 +67,9 @@
   --interactive-hover: #BABAB9;
   --interactive-active: #BABAB9;
   --interactive-muted: #635a69;
+  --interactive-text-default: #7b747f;
+  --interactive-text-hover: #BABAB9;
+  --interactive-text-active: #BABAB9;
   /* BRAND / ACCENT */
   --brand-experiment: #99246E;
   --brand-experiment-500: #99246E;
@@ -57,8 +83,14 @@
   --idle-color: #EAB9A8;
   --dnd-color: #99246E;
   --streaming-color: #9D54A7;
-  --status-green: #5CB1B3;
-  --status-yellow: #EAB9A8;
-  --status-red: #99246E;
-  --status-purple: #9D54A7;
+  --status-online: #5CB1B3;
+  --status-idle: #EAB9A8;
+  --status-dnd: #99246E;
+  --status-streaming: #9D54A7;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #180a22 !important;
 }

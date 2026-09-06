@@ -32,10 +32,17 @@ onto Discord's CSS variables:
 
 | Gogh value            | Discord usage                                        |
 | --------------------- | ---------------------------------------------------- |
-| `background`          | app backgrounds (chat, sidebars, server list, etc.)   |
+| `background`          | app backgrounds (chat, sidebars, guild list, popouts) |
 | `foreground`          | normal text, headers, interactive elements            |
 | `color_02`–`color_07` | accent (most saturated ANSI color), status dot colors |
 | variant (`dark`/`light`) | placement in `themes/dark/` or `themes/light/`     |
+
+Each theme targets both the current (2025 visual refresh) Discord variables
+(`--background-base-*`, `--bg-overlay-*`, `--text-default`,
+`--interactive-text-*`) and the legacy set (`--background-primary`,
+`--text-normal`, ...), so surfaces stay consistent across client versions.
+The app shell (base layer + guild sidebar) is painted directly to cover stock
+colors that don't route through a variable.
 
 Accent color is picked automatically as the most saturated ANSI color from the
 scheme's palette; status colors (online/idle/dnd/streaming) reuse the scheme's

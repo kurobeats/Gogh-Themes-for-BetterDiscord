@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Pastel Ega
  * @author Timo Heidutzek (trzyglow)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Pastel Ega" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #4C96D7;
   --gogh-magenta: #BF2FAF;
   --gogh-cyan: #41BCBC;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #3e3e3e;
+  --background-base-lower: #414141;
+  --background-base-lower-alt: #3e3e3e;
+  --background-base-low: #3c3c3c;
+  --background-base-medium: #3c3c3c;
+  --background-base-high: #383838;
+  --background-base-higher: #474747;
+  --background-base-highest: #4c4c4c;
+  --background-nested-floating: #4c4c4c;
+  --bg-overlay-chat: #414141;
+  --bg-overlay-home: #3c3c3c;
+  --bg-overlay-home-card: #3e3e3e;
+  --bg-overlay-app-frame: #383838;
+  --bg-overlay-1: #383838;
+  --bg-overlay-2: #383838;
+  --bg-overlay-3: #383838;
+  --bg-overlay-4: #3e3e3e;
+  --bg-overlay-5: #3c3c3c;
+  --bg-overlay-6: #4c4c4c;
+  --bg-overlay-color: 65 65 65;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #414141;
   --background-secondary: #3e3e3e;
   --background-secondary-alt: #3c3c3c;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #3e3e3e;
   /* TEXT */
   --text-normal: #F6F6F6;
+  --text-default: #F6F6F6;
   --text-muted: #aeaeae;
+  --text-low-contrast: #aeaeae;
   --text-link: #1DB37B;
   --text-brand: #1DB37B;
   --header-primary: #F6F6F6;
@@ -44,6 +67,9 @@
   --interactive-hover: #F6F6F6;
   --interactive-active: #F6F6F6;
   --interactive-muted: #929292;
+  --interactive-text-default: #aeaeae;
+  --interactive-text-hover: #F6F6F6;
+  --interactive-text-active: #F6F6F6;
   /* BRAND / ACCENT */
   --brand-experiment: #1DB37B;
   --brand-experiment-500: #1DB37B;
@@ -57,8 +83,14 @@
   --idle-color: #CBAE25;
   --dnd-color: #DD4274;
   --streaming-color: #BF2FAF;
-  --status-green: #1DB37B;
-  --status-yellow: #CBAE25;
-  --status-red: #DD4274;
-  --status-purple: #BF2FAF;
+  --status-online: #1DB37B;
+  --status-idle: #CBAE25;
+  --status-dnd: #DD4274;
+  --status-streaming: #BF2FAF;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #383838 !important;
 }

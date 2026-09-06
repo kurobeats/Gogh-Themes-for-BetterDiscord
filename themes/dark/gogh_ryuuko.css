@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Ryuuko
  * @author dylanaraps (https://github.com/dylanaraps)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Ryuuko" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #6A8E95;
   --gogh-magenta: #B18A73;
   --gogh-cyan: #88B2AC;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #2a373e;
+  --background-base-lower: #2C3941;
+  --background-base-lower-alt: #2a373e;
+  --background-base-low: #28343c;
+  --background-base-medium: #28343c;
+  --background-base-high: #263138;
+  --background-base-higher: #323f47;
+  --background-base-highest: #39454c;
+  --background-nested-floating: #39454c;
+  --bg-overlay-chat: #2C3941;
+  --bg-overlay-home: #28343c;
+  --bg-overlay-home-card: #2a373e;
+  --bg-overlay-app-frame: #263138;
+  --bg-overlay-1: #263138;
+  --bg-overlay-2: #263138;
+  --bg-overlay-3: #263138;
+  --bg-overlay-4: #2a373e;
+  --bg-overlay-5: #28343c;
+  --bg-overlay-6: #39454c;
+  --bg-overlay-color: 44 57 65;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #2C3941;
   --background-secondary: #2a373e;
   --background-secondary-alt: #28343c;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #2a373e;
   /* TEXT */
   --text-normal: #ECECEC;
+  --text-default: #ECECEC;
   --text-muted: #9fa4a8;
+  --text-low-contrast: #9fa4a8;
   --text-link: #B18A73;
   --text-brand: #B18A73;
   --header-primary: #ECECEC;
@@ -44,6 +67,9 @@
   --interactive-hover: #ECECEC;
   --interactive-active: #ECECEC;
   --interactive-muted: #828a8e;
+  --interactive-text-default: #9fa4a8;
+  --interactive-text-hover: #ECECEC;
+  --interactive-text-active: #ECECEC;
   /* BRAND / ACCENT */
   --brand-experiment: #B18A73;
   --brand-experiment-500: #B18A73;
@@ -57,8 +83,14 @@
   --idle-color: #B1A990;
   --dnd-color: #865F5B;
   --streaming-color: #B18A73;
-  --status-green: #66907D;
-  --status-yellow: #B1A990;
-  --status-red: #865F5B;
-  --status-purple: #B18A73;
+  --status-online: #66907D;
+  --status-idle: #B1A990;
+  --status-dnd: #865F5B;
+  --status-streaming: #B18A73;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #263138 !important;
 }

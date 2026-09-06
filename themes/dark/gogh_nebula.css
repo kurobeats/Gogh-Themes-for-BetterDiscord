@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Nebula
  * @author Gabriel Fontes (https://github.com/Misterio77)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Nebula" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #7CB7FF;
   --gogh-magenta: #C74DED;
   --gogh-cyan: #00E8C6;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #22242c;
+  --background-base-lower: #23262E;
+  --background-base-lower-alt: #22242c;
+  --background-base-low: #20232a;
+  --background-base-medium: #20232a;
+  --background-base-high: #1e2128;
+  --background-base-higher: #2a2d34;
+  --background-base-highest: #30333b;
+  --background-nested-floating: #30333b;
+  --bg-overlay-chat: #23262E;
+  --bg-overlay-home: #20232a;
+  --bg-overlay-home-card: #22242c;
+  --bg-overlay-app-frame: #1e2128;
+  --bg-overlay-1: #1e2128;
+  --bg-overlay-2: #1e2128;
+  --bg-overlay-3: #1e2128;
+  --bg-overlay-4: #22242c;
+  --bg-overlay-5: #20232a;
+  --bg-overlay-6: #30333b;
+  --bg-overlay-color: 35 38 46;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #23262E;
   --background-secondary: #22242c;
   --background-secondary-alt: #20232a;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #22242c;
   /* TEXT */
   --text-normal: #FFFFFF;
+  --text-default: #FFFFFF;
   --text-muted: #a7a8ab;
+  --text-low-contrast: #a7a8ab;
   --text-link: #FF007A;
   --text-brand: #FF007A;
   --header-primary: #FFFFFF;
@@ -44,6 +67,9 @@
   --interactive-hover: #FFFFFF;
   --interactive-active: #FFFFFF;
   --interactive-muted: #86888c;
+  --interactive-text-default: #a7a8ab;
+  --interactive-text-hover: #FFFFFF;
+  --interactive-text-active: #FFFFFF;
   /* BRAND / ACCENT */
   --brand-experiment: #FF007A;
   --brand-experiment-500: #FF007A;
@@ -57,8 +83,14 @@
   --idle-color: #F3D56E;
   --dnd-color: #FF007A;
   --streaming-color: #C74DED;
-  --status-green: #84FF39;
-  --status-yellow: #F3D56E;
-  --status-red: #FF007A;
-  --status-purple: #C74DED;
+  --status-online: #84FF39;
+  --status-idle: #F3D56E;
+  --status-dnd: #FF007A;
+  --status-streaming: #C74DED;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #1e2128 !important;
 }

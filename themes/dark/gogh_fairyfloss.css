@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Fairyfloss
  * @author rebecabordini (https://github.com/rebecabordini)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Fairyfloss" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #C2FFDF;
   --gogh-magenta: #FFB8D1;
   --gogh-cyan: #C5A3FF;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #565170;
+  --background-base-lower: #5A5475;
+  --background-base-lower-alt: #565170;
+  --background-base-low: #534d6c;
+  --background-base-medium: #534d6c;
+  --background-base-high: #4d4865;
+  --background-base-higher: #5f5979;
+  --background-base-highest: #645e7d;
+  --background-nested-floating: #645e7d;
+  --bg-overlay-chat: #5A5475;
+  --bg-overlay-home: #534d6c;
+  --bg-overlay-home-card: #565170;
+  --bg-overlay-app-frame: #4d4865;
+  --bg-overlay-1: #4d4865;
+  --bg-overlay-2: #4d4865;
+  --bg-overlay-3: #4d4865;
+  --bg-overlay-4: #565170;
+  --bg-overlay-5: #534d6c;
+  --bg-overlay-6: #645e7d;
+  --bg-overlay-color: 90 84 117;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #5A5475;
   --background-secondary: #565170;
   --background-secondary-alt: #534d6c;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #565170;
   /* TEXT */
   --text-normal: #F8F8F2;
+  --text-default: #F8F8F2;
   --text-muted: #b9b6c0;
+  --text-low-contrast: #b9b6c0;
   --text-link: #E6C000;
   --text-brand: #E6C000;
   --header-primary: #F8F8F2;
@@ -44,6 +67,9 @@
   --interactive-hover: #F8F8F2;
   --interactive-active: #F8F8F2;
   --interactive-muted: #a19ead;
+  --interactive-text-default: #b9b6c0;
+  --interactive-text-hover: #F8F8F2;
+  --interactive-text-active: #F8F8F2;
   /* BRAND / ACCENT */
   --brand-experiment: #E6C000;
   --brand-experiment-500: #E6C000;
@@ -57,8 +83,14 @@
   --idle-color: #E6C000;
   --dnd-color: #F92672;
   --streaming-color: #FFB8D1;
-  --status-green: #C2FFDF;
-  --status-yellow: #E6C000;
-  --status-red: #F92672;
-  --status-purple: #FFB8D1;
+  --status-online: #C2FFDF;
+  --status-idle: #E6C000;
+  --status-dnd: #F92672;
+  --status-streaming: #FFB8D1;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #4d4865 !important;
 }

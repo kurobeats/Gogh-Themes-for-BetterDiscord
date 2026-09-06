@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Spiderman
  * @author pyrophos (https://github.com/pyrophos)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Spiderman" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #2C3FFF;
   --gogh-magenta: #2435DB;
   --gogh-cyan: #3256FF;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #1a1c1d;
+  --background-base-lower: #1B1D1E;
+  --background-base-lower-alt: #1a1c1d;
+  --background-base-low: #191b1c;
+  --background-base-medium: #191b1c;
+  --background-base-high: #17191a;
+  --background-base-higher: #222425;
+  --background-base-highest: #292b2c;
+  --background-nested-floating: #292b2c;
+  --bg-overlay-chat: #1B1D1E;
+  --bg-overlay-home: #191b1c;
+  --bg-overlay-home-card: #1a1c1d;
+  --bg-overlay-app-frame: #17191a;
+  --bg-overlay-1: #17191a;
+  --bg-overlay-2: #17191a;
+  --bg-overlay-3: #17191a;
+  --bg-overlay-4: #1a1c1d;
+  --bg-overlay-5: #191b1c;
+  --bg-overlay-6: #292b2c;
+  --bg-overlay-color: 27 29 30;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #1B1D1E;
   --background-secondary: #1a1c1d;
   --background-secondary-alt: #191b1c;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #1a1c1d;
   /* TEXT */
   --text-normal: #E3E3E3;
+  --text-default: #E3E3E3;
   --text-muted: #939494;
+  --text-low-contrast: #939494;
   --text-link: #E60813;
   --text-brand: #E60813;
   --header-primary: #E3E3E3;
@@ -44,6 +67,9 @@
   --interactive-hover: #E3E3E3;
   --interactive-active: #E3E3E3;
   --interactive-muted: #757677;
+  --interactive-text-default: #939494;
+  --interactive-text-hover: #E3E3E3;
+  --interactive-text-active: #E3E3E3;
   /* BRAND / ACCENT */
   --brand-experiment: #E60813;
   --brand-experiment-500: #E60813;
@@ -57,8 +83,14 @@
   --idle-color: #E24756;
   --dnd-color: #E60813;
   --streaming-color: #2435DB;
-  --status-green: #E22928;
-  --status-yellow: #E24756;
-  --status-red: #E60813;
-  --status-purple: #2435DB;
+  --status-online: #E22928;
+  --status-idle: #E24756;
+  --status-dnd: #E60813;
+  --status-streaming: #2435DB;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #17191a !important;
 }

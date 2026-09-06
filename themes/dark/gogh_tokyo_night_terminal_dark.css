@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Tokyo Night Terminal Dark
  * @author Michaël Ball
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Tokyo Night Terminal Dark" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #7AA2F7;
   --gogh-magenta: #BB9AF7;
   --gogh-cyan: #7DCFFF;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #15151d;
+  --background-base-lower: #16161E;
+  --background-base-lower-alt: #15151d;
+  --background-base-low: #14141c;
+  --background-base-medium: #14141c;
+  --background-base-high: #13131a;
+  --background-base-higher: #1d1d25;
+  --background-base-highest: #24242c;
+  --background-nested-floating: #24242c;
+  --bg-overlay-chat: #16161E;
+  --bg-overlay-home: #14141c;
+  --bg-overlay-home-card: #15151d;
+  --bg-overlay-app-frame: #13131a;
+  --bg-overlay-1: #13131a;
+  --bg-overlay-2: #13131a;
+  --bg-overlay-3: #13131a;
+  --bg-overlay-4: #15151d;
+  --bg-overlay-5: #14141c;
+  --bg-overlay-6: #24242c;
+  --bg-overlay-color: 22 22 30;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #16161E;
   --background-secondary: #15151d;
   --background-secondary-alt: #14141c;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #15151d;
   /* TEXT */
   --text-normal: #787C99;
+  --text-default: #787C99;
   --text-muted: #515368;
+  --text-low-contrast: #515368;
   --text-link: #41A6B5;
   --text-brand: #41A6B5;
   --header-primary: #787C99;
@@ -44,6 +67,9 @@
   --interactive-hover: #787C99;
   --interactive-active: #787C99;
   --interactive-muted: #424455;
+  --interactive-text-default: #515368;
+  --interactive-text-hover: #787C99;
+  --interactive-text-active: #787C99;
   /* BRAND / ACCENT */
   --brand-experiment: #41A6B5;
   --brand-experiment-500: #41A6B5;
@@ -57,8 +83,14 @@
   --idle-color: #E0AF68;
   --dnd-color: #F7768E;
   --streaming-color: #BB9AF7;
-  --status-green: #41A6B5;
-  --status-yellow: #E0AF68;
-  --status-red: #F7768E;
-  --status-purple: #BB9AF7;
+  --status-online: #41A6B5;
+  --status-idle: #E0AF68;
+  --status-dnd: #F7768E;
+  --status-streaming: #BB9AF7;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #13131a !important;
 }

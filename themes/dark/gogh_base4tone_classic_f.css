@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Base4Tone Classic F
  * @author Gogh
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Base4Tone Classic F" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #8BCF17;
   --gogh-magenta: #15BC52;
   --gogh-cyan: #C1AA15;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #1e201b;
+  --background-base-lower: #1F211C;
+  --background-base-lower-alt: #1e201b;
+  --background-base-low: #1d1e1a;
+  --background-base-medium: #1d1e1a;
+  --background-base-high: #1b1c18;
+  --background-base-higher: #262823;
+  --background-base-highest: #2c2e2a;
+  --background-nested-floating: #2c2e2a;
+  --bg-overlay-chat: #1F211C;
+  --bg-overlay-home: #1d1e1a;
+  --bg-overlay-home-card: #1e201b;
+  --bg-overlay-app-frame: #1b1c18;
+  --bg-overlay-1: #1b1c18;
+  --bg-overlay-2: #1b1c18;
+  --bg-overlay-3: #1b1c18;
+  --bg-overlay-4: #1e201b;
+  --bg-overlay-5: #1d1e1a;
+  --bg-overlay-6: #2c2e2a;
+  --bg-overlay-color: 31 33 28;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #1F211C;
   --background-secondary: #1e201b;
   --background-secondary-alt: #1d1e1a;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #1e201b;
   /* TEXT */
   --text-normal: #9BA191;
+  --text-default: #9BA191;
   --text-muted: #696e62;
+  --text-low-contrast: #696e62;
   --text-link: #A48F04;
   --text-brand: #A48F04;
   --header-primary: #9BA191;
@@ -44,6 +67,9 @@
   --interactive-hover: #9BA191;
   --interactive-active: #9BA191;
   --interactive-muted: #575b51;
+  --interactive-text-default: #696e62;
+  --interactive-text-hover: #9BA191;
+  --interactive-text-active: #9BA191;
   /* BRAND / ACCENT */
   --brand-experiment: #A48F04;
   --brand-experiment-500: #A48F04;
@@ -57,8 +83,14 @@
   --idle-color: #DCC218;
   --dnd-color: #0B88D0;
   --streaming-color: #15BC52;
-  --status-green: #A48F04;
-  --status-yellow: #DCC218;
-  --status-red: #0B88D0;
-  --status-purple: #15BC52;
+  --status-online: #A48F04;
+  --status-idle: #DCC218;
+  --status-dnd: #0B88D0;
+  --status-streaming: #15BC52;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #1b1c18 !important;
 }

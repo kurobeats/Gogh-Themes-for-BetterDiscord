@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Alien Blood
  * @author zdj (https://github.com/zdj/themes/tree/master/iterm2)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Alien Blood" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #2F6A7F;
   --gogh-magenta: #47587F;
   --gogh-cyan: #327F77;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #0e150f;
+  --background-base-lower: #0F1610;
+  --background-base-lower-alt: #0e150f;
+  --background-base-low: #0e140f;
+  --background-base-medium: #0e140f;
+  --background-base-high: #0d130e;
+  --background-base-higher: #161d17;
+  --background-base-highest: #1d241e;
+  --background-nested-floating: #1d241e;
+  --bg-overlay-chat: #0F1610;
+  --bg-overlay-home: #0e140f;
+  --bg-overlay-home-card: #0e150f;
+  --bg-overlay-app-frame: #0d130e;
+  --bg-overlay-1: #0d130e;
+  --bg-overlay-2: #0d130e;
+  --bg-overlay-3: #0d130e;
+  --bg-overlay-4: #0e150f;
+  --bg-overlay-5: #0e140f;
+  --bg-overlay-6: #1d241e;
+  --bg-overlay-color: 15 22 16;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #0F1610;
   --background-secondary: #0e150f;
   --background-secondary-alt: #0e140f;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #0e150f;
   /* TEXT */
   --text-normal: #637D75;
+  --text-default: #637D75;
   --text-muted: #41544d;
+  --text-low-contrast: #41544d;
   --text-link: #717F24;
   --text-brand: #717F24;
   --header-primary: #637D75;
@@ -44,6 +67,9 @@
   --interactive-hover: #637D75;
   --interactive-active: #637D75;
   --interactive-muted: #35443d;
+  --interactive-text-default: #41544d;
+  --interactive-text-hover: #637D75;
+  --interactive-text-active: #637D75;
   /* BRAND / ACCENT */
   --brand-experiment: #717F24;
   --brand-experiment-500: #717F24;
@@ -57,8 +83,14 @@
   --idle-color: #717F24;
   --dnd-color: #7F2B27;
   --streaming-color: #47587F;
-  --status-green: #2F7E25;
-  --status-yellow: #717F24;
-  --status-red: #7F2B27;
-  --status-purple: #47587F;
+  --status-online: #2F7E25;
+  --status-idle: #717F24;
+  --status-dnd: #7F2B27;
+  --status-streaming: #47587F;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #0d130e !important;
 }

@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Fairy Floss Dark
  * @author Gogh
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Fairy Floss Dark" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #AE81FF;
   --gogh-magenta: #716799;
   --gogh-cyan: #C2FFDF;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #3f3759;
+  --background-base-lower: #42395D;
+  --background-base-lower-alt: #3f3759;
+  --background-base-low: #3d3456;
+  --background-base-medium: #3d3456;
+  --background-base-high: #393150;
+  --background-base-higher: #483f62;
+  --background-base-highest: #4d4567;
+  --background-nested-floating: #4d4567;
+  --bg-overlay-chat: #42395D;
+  --bg-overlay-home: #3d3456;
+  --bg-overlay-home-card: #3f3759;
+  --bg-overlay-app-frame: #393150;
+  --bg-overlay-1: #393150;
+  --bg-overlay-2: #393150;
+  --bg-overlay-3: #393150;
+  --bg-overlay-4: #3f3759;
+  --bg-overlay-5: #3d3456;
+  --bg-overlay-6: #4d4567;
+  --bg-overlay-color: 66 57 93;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #42395D;
   --background-secondary: #3f3759;
   --background-secondary-alt: #3d3456;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #3f3759;
   /* TEXT */
   --text-normal: #C2FFDF;
+  --text-default: #C2FFDF;
   --text-muted: #8fb0ab;
+  --text-low-contrast: #8fb0ab;
   --text-link: #E6C000;
   --text-brand: #E6C000;
   --header-primary: #C2FFDF;
@@ -44,6 +67,9 @@
   --interactive-hover: #C2FFDF;
   --interactive-active: #C2FFDF;
   --interactive-muted: #7c9298;
+  --interactive-text-default: #8fb0ab;
+  --interactive-text-hover: #C2FFDF;
+  --interactive-text-active: #C2FFDF;
   /* BRAND / ACCENT */
   --brand-experiment: #E6C000;
   --brand-experiment-500: #E6C000;
@@ -57,8 +83,14 @@
   --idle-color: #E6C000;
   --dnd-color: #A8757B;
   --streaming-color: #716799;
-  --status-green: #FF857F;
-  --status-yellow: #E6C000;
-  --status-red: #A8757B;
-  --status-purple: #716799;
+  --status-online: #FF857F;
+  --status-idle: #E6C000;
+  --status-dnd: #A8757B;
+  --status-streaming: #716799;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #393150 !important;
 }

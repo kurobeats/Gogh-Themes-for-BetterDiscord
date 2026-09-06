@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Spaceduck
  * @author Guillermo Rodriguez, packaged by Gabriel Fontes (https://github.com/pineapplegiant)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Spaceduck" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #7A5CCC;
   --gogh-magenta: #B3A1E6;
   --gogh-cyan: #00A3CC;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #15162b;
+  --background-base-lower: #16172D;
+  --background-base-lower-alt: #15162b;
+  --background-base-low: #141529;
+  --background-base-medium: #141529;
+  --background-base-high: #131427;
+  --background-base-higher: #1d1e33;
+  --background-base-highest: #24253a;
+  --background-nested-floating: #24253a;
+  --bg-overlay-chat: #16172D;
+  --bg-overlay-home: #141529;
+  --bg-overlay-home-card: #15162b;
+  --bg-overlay-app-frame: #131427;
+  --bg-overlay-1: #131427;
+  --bg-overlay-2: #131427;
+  --bg-overlay-3: #131427;
+  --bg-overlay-4: #15162b;
+  --bg-overlay-5: #141529;
+  --bg-overlay-6: #24253a;
+  --bg-overlay-color: 22 23 45;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #16172D;
   --background-secondary: #15162b;
   --background-secondary-alt: #141529;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #15162b;
   /* TEXT */
   --text-normal: #ECF0C1;
+  --text-default: #ECF0C1;
   --text-muted: #969986;
+  --text-low-contrast: #969986;
   --text-link: #E33400;
   --text-brand: #E33400;
   --header-primary: #ECF0C1;
@@ -44,6 +67,9 @@
   --interactive-hover: #ECF0C1;
   --interactive-active: #ECF0C1;
   --interactive-muted: #767970;
+  --interactive-text-default: #969986;
+  --interactive-text-hover: #ECF0C1;
+  --interactive-text-active: #ECF0C1;
   /* BRAND / ACCENT */
   --brand-experiment: #E33400;
   --brand-experiment-500: #E33400;
@@ -57,8 +83,14 @@
   --idle-color: #F2CE00;
   --dnd-color: #E33400;
   --streaming-color: #B3A1E6;
-  --status-green: #5CCC96;
-  --status-yellow: #F2CE00;
-  --status-red: #E33400;
-  --status-purple: #B3A1E6;
+  --status-online: #5CCC96;
+  --status-idle: #F2CE00;
+  --status-dnd: #E33400;
+  --status-streaming: #B3A1E6;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #131427 !important;
 }

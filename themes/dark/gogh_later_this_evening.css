@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Later This Evening
  * @author vilhalmer (https://github.com/vilhalmer/System/tree/master/terminal-themes)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Later This Evening" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #A0BAD6;
   --gogh-magenta: #C092D6;
   --gogh-cyan: #91BFB7;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #212121;
+  --background-base-lower: #222222;
+  --background-base-lower-alt: #212121;
+  --background-base-low: #1f1f1f;
+  --background-base-medium: #1f1f1f;
+  --background-base-high: #1d1d1d;
+  --background-base-higher: #292929;
+  --background-base-highest: #2f2f2f;
+  --background-nested-floating: #2f2f2f;
+  --bg-overlay-chat: #222222;
+  --bg-overlay-home: #1f1f1f;
+  --bg-overlay-home-card: #212121;
+  --bg-overlay-app-frame: #1d1d1d;
+  --bg-overlay-1: #1d1d1d;
+  --bg-overlay-2: #1d1d1d;
+  --bg-overlay-3: #1d1d1d;
+  --bg-overlay-4: #212121;
+  --bg-overlay-5: #1f1f1f;
+  --bg-overlay-6: #2f2f2f;
+  --bg-overlay-color: 34 34 34;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #222222;
   --background-secondary: #212121;
   --background-secondary-alt: #1f1f1f;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #212121;
   /* TEXT */
   --text-normal: #959595;
+  --text-default: #959595;
   --text-muted: #676767;
+  --text-low-contrast: #676767;
   --text-link: #D45A60;
   --text-brand: #D45A60;
   --header-primary: #959595;
@@ -44,6 +67,9 @@
   --interactive-hover: #959595;
   --interactive-active: #959595;
   --interactive-muted: #565656;
+  --interactive-text-default: #676767;
+  --interactive-text-hover: #959595;
+  --interactive-text-active: #959595;
   /* BRAND / ACCENT */
   --brand-experiment: #D45A60;
   --brand-experiment-500: #D45A60;
@@ -57,8 +83,14 @@
   --idle-color: #E5D289;
   --dnd-color: #D45A60;
   --streaming-color: #C092D6;
-  --status-green: #AFBA67;
-  --status-yellow: #E5D289;
-  --status-red: #D45A60;
-  --status-purple: #C092D6;
+  --status-online: #AFBA67;
+  --status-idle: #E5D289;
+  --status-dnd: #D45A60;
+  --status-streaming: #C092D6;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #1d1d1d !important;
 }

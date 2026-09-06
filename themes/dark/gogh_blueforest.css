@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Blueforest
  * @author alonsodomin (https://github.com/alonsodomin)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Blueforest" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #A2CFF5;
   --gogh-magenta: #0099FF;
   --gogh-cyan: #80FF80;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #131e2c;
+  --background-base-lower: #141F2E;
+  --background-base-lower-alt: #131e2c;
+  --background-base-low: #121d2a;
+  --background-base-medium: #121d2a;
+  --background-base-high: #111b28;
+  --background-base-higher: #1b2634;
+  --background-base-highest: #222c3b;
+  --background-nested-floating: #222c3b;
+  --bg-overlay-chat: #141F2E;
+  --bg-overlay-home: #121d2a;
+  --bg-overlay-home-card: #131e2c;
+  --bg-overlay-app-frame: #111b28;
+  --bg-overlay-1: #111b28;
+  --bg-overlay-2: #111b28;
+  --bg-overlay-3: #111b28;
+  --bg-overlay-4: #131e2c;
+  --bg-overlay-5: #121d2a;
+  --bg-overlay-6: #222c3b;
+  --bg-overlay-color: 20 31 46;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #141F2E;
   --background-secondary: #131e2c;
   --background-secondary-alt: #121d2a;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #131e2c;
   /* TEXT */
   --text-normal: #FFCC33;
+  --text-default: #FFCC33;
   --text-muted: #a18731;
+  --text-low-contrast: #a18731;
   --text-link: #0099FF;
   --text-brand: #0099FF;
   --header-primary: #FFCC33;
@@ -44,6 +67,9 @@
   --interactive-hover: #FFCC33;
   --interactive-active: #FFCC33;
   --interactive-muted: #7e6d30;
+  --interactive-text-default: #a18731;
+  --interactive-text-hover: #FFCC33;
+  --interactive-text-active: #FFCC33;
   /* BRAND / ACCENT */
   --brand-experiment: #0099FF;
   --brand-experiment-500: #0099FF;
@@ -57,8 +83,14 @@
   --idle-color: #91CCFF;
   --dnd-color: #FFFAB1;
   --streaming-color: #0099FF;
-  --status-green: #80FF80;
-  --status-yellow: #91CCFF;
-  --status-red: #FFFAB1;
-  --status-purple: #0099FF;
+  --status-online: #80FF80;
+  --status-idle: #91CCFF;
+  --status-dnd: #FFFAB1;
+  --status-streaming: #0099FF;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #111b28 !important;
 }

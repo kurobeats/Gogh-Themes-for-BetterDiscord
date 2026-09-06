@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Tiwahu Dark
  * @author Tim Huber (http://www.tiwahu.com)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Tiwahu Dark" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #0077AA;
   --gogh-magenta: #880088;
   --gogh-cyan: #00AA99;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #171717;
+  --background-base-lower: #181818;
+  --background-base-lower-alt: #171717;
+  --background-base-low: #161616;
+  --background-base-medium: #161616;
+  --background-base-high: #151515;
+  --background-base-higher: #1f1f1f;
+  --background-base-highest: #262626;
+  --background-nested-floating: #262626;
+  --bg-overlay-chat: #181818;
+  --bg-overlay-home: #161616;
+  --bg-overlay-home-card: #171717;
+  --bg-overlay-app-frame: #151515;
+  --bg-overlay-1: #151515;
+  --bg-overlay-2: #151515;
+  --bg-overlay-3: #151515;
+  --bg-overlay-4: #171717;
+  --bg-overlay-5: #161616;
+  --bg-overlay-6: #262626;
+  --bg-overlay-color: 24 24 24;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #181818;
   --background-secondary: #171717;
   --background-secondary-alt: #161616;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #171717;
   /* TEXT */
   --text-normal: #DDDDDD;
+  --text-default: #DDDDDD;
   --text-muted: #8e8e8e;
+  --text-low-contrast: #8e8e8e;
   --text-link: #AA0000;
   --text-brand: #AA0000;
   --header-primary: #DDDDDD;
@@ -44,6 +67,9 @@
   --interactive-hover: #DDDDDD;
   --interactive-active: #DDDDDD;
   --interactive-muted: #717171;
+  --interactive-text-default: #8e8e8e;
+  --interactive-text-hover: #DDDDDD;
+  --interactive-text-active: #DDDDDD;
   /* BRAND / ACCENT */
   --brand-experiment: #AA0000;
   --brand-experiment-500: #AA0000;
@@ -57,8 +83,14 @@
   --idle-color: #AAAA00;
   --dnd-color: #AA0000;
   --streaming-color: #880088;
-  --status-green: #008800;
-  --status-yellow: #AAAA00;
-  --status-red: #AA0000;
-  --status-purple: #880088;
+  --status-online: #008800;
+  --status-idle: #AAAA00;
+  --status-dnd: #AA0000;
+  --status-streaming: #880088;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #151515 !important;
 }

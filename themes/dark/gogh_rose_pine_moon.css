@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Rose Pine Moon
  * @author Rosé Pine (https://github.com/orgs/rose-pine/people)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Rose Pine Moon" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #9CCFD8;
   --gogh-magenta: #C4A7E7;
   --gogh-cyan: #EA9A97;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #222034;
+  --background-base-lower: #232136;
+  --background-base-lower-alt: #222034;
+  --background-base-low: #201e32;
+  --background-base-medium: #201e32;
+  --background-base-high: #1e1c2e;
+  --background-base-higher: #2a283c;
+  --background-base-highest: #302e42;
+  --background-nested-floating: #302e42;
+  --bg-overlay-chat: #232136;
+  --bg-overlay-home: #201e32;
+  --bg-overlay-home-card: #222034;
+  --bg-overlay-app-frame: #1e1c2e;
+  --bg-overlay-1: #1e1c2e;
+  --bg-overlay-2: #1e1c2e;
+  --bg-overlay-3: #1e1c2e;
+  --bg-overlay-4: #222034;
+  --bg-overlay-5: #201e32;
+  --bg-overlay-6: #302e42;
+  --bg-overlay-color: 35 33 54;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #232136;
   --background-secondary: #222034;
   --background-secondary-alt: #201e32;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #222034;
   /* TEXT */
   --text-normal: #E0DEF4;
+  --text-default: #E0DEF4;
   --text-muted: #9492a8;
+  --text-low-contrast: #9492a8;
   --text-link: #3E8FB0;
   --text-brand: #3E8FB0;
   --header-primary: #E0DEF4;
@@ -44,6 +67,9 @@
   --interactive-hover: #E0DEF4;
   --interactive-active: #E0DEF4;
   --interactive-muted: #78768c;
+  --interactive-text-default: #9492a8;
+  --interactive-text-hover: #E0DEF4;
+  --interactive-text-active: #E0DEF4;
   /* BRAND / ACCENT */
   --brand-experiment: #3E8FB0;
   --brand-experiment-500: #3E8FB0;
@@ -57,8 +83,14 @@
   --idle-color: #F6C177;
   --dnd-color: #EB6F92;
   --streaming-color: #C4A7E7;
-  --status-green: #3E8FB0;
-  --status-yellow: #F6C177;
-  --status-red: #EB6F92;
-  --status-purple: #C4A7E7;
+  --status-online: #3E8FB0;
+  --status-idle: #F6C177;
+  --status-dnd: #EB6F92;
+  --status-streaming: #C4A7E7;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #1e1c2e !important;
 }

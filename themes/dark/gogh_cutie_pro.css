@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Cutie Pro
  * @author jezzy (https://github.com/jezzy-ultra)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Cutie Pro" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #42D9C5;
   --gogh-magenta: #D286B7;
   --gogh-cyan: #37CB8A;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #171717;
+  --background-base-lower: #181818;
+  --background-base-lower-alt: #171717;
+  --background-base-low: #161616;
+  --background-base-medium: #161616;
+  --background-base-high: #151515;
+  --background-base-higher: #1f1f1f;
+  --background-base-highest: #262626;
+  --background-nested-floating: #262626;
+  --bg-overlay-chat: #181818;
+  --bg-overlay-home: #161616;
+  --bg-overlay-home-card: #171717;
+  --bg-overlay-app-frame: #151515;
+  --bg-overlay-1: #151515;
+  --bg-overlay-2: #151515;
+  --bg-overlay-3: #151515;
+  --bg-overlay-4: #171717;
+  --bg-overlay-5: #161616;
+  --bg-overlay-6: #262626;
+  --bg-overlay-color: 24 24 24;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #181818;
   --background-secondary: #171717;
   --background-secondary-alt: #161616;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #171717;
   /* TEXT */
   --text-normal: #D5D0C9;
+  --text-default: #D5D0C9;
   --text-muted: #898682;
+  --text-low-contrast: #898682;
   --text-link: #37CB8A;
   --text-brand: #37CB8A;
   --header-primary: #D5D0C9;
@@ -44,6 +67,9 @@
   --interactive-hover: #D5D0C9;
   --interactive-active: #D5D0C9;
   --interactive-muted: #6d6b68;
+  --interactive-text-default: #898682;
+  --interactive-text-hover: #D5D0C9;
+  --interactive-text-active: #D5D0C9;
   /* BRAND / ACCENT */
   --brand-experiment: #37CB8A;
   --brand-experiment-500: #37CB8A;
@@ -57,8 +83,14 @@
   --idle-color: #F58669;
   --dnd-color: #F56E7F;
   --streaming-color: #D286B7;
-  --status-green: #BEC975;
-  --status-yellow: #F58669;
-  --status-red: #F56E7F;
-  --status-purple: #D286B7;
+  --status-online: #BEC975;
+  --status-idle: #F58669;
+  --status-dnd: #F56E7F;
+  --status-streaming: #D286B7;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #151515 !important;
 }

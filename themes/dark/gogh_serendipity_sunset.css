@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Serendipity Sunset
  * @author Michael Andreuzza (https://github.com/michael-andreuzza)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Serendipity Sunset" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #A0B6E8;
   --gogh-magenta: #AAC9D4;
   --gogh-cyan: #D6B4B4;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #1f212f;
+  --background-base-lower: #202231;
+  --background-base-lower-alt: #1f212f;
+  --background-base-low: #1d1f2d;
+  --background-base-medium: #1d1f2d;
+  --background-base-high: #1c1d2a;
+  --background-base-higher: #272937;
+  --background-base-highest: #2d2f3d;
+  --background-nested-floating: #2d2f3d;
+  --bg-overlay-chat: #202231;
+  --bg-overlay-home: #1d1f2d;
+  --bg-overlay-home-card: #1f212f;
+  --bg-overlay-app-frame: #1c1d2a;
+  --bg-overlay-1: #1c1d2a;
+  --bg-overlay-2: #1c1d2a;
+  --bg-overlay-3: #1c1d2a;
+  --bg-overlay-4: #1f212f;
+  --bg-overlay-5: #1d1f2d;
+  --bg-overlay-6: #2d2f3d;
+  --bg-overlay-color: 32 34 49;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #202231;
   --background-secondary: #1f212f;
   --background-secondary-alt: #1d1f2d;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #1f212f;
   /* TEXT */
   --text-normal: #DEE0EF;
+  --text-default: #DEE0EF;
   --text-muted: #9294a3;
+  --text-low-contrast: #9294a3;
   --text-link: #709BBD;
   --text-brand: #709BBD;
   --header-primary: #DEE0EF;
@@ -44,6 +67,9 @@
   --interactive-hover: #DEE0EF;
   --interactive-active: #DEE0EF;
   --interactive-muted: #757786;
+  --interactive-text-default: #9294a3;
+  --interactive-text-hover: #DEE0EF;
+  --interactive-text-active: #DEE0EF;
   /* BRAND / ACCENT */
   --brand-experiment: #709BBD;
   --brand-experiment-500: #709BBD;
@@ -57,8 +83,14 @@
   --idle-color: #A392DC;
   --dnd-color: #D1918F;
   --streaming-color: #AAC9D4;
-  --status-green: #709BBD;
-  --status-yellow: #A392DC;
-  --status-red: #D1918F;
-  --status-purple: #AAC9D4;
+  --status-online: #709BBD;
+  --status-idle: #A392DC;
+  --status-dnd: #D1918F;
+  --status-streaming: #AAC9D4;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #1c1d2a !important;
 }

@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Lab Fox
  * @author theatlasroom (https://github.com/theatlasroom)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Lab Fox" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #DB3B21;
   --gogh-magenta: #380D75;
   --gogh-cyan: #6E49CB;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #2c2c2c;
+  --background-base-lower: #2E2E2E;
+  --background-base-lower-alt: #2c2c2c;
+  --background-base-low: #2a2a2a;
+  --background-base-medium: #2a2a2a;
+  --background-base-high: #282828;
+  --background-base-higher: #343434;
+  --background-base-highest: #3b3b3b;
+  --background-nested-floating: #3b3b3b;
+  --bg-overlay-chat: #2E2E2E;
+  --bg-overlay-home: #2a2a2a;
+  --bg-overlay-home-card: #2c2c2c;
+  --bg-overlay-app-frame: #282828;
+  --bg-overlay-1: #282828;
+  --bg-overlay-2: #282828;
+  --bg-overlay-3: #282828;
+  --bg-overlay-4: #2c2c2c;
+  --bg-overlay-5: #2a2a2a;
+  --bg-overlay-6: #3b3b3b;
+  --bg-overlay-color: 46 46 46;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #2E2E2E;
   --background-secondary: #2c2c2c;
   --background-secondary-alt: #2a2a2a;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #2c2c2c;
   /* TEXT */
   --text-normal: #FFFFFF;
+  --text-default: #FFFFFF;
   --text-muted: #ababab;
+  --text-low-contrast: #ababab;
   --text-link: #380D75;
   --text-brand: #380D75;
   --header-primary: #FFFFFF;
@@ -44,6 +67,9 @@
   --interactive-hover: #FFFFFF;
   --interactive-active: #FFFFFF;
   --interactive-muted: #8c8c8c;
+  --interactive-text-default: #ababab;
+  --interactive-text-hover: #FFFFFF;
+  --interactive-text-active: #FFFFFF;
   /* BRAND / ACCENT */
   --brand-experiment: #380D75;
   --brand-experiment-500: #380D75;
@@ -57,8 +83,14 @@
   --idle-color: #FCA121;
   --dnd-color: #FC6D26;
   --streaming-color: #380D75;
-  --status-green: #3EB383;
-  --status-yellow: #FCA121;
-  --status-red: #FC6D26;
-  --status-purple: #380D75;
+  --status-online: #3EB383;
+  --status-idle: #FCA121;
+  --status-dnd: #FC6D26;
+  --status-streaming: #380D75;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #282828 !important;
 }

@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Catppuccin Frappe
  * @author Catppuccin (https://github.com/catppuccin)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Catppuccin Frappe" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #8CAAEE;
   --gogh-magenta: #F4B8E4;
   --gogh-cyan: #81C8BE;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #2e3243;
+  --background-base-lower: #303446;
+  --background-base-lower-alt: #2e3243;
+  --background-base-low: #2c3040;
+  --background-base-medium: #2c3040;
+  --background-base-high: #292d3c;
+  --background-base-higher: #363a4c;
+  --background-base-highest: #3c4051;
+  --background-nested-floating: #3c4051;
+  --bg-overlay-chat: #303446;
+  --bg-overlay-home: #2c3040;
+  --bg-overlay-home-card: #2e3243;
+  --bg-overlay-app-frame: #292d3c;
+  --bg-overlay-1: #292d3c;
+  --bg-overlay-2: #292d3c;
+  --bg-overlay-3: #292d3c;
+  --bg-overlay-4: #2e3243;
+  --bg-overlay-5: #2c3040;
+  --bg-overlay-6: #3c4051;
+  --bg-overlay-color: 48 52 70;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #303446;
   --background-secondary: #2e3243;
   --background-secondary-alt: #2c3040;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #2e3243;
   /* TEXT */
   --text-normal: #C6D0F5;
+  --text-default: #C6D0F5;
   --text-muted: #8a92af;
+  --text-low-contrast: #8a92af;
   --text-link: #E78284;
   --text-brand: #E78284;
   --header-primary: #C6D0F5;
@@ -44,6 +67,9 @@
   --interactive-hover: #C6D0F5;
   --interactive-active: #C6D0F5;
   --interactive-muted: #747a95;
+  --interactive-text-default: #8a92af;
+  --interactive-text-hover: #C6D0F5;
+  --interactive-text-active: #C6D0F5;
   /* BRAND / ACCENT */
   --brand-experiment: #E78284;
   --brand-experiment-500: #E78284;
@@ -57,8 +83,14 @@
   --idle-color: #E5C890;
   --dnd-color: #E78284;
   --streaming-color: #F4B8E4;
-  --status-green: #A6D189;
-  --status-yellow: #E5C890;
-  --status-red: #E78284;
-  --status-purple: #F4B8E4;
+  --status-online: #A6D189;
+  --status-idle: #E5C890;
+  --status-dnd: #E78284;
+  --status-streaming: #F4B8E4;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #292d3c !important;
 }

@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Modus Vivendi Tritanopia
  * @author Protesilaos Stavrou (https://github.com/protesilaos)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Modus Vivendi Tritanopia" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #2FAFFF;
   --gogh-magenta: #FEACD0;
   --gogh-cyan: #00D3D0;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #000000;
+  --background-base-lower: #000000;
+  --background-base-lower-alt: #000000;
+  --background-base-low: #000000;
+  --background-base-medium: #000000;
+  --background-base-high: #000000;
+  --background-base-higher: #080808;
+  --background-base-highest: #0f0f0f;
+  --background-nested-floating: #0f0f0f;
+  --bg-overlay-chat: #000000;
+  --bg-overlay-home: #000000;
+  --bg-overlay-home-card: #000000;
+  --bg-overlay-app-frame: #000000;
+  --bg-overlay-1: #000000;
+  --bg-overlay-2: #000000;
+  --bg-overlay-3: #000000;
+  --bg-overlay-4: #000000;
+  --bg-overlay-5: #000000;
+  --bg-overlay-6: #0f0f0f;
+  --bg-overlay-color: 0 0 0;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #000000;
   --background-secondary: #000000;
   --background-secondary-alt: #000000;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #000000;
   /* TEXT */
   --text-normal: #FFFFFF;
+  --text-default: #FFFFFF;
   --text-muted: #999999;
+  --text-low-contrast: #999999;
   --text-link: #CABF00;
   --text-brand: #CABF00;
   --header-primary: #FFFFFF;
@@ -44,6 +67,9 @@
   --interactive-hover: #FFFFFF;
   --interactive-active: #FFFFFF;
   --interactive-muted: #737373;
+  --interactive-text-default: #999999;
+  --interactive-text-hover: #FFFFFF;
+  --interactive-text-active: #FFFFFF;
   /* BRAND / ACCENT */
   --brand-experiment: #CABF00;
   --brand-experiment-500: #CABF00;
@@ -57,8 +83,14 @@
   --idle-color: #CABF00;
   --dnd-color: #FF5F59;
   --streaming-color: #FEACD0;
-  --status-green: #44BC44;
-  --status-yellow: #CABF00;
-  --status-red: #FF5F59;
-  --status-purple: #FEACD0;
+  --status-online: #44BC44;
+  --status-idle: #CABF00;
+  --status-dnd: #FF5F59;
+  --status-streaming: #FEACD0;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #000000 !important;
 }

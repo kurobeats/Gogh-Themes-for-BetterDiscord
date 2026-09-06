@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Kaolin Aurora
  * @author Ogden Webb
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Kaolin Aurora" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #4CA6E8;
   --gogh-magenta: #9D81BA;
   --gogh-cyan: #49BDB0;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #13181d;
+  --background-base-lower: #14191E;
+  --background-base-lower-alt: #13181d;
+  --background-base-low: #12171c;
+  --background-base-medium: #12171c;
+  --background-base-high: #11161a;
+  --background-base-higher: #1b2025;
+  --background-base-highest: #22272c;
+  --background-nested-floating: #22272c;
+  --bg-overlay-chat: #14191E;
+  --bg-overlay-home: #12171c;
+  --bg-overlay-home-card: #13181d;
+  --bg-overlay-app-frame: #11161a;
+  --bg-overlay-1: #11161a;
+  --bg-overlay-2: #11161a;
+  --bg-overlay-3: #11161a;
+  --bg-overlay-4: #13181d;
+  --bg-overlay-5: #12171c;
+  --bg-overlay-6: #22272c;
+  --bg-overlay-color: 20 25 30;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #14191E;
   --background-secondary: #13181d;
   --background-secondary-alt: #12171c;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #13181d;
   /* TEXT */
   --text-normal: #E6E6E8;
+  --text-default: #E6E6E8;
   --text-muted: #929497;
+  --text-low-contrast: #929497;
   --text-link: #31E183;
   --text-brand: #31E183;
   --header-primary: #E6E6E8;
@@ -44,6 +67,9 @@
   --interactive-hover: #E6E6E8;
   --interactive-active: #E6E6E8;
   --interactive-muted: #727579;
+  --interactive-text-default: #929497;
+  --interactive-text-hover: #E6E6E8;
+  --interactive-text-active: #E6E6E8;
   /* BRAND / ACCENT */
   --brand-experiment: #31E183;
   --brand-experiment-500: #31E183;
@@ -57,8 +83,14 @@
   --idle-color: #F5C791;
   --dnd-color: #E55C7A;
   --streaming-color: #9D81BA;
-  --status-green: #31E183;
-  --status-yellow: #F5C791;
-  --status-red: #E55C7A;
-  --status-purple: #9D81BA;
+  --status-online: #31E183;
+  --status-idle: #F5C791;
+  --status-dnd: #E55C7A;
+  --status-streaming: #9D81BA;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #11161a !important;
 }

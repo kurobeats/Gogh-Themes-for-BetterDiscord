@@ -1,7 +1,7 @@
 /**
  * @name Gogh - IBM 5153 CGA (Black)
  * @author Jesse Miller (https://jmiller.com/)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "IBM 5153 CGA (Black)" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #0000C4;
   --gogh-magenta: #C400C4;
   --gogh-cyan: #00C4C4;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #000000;
+  --background-base-lower: #000000;
+  --background-base-lower-alt: #000000;
+  --background-base-low: #000000;
+  --background-base-medium: #000000;
+  --background-base-high: #000000;
+  --background-base-higher: #080808;
+  --background-base-highest: #0f0f0f;
+  --background-nested-floating: #0f0f0f;
+  --bg-overlay-chat: #000000;
+  --bg-overlay-home: #000000;
+  --bg-overlay-home-card: #000000;
+  --bg-overlay-app-frame: #000000;
+  --bg-overlay-1: #000000;
+  --bg-overlay-2: #000000;
+  --bg-overlay-3: #000000;
+  --bg-overlay-4: #000000;
+  --bg-overlay-5: #000000;
+  --bg-overlay-6: #0f0f0f;
+  --bg-overlay-color: 0 0 0;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #000000;
   --background-secondary: #000000;
   --background-secondary-alt: #000000;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #000000;
   /* TEXT */
   --text-normal: #C4C4C4;
+  --text-default: #C4C4C4;
   --text-muted: #767676;
+  --text-low-contrast: #767676;
   --text-link: #C40000;
   --text-brand: #C40000;
   --header-primary: #C4C4C4;
@@ -44,6 +67,9 @@
   --interactive-hover: #C4C4C4;
   --interactive-active: #C4C4C4;
   --interactive-muted: #585858;
+  --interactive-text-default: #767676;
+  --interactive-text-hover: #C4C4C4;
+  --interactive-text-active: #C4C4C4;
   /* BRAND / ACCENT */
   --brand-experiment: #C40000;
   --brand-experiment-500: #C40000;
@@ -57,8 +83,14 @@
   --idle-color: #C47E00;
   --dnd-color: #C40000;
   --streaming-color: #C400C4;
-  --status-green: #00C400;
-  --status-yellow: #C47E00;
-  --status-red: #C40000;
-  --status-purple: #C400C4;
+  --status-online: #00C400;
+  --status-idle: #C47E00;
+  --status-dnd: #C40000;
+  --status-streaming: #C400C4;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #000000 !important;
 }

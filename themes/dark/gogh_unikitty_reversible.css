@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Unikitty Reversible
  * @author Josh W Lewis (@joshwlewis)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Unikitty Reversible" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #7864FA;
   --gogh-magenta: #B33CE8;
   --gogh-cyan: #149BDA;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #2c282f;
+  --background-base-lower: #2E2A31;
+  --background-base-lower-alt: #2c282f;
+  --background-base-low: #2a272d;
+  --background-base-medium: #2a272d;
+  --background-base-high: #28242a;
+  --background-base-higher: #343037;
+  --background-base-highest: #3b373d;
+  --background-nested-floating: #3b373d;
+  --bg-overlay-chat: #2E2A31;
+  --bg-overlay-home: #2a272d;
+  --bg-overlay-home-card: #2c282f;
+  --bg-overlay-app-frame: #28242a;
+  --bg-overlay-1: #28242a;
+  --bg-overlay-2: #28242a;
+  --bg-overlay-3: #28242a;
+  --bg-overlay-4: #2c282f;
+  --bg-overlay-5: #2a272d;
+  --bg-overlay-6: #3b373d;
+  --bg-overlay-color: 46 42 49;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #2E2A31;
   --background-secondary: #2c282f;
   --background-secondary-alt: #2a272d;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #2c282f;
   /* TEXT */
   --text-normal: #C3C2C4;
+  --text-default: #C3C2C4;
   --text-muted: #878589;
+  --text-low-contrast: #878589;
   --text-link: #DC8A0E;
   --text-brand: #DC8A0E;
   --header-primary: #C3C2C4;
@@ -44,6 +67,9 @@
   --interactive-hover: #C3C2C4;
   --interactive-active: #C3C2C4;
   --interactive-muted: #716e73;
+  --interactive-text-default: #878589;
+  --interactive-text-hover: #C3C2C4;
+  --interactive-text-active: #C3C2C4;
   /* BRAND / ACCENT */
   --brand-experiment: #DC8A0E;
   --brand-experiment-500: #DC8A0E;
@@ -57,8 +83,14 @@
   --idle-color: #DC8A0E;
   --dnd-color: #D8137F;
   --streaming-color: #B33CE8;
-  --status-green: #17AD98;
-  --status-yellow: #DC8A0E;
-  --status-red: #D8137F;
-  --status-purple: #B33CE8;
+  --status-online: #17AD98;
+  --status-idle: #DC8A0E;
+  --status-dnd: #D8137F;
+  --status-streaming: #B33CE8;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #28242a !important;
 }

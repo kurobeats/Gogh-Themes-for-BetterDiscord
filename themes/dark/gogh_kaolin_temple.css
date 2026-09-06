@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Kaolin Temple
  * @author Ogden Webb
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Kaolin Temple" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #4EB8CA;
   --gogh-magenta: #FBAED2;
   --gogh-cyan: #49BDB0;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #29292d;
+  --background-base-lower: #2B2B2F;
+  --background-base-lower-alt: #29292d;
+  --background-base-low: #28282b;
+  --background-base-medium: #28282b;
+  --background-base-high: #252528;
+  --background-base-higher: #313135;
+  --background-base-highest: #38383b;
+  --background-nested-floating: #38383b;
+  --bg-overlay-chat: #2B2B2F;
+  --bg-overlay-home: #28282b;
+  --bg-overlay-home-card: #29292d;
+  --bg-overlay-app-frame: #252528;
+  --bg-overlay-1: #252528;
+  --bg-overlay-2: #252528;
+  --bg-overlay-3: #252528;
+  --bg-overlay-4: #29292d;
+  --bg-overlay-5: #28282b;
+  --bg-overlay-6: #38383b;
+  --bg-overlay-color: 43 43 47;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #2B2B2F;
   --background-secondary: #29292d;
   --background-secondary-alt: #28282b;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #29292d;
   /* TEXT */
   --text-normal: #EEDCC1;
+  --text-default: #EEDCC1;
   --text-muted: #a09587;
+  --text-low-contrast: #a09587;
   --text-link: #47BA99;
   --text-brand: #47BA99;
   --header-primary: #EEDCC1;
@@ -44,6 +67,9 @@
   --interactive-hover: #EEDCC1;
   --interactive-active: #EEDCC1;
   --interactive-muted: #837b71;
+  --interactive-text-default: #a09587;
+  --interactive-text-hover: #EEDCC1;
+  --interactive-text-active: #EEDCC1;
   /* BRAND / ACCENT */
   --brand-experiment: #47BA99;
   --brand-experiment-500: #47BA99;
@@ -57,8 +83,14 @@
   --idle-color: #EED891;
   --dnd-color: #EF6787;
   --streaming-color: #FBAED2;
-  --status-green: #47BA99;
-  --status-yellow: #EED891;
-  --status-red: #EF6787;
-  --status-purple: #FBAED2;
+  --status-online: #47BA99;
+  --status-idle: #EED891;
+  --status-dnd: #EF6787;
+  --status-streaming: #FBAED2;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #252528 !important;
 }

@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Night Lion V2
  * @author Curvve Media (http://www.curvve.com/blog/category/themes/)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Night Lion V2" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #64D0F0;
   --gogh-magenta: #CE6FDB;
   --gogh-cyan: #00DADF;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #161616;
+  --background-base-lower: #171717;
+  --background-base-lower-alt: #161616;
+  --background-base-low: #151515;
+  --background-base-medium: #151515;
+  --background-base-high: #141414;
+  --background-base-higher: #1e1e1e;
+  --background-base-highest: #252525;
+  --background-nested-floating: #252525;
+  --bg-overlay-chat: #171717;
+  --bg-overlay-home: #151515;
+  --bg-overlay-home-card: #161616;
+  --bg-overlay-app-frame: #141414;
+  --bg-overlay-1: #141414;
+  --bg-overlay-2: #141414;
+  --bg-overlay-3: #141414;
+  --bg-overlay-4: #161616;
+  --bg-overlay-5: #151515;
+  --bg-overlay-6: #252525;
+  --bg-overlay-color: 23 23 23;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #171717;
   --background-secondary: #161616;
   --background-secondary-alt: #151515;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #161616;
   /* TEXT */
   --text-normal: #BBBBBB;
+  --text-default: #BBBBBB;
   --text-muted: #797979;
+  --text-low-contrast: #797979;
   --text-link: #BB0000;
   --text-brand: #BB0000;
   --header-primary: #BBBBBB;
@@ -44,6 +67,9 @@
   --interactive-hover: #BBBBBB;
   --interactive-active: #BBBBBB;
   --interactive-muted: #616161;
+  --interactive-text-default: #797979;
+  --interactive-text-hover: #BBBBBB;
+  --interactive-text-active: #BBBBBB;
   /* BRAND / ACCENT */
   --brand-experiment: #BB0000;
   --brand-experiment-500: #BB0000;
@@ -57,8 +83,14 @@
   --idle-color: #F3F167;
   --dnd-color: #BB0000;
   --streaming-color: #CE6FDB;
-  --status-green: #04F623;
-  --status-yellow: #F3F167;
-  --status-red: #BB0000;
-  --status-purple: #CE6FDB;
+  --status-online: #04F623;
+  --status-idle: #F3F167;
+  --status-dnd: #BB0000;
+  --status-streaming: #CE6FDB;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #141414 !important;
 }

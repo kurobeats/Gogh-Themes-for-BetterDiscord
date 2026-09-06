@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Charcoal Dark
  * @author Mubin Muhammad (https://github.com/mubin6th)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Charcoal Dark" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #C3A983;
   --gogh-magenta: #A88C62;
   --gogh-cyan: #DEC8A7;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #0e0b05;
+  --background-base-lower: #0F0B05;
+  --background-base-lower-alt: #0e0b05;
+  --background-base-low: #0e0a05;
+  --background-base-medium: #0e0a05;
+  --background-base-high: #0d0904;
+  --background-base-higher: #16120c;
+  --background-base-highest: #1d1a14;
+  --background-nested-floating: #1d1a14;
+  --bg-overlay-chat: #0F0B05;
+  --bg-overlay-home: #0e0a05;
+  --bg-overlay-home-card: #0e0b05;
+  --bg-overlay-app-frame: #0d0904;
+  --bg-overlay-1: #0d0904;
+  --bg-overlay-2: #0d0904;
+  --bg-overlay-3: #0d0904;
+  --bg-overlay-4: #0e0b05;
+  --bg-overlay-5: #0e0a05;
+  --bg-overlay-6: #1d1a14;
+  --bg-overlay-color: 15 11 5;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #0F0B05;
   --background-secondary: #0e0b05;
   --background-secondary-alt: #0e0a05;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #0e0b05;
   /* TEXT */
   --text-normal: #C3A983;
+  --text-default: #C3A983;
   --text-muted: #7b6a51;
+  --text-low-contrast: #7b6a51;
   --text-link: #A88C62;
   --text-brand: #A88C62;
   --header-primary: #C3A983;
@@ -44,6 +67,9 @@
   --interactive-hover: #C3A983;
   --interactive-active: #C3A983;
   --interactive-muted: #60523e;
+  --interactive-text-default: #7b6a51;
+  --interactive-text-hover: #C3A983;
+  --interactive-text-active: #C3A983;
   /* BRAND / ACCENT */
   --brand-experiment: #A88C62;
   --brand-experiment-500: #A88C62;
@@ -57,8 +83,14 @@
   --idle-color: #DEC8A7;
   --dnd-color: #A88C62;
   --streaming-color: #A88C62;
-  --status-green: #DEC8A7;
-  --status-yellow: #DEC8A7;
-  --status-red: #A88C62;
-  --status-purple: #A88C62;
+  --status-online: #DEC8A7;
+  --status-idle: #DEC8A7;
+  --status-dnd: #A88C62;
+  --status-streaming: #A88C62;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #0d0904 !important;
 }

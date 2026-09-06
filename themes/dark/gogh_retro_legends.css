@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Retro Legends
  * @author VeteranBV (https://github.com/VeteranBV)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Retro Legends" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #4066F2;
   --gogh-magenta: #BF4CF2;
   --gogh-cyan: #40D9E6;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #0c0c0c;
+  --background-base-lower: #0D0D0D;
+  --background-base-lower-alt: #0c0c0c;
+  --background-base-low: #0c0c0c;
+  --background-base-medium: #0c0c0c;
+  --background-base-high: #0b0b0b;
+  --background-base-higher: #141414;
+  --background-base-highest: #1c1c1c;
+  --background-nested-floating: #1c1c1c;
+  --bg-overlay-chat: #0D0D0D;
+  --bg-overlay-home: #0c0c0c;
+  --bg-overlay-home-card: #0c0c0c;
+  --bg-overlay-app-frame: #0b0b0b;
+  --bg-overlay-1: #0b0b0b;
+  --bg-overlay-2: #0b0b0b;
+  --bg-overlay-3: #0b0b0b;
+  --bg-overlay-4: #0c0c0c;
+  --bg-overlay-5: #0c0c0c;
+  --bg-overlay-6: #1c1c1c;
+  --bg-overlay-color: 13 13 13;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #0D0D0D;
   --background-secondary: #0c0c0c;
   --background-secondary-alt: #0c0c0c;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #0c0c0c;
   /* TEXT */
   --text-normal: #45EB45;
+  --text-default: #45EB45;
   --text-muted: #2f922f;
+  --text-low-contrast: #2f922f;
   --text-link: #F7BF2B;
   --text-brand: #F7BF2B;
   --header-primary: #45EB45;
@@ -44,6 +67,9 @@
   --interactive-hover: #45EB45;
   --interactive-active: #45EB45;
   --interactive-muted: #267126;
+  --interactive-text-default: #2f922f;
+  --interactive-text-hover: #45EB45;
+  --interactive-text-active: #45EB45;
   /* BRAND / ACCENT */
   --brand-experiment: #F7BF2B;
   --brand-experiment-500: #F7BF2B;
@@ -57,8 +83,14 @@
   --idle-color: #F7BF2B;
   --dnd-color: #DE5454;
   --streaming-color: #BF4CF2;
-  --status-green: #45EB45;
-  --status-yellow: #F7BF2B;
-  --status-red: #DE5454;
-  --status-purple: #BF4CF2;
+  --status-online: #45EB45;
+  --status-idle: #F7BF2B;
+  --status-dnd: #DE5454;
+  --status-streaming: #BF4CF2;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #0b0b0b !important;
 }

@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Birds Of Paradise
  * @author zdj (https://github.com/zdj/themes/tree/master/iterm2)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Birds Of Paradise" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #5A86AD;
   --gogh-magenta: #AC80A6;
   --gogh-cyan: #74A6AD;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #281e1c;
+  --background-base-lower: #2A1F1D;
+  --background-base-lower-alt: #281e1c;
+  --background-base-low: #271d1b;
+  --background-base-medium: #271d1b;
+  --background-base-high: #241b19;
+  --background-base-higher: #302624;
+  --background-base-highest: #372c2b;
+  --background-nested-floating: #372c2b;
+  --bg-overlay-chat: #2A1F1D;
+  --bg-overlay-home: #271d1b;
+  --bg-overlay-home-card: #281e1c;
+  --bg-overlay-app-frame: #241b19;
+  --bg-overlay-1: #241b19;
+  --bg-overlay-2: #241b19;
+  --bg-overlay-3: #241b19;
+  --bg-overlay-4: #281e1c;
+  --bg-overlay-5: #271d1b;
+  --bg-overlay-6: #372c2b;
+  --bg-overlay-color: 42 31 29;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #2A1F1D;
   --background-secondary: #281e1c;
   --background-secondary-alt: #271d1b;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #281e1c;
   /* TEXT */
   --text-normal: #E0DBB7;
+  --text-default: #E0DBB7;
   --text-muted: #979079;
+  --text-low-contrast: #979079;
   --text-link: #E99D2A;
   --text-brand: #E99D2A;
   --header-primary: #E0DBB7;
@@ -44,6 +67,9 @@
   --interactive-hover: #E0DBB7;
   --interactive-active: #E0DBB7;
   --interactive-muted: #7c7462;
+  --interactive-text-default: #979079;
+  --interactive-text-hover: #E0DBB7;
+  --interactive-text-active: #E0DBB7;
   /* BRAND / ACCENT */
   --brand-experiment: #E99D2A;
   --brand-experiment-500: #E99D2A;
@@ -57,8 +83,14 @@
   --idle-color: #E99D2A;
   --dnd-color: #BE2D26;
   --streaming-color: #AC80A6;
-  --status-green: #6BA18A;
-  --status-yellow: #E99D2A;
-  --status-red: #BE2D26;
-  --status-purple: #AC80A6;
+  --status-online: #6BA18A;
+  --status-idle: #E99D2A;
+  --status-dnd: #BE2D26;
+  --status-streaming: #AC80A6;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #241b19 !important;
 }

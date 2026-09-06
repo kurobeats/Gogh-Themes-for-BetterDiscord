@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Hivacruz
  * @author Yann Defretin (https://github.com/kinoute/hivacruz-itermcolors)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Hivacruz" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #3D8FD1;
   --gogh-magenta: #6679CC;
   --gogh-cyan: #22A2C9;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #122436;
+  --background-base-lower: #132638;
+  --background-base-lower-alt: #122436;
+  --background-base-low: #112334;
+  --background-base-medium: #112334;
+  --background-base-high: #102130;
+  --background-base-higher: #1a2d3e;
+  --background-base-highest: #213344;
+  --background-nested-floating: #213344;
+  --bg-overlay-chat: #132638;
+  --bg-overlay-home: #112334;
+  --bg-overlay-home-card: #122436;
+  --bg-overlay-app-frame: #102130;
+  --bg-overlay-1: #102130;
+  --bg-overlay-2: #102130;
+  --bg-overlay-3: #102130;
+  --bg-overlay-4: #122436;
+  --bg-overlay-5: #112334;
+  --bg-overlay-6: #213344;
+  --bg-overlay-color: 19 38 56;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #132638;
   --background-secondary: #122436;
   --background-secondary-alt: #112334;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #122436;
   /* TEXT */
   --text-normal: #EDE4E4;
+  --text-default: #EDE4E4;
   --text-muted: #96989f;
+  --text-low-contrast: #96989f;
   --text-link: #C94922;
   --text-brand: #C94922;
   --header-primary: #EDE4E4;
@@ -44,6 +67,9 @@
   --interactive-hover: #EDE4E4;
   --interactive-active: #EDE4E4;
   --interactive-muted: #757b85;
+  --interactive-text-default: #96989f;
+  --interactive-text-hover: #EDE4E4;
+  --interactive-text-active: #EDE4E4;
   /* BRAND / ACCENT */
   --brand-experiment: #C94922;
   --brand-experiment-500: #C94922;
@@ -57,8 +83,14 @@
   --idle-color: #C08B30;
   --dnd-color: #C94922;
   --streaming-color: #6679CC;
-  --status-green: #AC9739;
-  --status-yellow: #C08B30;
-  --status-red: #C94922;
-  --status-purple: #6679CC;
+  --status-online: #AC9739;
+  --status-idle: #C08B30;
+  --status-dnd: #C94922;
+  --status-streaming: #6679CC;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #102130 !important;
 }

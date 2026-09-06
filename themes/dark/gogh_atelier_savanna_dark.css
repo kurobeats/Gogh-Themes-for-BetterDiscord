@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Atelier Savanna Dark
  * @author Bram de Haan (https://github.com/atelierbram)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Atelier Savanna Dark" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #478C90;
   --gogh-magenta: #55859B;
   --gogh-cyan: #1C9AA0;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #161b18;
+  --background-base-lower: #171C19;
+  --background-base-lower-alt: #161b18;
+  --background-base-low: #151a17;
+  --background-base-medium: #151a17;
+  --background-base-high: #141816;
+  --background-base-higher: #1e2320;
+  --background-base-highest: #252a27;
+  --background-nested-floating: #252a27;
+  --bg-overlay-chat: #171C19;
+  --bg-overlay-home: #151a17;
+  --bg-overlay-home-card: #161b18;
+  --bg-overlay-app-frame: #141816;
+  --bg-overlay-1: #141816;
+  --bg-overlay-2: #141816;
+  --bg-overlay-3: #141816;
+  --bg-overlay-4: #161b18;
+  --bg-overlay-5: #151a17;
+  --bg-overlay-6: #252a27;
+  --bg-overlay-color: 23 28 25;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #171C19;
   --background-secondary: #161b18;
   --background-secondary-alt: #151a17;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #161b18;
   /* TEXT */
   --text-normal: #87928A;
+  --text-default: #87928A;
   --text-muted: #5a635d;
+  --text-low-contrast: #5a635d;
   --text-link: #1C9AA0;
   --text-brand: #1C9AA0;
   --header-primary: #87928A;
@@ -44,6 +67,9 @@
   --interactive-hover: #87928A;
   --interactive-active: #87928A;
   --interactive-muted: #49514c;
+  --interactive-text-default: #5a635d;
+  --interactive-text-hover: #87928A;
+  --interactive-text-active: #87928A;
   /* BRAND / ACCENT */
   --brand-experiment: #1C9AA0;
   --brand-experiment-500: #1C9AA0;
@@ -57,8 +83,14 @@
   --idle-color: #A07E3B;
   --dnd-color: #B16139;
   --streaming-color: #55859B;
-  --status-green: #489963;
-  --status-yellow: #A07E3B;
-  --status-red: #B16139;
-  --status-purple: #55859B;
+  --status-online: #489963;
+  --status-idle: #A07E3B;
+  --status-dnd: #B16139;
+  --status-streaming: #55859B;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #141816 !important;
 }

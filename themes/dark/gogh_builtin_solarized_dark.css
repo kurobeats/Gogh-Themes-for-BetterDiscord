@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Builtin Solarized Dark
  * @author FredHappyface (https://github.com/fredHappyface)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Builtin Solarized Dark" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #268BD2;
   --gogh-magenta: #D33682;
   --gogh-cyan: #2AA198;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #002934;
+  --background-base-lower: #002B36;
+  --background-base-lower-alt: #002934;
+  --background-base-low: #002832;
+  --background-base-medium: #002832;
+  --background-base-high: #00252e;
+  --background-base-higher: #08313c;
+  --background-base-highest: #0f3842;
+  --background-nested-floating: #0f3842;
+  --bg-overlay-chat: #002B36;
+  --bg-overlay-home: #002832;
+  --bg-overlay-home-card: #002934;
+  --bg-overlay-app-frame: #00252e;
+  --bg-overlay-1: #00252e;
+  --bg-overlay-2: #00252e;
+  --bg-overlay-3: #00252e;
+  --bg-overlay-4: #002934;
+  --bg-overlay-5: #002832;
+  --bg-overlay-6: #0f3842;
+  --bg-overlay-color: 0 43 54;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #002B36;
   --background-secondary: #002934;
   --background-secondary-alt: #002832;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #002934;
   /* TEXT */
   --text-normal: #B2B8AD;
+  --text-default: #B2B8AD;
   --text-muted: #6b807d;
+  --text-low-contrast: #6b807d;
   --text-link: #859900;
   --text-brand: #859900;
   --header-primary: #B2B8AD;
@@ -44,6 +67,9 @@
   --interactive-hover: #B2B8AD;
   --interactive-active: #B2B8AD;
   --interactive-muted: #506a6c;
+  --interactive-text-default: #6b807d;
+  --interactive-text-hover: #B2B8AD;
+  --interactive-text-active: #B2B8AD;
   /* BRAND / ACCENT */
   --brand-experiment: #859900;
   --brand-experiment-500: #859900;
@@ -57,8 +83,14 @@
   --idle-color: #839496;
   --dnd-color: #DC322F;
   --streaming-color: #D33682;
-  --status-green: #859900;
-  --status-yellow: #839496;
-  --status-red: #DC322F;
-  --status-purple: #D33682;
+  --status-online: #859900;
+  --status-idle: #839496;
+  --status-dnd: #DC322F;
+  --status-streaming: #D33682;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #00252e !important;
 }

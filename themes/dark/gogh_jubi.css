@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Jubi
  * @author Julia Tretel (https://github.com/jutretel)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Jubi" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #576EA6;
   --gogh-magenta: #BC4F68;
   --gogh-cyan: #75A7D2;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #242931;
+  --background-base-lower: #262B33;
+  --background-base-lower-alt: #242931;
+  --background-base-low: #23282f;
+  --background-base-medium: #23282f;
+  --background-base-high: #21252c;
+  --background-base-higher: #2d3139;
+  --background-base-highest: #33383f;
+  --background-nested-floating: #33383f;
+  --bg-overlay-chat: #262B33;
+  --bg-overlay-home: #23282f;
+  --bg-overlay-home-card: #242931;
+  --bg-overlay-app-frame: #21252c;
+  --bg-overlay-1: #21252c;
+  --bg-overlay-2: #21252c;
+  --bg-overlay-3: #21252c;
+  --bg-overlay-4: #242931;
+  --bg-overlay-5: #23282f;
+  --bg-overlay-6: #33383f;
+  --bg-overlay-color: 38 43 51;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #262B33;
   --background-secondary: #242931;
   --background-secondary-alt: #23282f;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #242931;
   /* TEXT */
   --text-normal: #C3D3DE;
+  --text-default: #C3D3DE;
   --text-muted: #84909a;
+  --text-low-contrast: #84909a;
   --text-link: #BC4F68;
   --text-brand: #BC4F68;
   --header-primary: #C3D3DE;
@@ -44,6 +67,9 @@
   --interactive-hover: #C3D3DE;
   --interactive-active: #C3D3DE;
   --interactive-muted: #6d7780;
+  --interactive-text-default: #84909a;
+  --interactive-text-hover: #C3D3DE;
+  --interactive-text-active: #C3D3DE;
   /* BRAND / ACCENT */
   --brand-experiment: #BC4F68;
   --brand-experiment-500: #BC4F68;
@@ -57,8 +83,14 @@
   --idle-color: #6EBFC0;
   --dnd-color: #CF7B98;
   --streaming-color: #BC4F68;
-  --status-green: #90A94B;
-  --status-yellow: #6EBFC0;
-  --status-red: #CF7B98;
-  --status-purple: #BC4F68;
+  --status-online: #90A94B;
+  --status-idle: #6EBFC0;
+  --status-dnd: #CF7B98;
+  --status-streaming: #BC4F68;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #21252c !important;
 }

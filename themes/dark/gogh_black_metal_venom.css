@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Black Metal (Venom)
  * @author nooneknows (https://github.com/nooneknowspeter)
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gogh "Black Metal (Venom)" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -16,7 +16,28 @@
   --gogh-blue: #888888;
   --gogh-magenta: #999999;
   --gogh-cyan: #AAAAAA;
-  /* BACKGROUNDS */
+  /* BACKGROUNDS - 2025 visual refresh vars */
+  --background-base-lowest: #000000;
+  --background-base-lower: #000000;
+  --background-base-lower-alt: #000000;
+  --background-base-low: #000000;
+  --background-base-medium: #000000;
+  --background-base-high: #000000;
+  --background-base-higher: #080808;
+  --background-base-highest: #0f0f0f;
+  --background-nested-floating: #0f0f0f;
+  --bg-overlay-chat: #000000;
+  --bg-overlay-home: #000000;
+  --bg-overlay-home-card: #000000;
+  --bg-overlay-app-frame: #000000;
+  --bg-overlay-1: #000000;
+  --bg-overlay-2: #000000;
+  --bg-overlay-3: #000000;
+  --bg-overlay-4: #000000;
+  --bg-overlay-5: #000000;
+  --bg-overlay-6: #0f0f0f;
+  --bg-overlay-color: 0 0 0;
+  /* BACKGROUNDS - legacy vars */
   --background-primary: #000000;
   --background-secondary: #000000;
   --background-secondary-alt: #000000;
@@ -35,7 +56,9 @@
   --scrollbar-auto-track: #000000;
   /* TEXT */
   --text-normal: #C1C1C1;
+  --text-default: #C1C1C1;
   --text-muted: #747474;
+  --text-low-contrast: #747474;
   --text-link: #79241F;
   --text-brand: #79241F;
   --header-primary: #C1C1C1;
@@ -44,6 +67,9 @@
   --interactive-hover: #C1C1C1;
   --interactive-active: #C1C1C1;
   --interactive-muted: #575757;
+  --interactive-text-default: #747474;
+  --interactive-text-hover: #C1C1C1;
+  --interactive-text-active: #C1C1C1;
   /* BRAND / ACCENT */
   --brand-experiment: #79241F;
   --brand-experiment-500: #79241F;
@@ -57,8 +83,14 @@
   --idle-color: #79241F;
   --dnd-color: #5F8787;
   --streaming-color: #999999;
-  --status-green: #F8F7F2;
-  --status-yellow: #79241F;
-  --status-red: #5F8787;
-  --status-purple: #999999;
+  --status-online: #F8F7F2;
+  --status-idle: #79241F;
+  --status-dnd: #5F8787;
+  --status-streaming: #999999;
+}
+
+/* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
+[class*="-baseLayer"] > [class*="-container"],
+nav[class*="guilds"] {
+  background: #000000 !important;
 }
