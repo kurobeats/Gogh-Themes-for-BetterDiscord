@@ -3,6 +3,8 @@
 
 Reads data/themes-min.json (Gogh-Co/Gogh) and writes one self-contained
 .theme.css per scheme into themes/dark/ or themes/light/.
+Only the theme's own 16 palette colors (+ foreground) are used - no
+synthesized shades.
 """
 import colorsys
 import json
@@ -17,112 +19,121 @@ DATA_FILE = "data/themes-min.json"
 TEMPLATE = """/**
  * @name Gogh - {name}
  * @author {author}
- * @version 1.0.1
+ * @version 1.1.0
  * @description Gogh "{name}" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
-/* PALETTE */
+/* FULL PALETTE - all 16 Gogh colors, exposed for reuse */
 :root, .theme-dark, .theme-light, .theme-darker, .theme-midnight {{
-  --gogh-bg: {bg};
-  --gogh-fg: {fg};
-  --gogh-accent: {accent};
-  --gogh-red: {c2};
-  --gogh-green: {c3};
-  --gogh-yellow: {c4};
-  --gogh-blue: {c5};
-  --gogh-magenta: {c6};
-  --gogh-cyan: {c7};
+  --gogh-color-01: {c01}; /* background */
+  --gogh-color-02: {c02}; /* red */
+  --gogh-color-03: {c03}; /* green */
+  --gogh-color-04: {c04}; /* yellow */
+  --gogh-color-05: {c05}; /* blue */
+  --gogh-color-06: {c06}; /* magenta */
+  --gogh-color-07: {c07}; /* cyan */
+  --gogh-color-08: {c08}; /* white (normal) */
+  --gogh-color-09: {c09}; /* bright black (surface tone) */
+  --gogh-color-10: {c10}; /* bright red */
+  --gogh-color-11: {c11}; /* bright green */
+  --gogh-color-12: {c12}; /* bright yellow */
+  --gogh-color-13: {c13}; /* bright blue */
+  --gogh-color-14: {c14}; /* bright magenta */
+  --gogh-color-15: {c15}; /* bright cyan */
+  --gogh-color-16: {c16}; /* bright white (text) */
   /* BACKGROUNDS - 2025 visual refresh vars */
-  --background-base-lowest: {bg2};
-  --background-base-lower: {bg1};
-  --background-base-lower-alt: {bg2};
-  --background-base-low: {bg3};
-  --background-base-medium: {bg3};
-  --background-base-high: {bg4};
-  --background-base-higher: {bghigher};
-  --background-base-highest: {bg5};
-  --background-nested-floating: {bg5};
-  --bg-overlay-chat: {bg1};
-  --bg-overlay-home: {bg3};
-  --bg-overlay-home-card: {bg2};
-  --bg-overlay-app-frame: {bg4};
-  --bg-overlay-1: {bg4};
-  --bg-overlay-2: {bg4};
-  --bg-overlay-3: {bg4};
-  --bg-overlay-4: {bg2};
-  --bg-overlay-5: {bg3};
-  --bg-overlay-6: {bg5};
-  --bg-overlay-color: {bgrgb};
+  --background-base-lowest: {surface};
+  --background-base-lower: {chat};
+  --background-base-lower-alt: {surface};
+  --background-base-low: {surface};
+  --background-base-medium: {surface};
+  --background-base-high: {chat};
+  --background-base-higher: {floating};
+  --background-base-highest: {floating};
+  --background-nested-floating: {floating};
+  --bg-overlay-chat: {chat};
+  --bg-overlay-home: {surface};
+  --bg-overlay-home-card: {chat};
+  --bg-overlay-app-frame: {chat};
+  --bg-overlay-1: {chat};
+  --bg-overlay-2: {chat};
+  --bg-overlay-3: {chat};
+  --bg-overlay-4: {surface};
+  --bg-overlay-5: {surface};
+  --bg-overlay-6: {floating};
+  --bg-overlay-color: {rgb01};
   /* BACKGROUNDS - legacy vars */
-  --background-primary: {bg1};
-  --background-secondary: {bg2};
-  --background-secondary-alt: {bg3};
-  --background-tertiary: {bg4};
-  --background-floating: {bg5};
-  --background-mobile-primary: {bg1};
-  --background-mobile-secondary: {bg2};
-  --channeltextarea-background: {bg2};
-  --background-message-hover: {bghover};
-  --background-modifier-hover: {bghover};
-  --background-modifier-active: {bgactive};
-  --background-modifier-selected: {bgselected};
-  --background-modifier-accent: {bgaccent};
-  --scrollbar-thin-thumb: {bg4};
-  --scrollbar-auto-thumb: {bg4};
-  --scrollbar-auto-track: {bg2};
+  --background-primary: {chat};
+  --background-secondary: {surface};
+  --background-secondary-alt: {surface};
+  --background-tertiary: {surface};
+  --background-floating: {floating};
+  --background-mobile-primary: {chat};
+  --background-mobile-secondary: {surface};
+  --channeltextarea-background: {surface};
+  --background-message-hover: {surface};
+  --background-modifier-hover: {surface};
+  --background-modifier-active: {surface};
+  --background-modifier-selected: {surface};
+  --background-modifier-accent: {text_dim};
+  --background-mentioned: {mention_bg};
+  --background-mentioned-hover: {mention_bg};
+  --mention-foreground: {accent};
+  --scrollbar-thin-thumb: {text_dim};
+  --scrollbar-auto-thumb: {text_dim};
+  --scrollbar-auto-track: {chat};
   /* TEXT */
-  --text-normal: {fg};
-  --text-default: {fg};
-  --text-muted: {muted};
-  --text-low-contrast: {muted};
-  --text-link: {accent};
+  --text-normal: {text};
+  --text-default: {text};
+  --text-muted: {text_dim};
+  --text-low-contrast: {text_dim};
+  --text-link: {link};
   --text-brand: {accent};
-  --header-primary: {fg};
-  --header-secondary: {muted};
-  --interactive-normal: {muted};
-  --interactive-hover: {fg};
-  --interactive-active: {fg};
-  --interactive-muted: {imuted};
-  --interactive-text-default: {muted};
-  --interactive-text-hover: {fg};
-  --interactive-text-active: {fg};
+  --text-positive: {c03};
+  --text-positive-hover: {c11};
+  --text-feedback-positive: {c03};
+  --text-danger: {c02};
+  --text-danger-hover: {c10};
+  --text-warning: {c04};
+  --text-warning-hover: {c12};
+  --text-info: {c07};
+  --text-info-hover: {c15};
+  --header-primary: {text_emph};
+  --header-secondary: {text_dim};
+  --interactive-normal: {text_norm};
+  --interactive-hover: {text_emph};
+  --interactive-active: {text_emph};
+  --interactive-muted: {text_dim};
+  --interactive-text-default: {text_dim};
+  --interactive-text-hover: {text_emph};
+  --interactive-text-active: {text_emph};
+  --channels-default: {text_norm};
   /* BRAND / ACCENT */
+  --accent: {accent};
   --brand-experiment: {accent};
   --brand-experiment-500: {accent};
-  --brand-experiment-560: {accent_darker};
-  --brand-experiment-600: {accent_darker};
+  --brand-experiment-560: {accent};
+  --brand-experiment-600: {accent};
   --brand-500: {accent};
-  --brand-560: {accent_darker};
-  --brand-600: {accent_darker};
+  --brand-560: {accent};
+  --brand-600: {accent};
+  --brand-700: {accent};
   /* STATUS */
-  --online-color: {c3};
-  --idle-color: {c4};
-  --dnd-color: {c2};
-  --streaming-color: {c6};
-  --status-online: {c3};
-  --status-idle: {c4};
-  --status-dnd: {c2};
-  --status-streaming: {c6};
+  --online-color: {c03};
+  --idle-color: {c04};
+  --dnd-color: {c02};
+  --streaming-color: {c06};
+  --status-online: {c03};
+  --status-idle: {c04};
+  --status-dnd: {c02};
+  --status-streaming: {c06};
 }}
 
 /* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
 [class*="-baseLayer"] > [class*="-container"],
 nav[class*="guilds"] {{
-  background: {bg4} !important;
+  background: {chat} !important;
 }}"""
-
-
-def clamp(v):
-    return max(0, min(255, round(v)))
-
-
-def mix(hex_color, target, pct):
-    """Mix hex_color toward target (hex) by pct (0-100)."""
-    r, g, b = (int(hex_color[i:i + 2], 16) for i in (1, 3, 5))
-    tr, tg, tb = (int(target[i:i + 2], 16) for i in (1, 3, 5))
-    f = pct / 100.0
-    return "#{:02x}{:02x}{:02x}".format(
-        clamp(r + (tr - r) * f), clamp(g + (tg - g) * f), clamp(b + (tb - b) * f))
 
 
 def rgb_triplet(hex_color):
@@ -139,39 +150,30 @@ def slug(name):
 
 
 def build(theme):
-    bg, fg = theme["background"], theme["foreground"]
-    colors = [theme[f"color_{i:02d}"] for i in range(2, 8)]
-    # Accent: most saturated ANSI color, avoid near-background noise
-    accent = max(colors, key=saturation)
+    colors = {f"c{i:02d}": theme[f"color_{i:02d}"] for i in range(1, 17)}
+    bg = theme["background"]
+    # Accent: most saturated ANSI color
+    accent = max((theme[f"color_{i:02d}"] for i in range(2, 8)), key=saturation)
+    # Terminal roles flip between variants: in dark schemes color_09 (bright
+    # black) is a gray surface tone; in light schemes color_08/color_16 are
+    # paper tones and color_01/09 are dark text tones. Map accordingly.
     if theme["variant"] == "dark":
-        bg1 = bg                                  # chat area
-        bg2 = mix(bg, "#000000", 4)               # sidebars / textarea
-        bg3 = mix(bg, "#000000", 8)               # panels / user area
-        bg4 = mix(bg, "#000000", 14)              # guild list / app frame
-        bg5 = mix(bg, "#ffffff", 6)               # popouts/floating
-        bghigher = mix(bg, "#ffffff", 3)
+        roles = dict(
+            chat=bg, surface=colors["c09"], floating=colors["c09"],
+            text=theme["foreground"], text_emph=colors["c16"],
+            text_dim=colors["c09"], text_norm=colors["c08"],
+            link=colors["c13"], mention_bg=colors["c09"],
+        )
     else:
-        bg1 = bg                                  # chat area
-        bg2 = mix(bg, "#000000", 4)               # sidebars / textarea
-        bg3 = mix(bg, "#000000", 8)               # panels / user area
-        bg4 = mix(bg, "#000000", 12)              # guild list / app frame
-        bg5 = "#ffffff"                           # popouts/floating
-        bghigher = mix(bg, "#ffffff", 50)
-    muted = mix(fg, bg, 40)
-    imuted = mix(fg, bg, 55)
-    accent_darker = mix(accent, "#000000", 25)
+        roles = dict(
+            chat=bg, surface=colors["c08"], floating=colors["c16"],
+            text=theme["foreground"], text_emph=colors["c01"],
+            text_dim=colors["c09"], text_norm=colors["c09"],
+            link=colors["c05"], mention_bg=colors["c08"],
+        )
     return TEMPLATE.format(
         name=theme["name"], author=theme.get("author") or "Gogh",
-        bg=bg, fg=fg, accent=accent, c2=colors[0], c3=colors[1], c4=colors[2],
-        c5=colors[3], c6=colors[4], c7=colors[5],
-        bg1=bg1, bg2=bg2, bg3=bg3, bg4=bg4, bg5=bg5, bghigher=bghigher,
-        bgrgb=rgb_triplet(bg1),
-        bghover=mix(bg1, fg, 6) if theme["variant"] == "dark" else mix(bg1, "#000000", 4),
-        bgactive=mix(bg1, fg, 10) if theme["variant"] == "dark" else mix(bg1, "#000000", 7),
-        bgselected=mix(bg1, fg, 12) if theme["variant"] == "dark" else mix(bg1, "#000000", 9),
-        bgaccent=mix(fg, bg, 85), muted=muted, imuted=imuted,
-        accent_darker=accent_darker,
-    )
+        accent=accent, rgb01=rgb_triplet(roles["surface"]), **roles, **colors)
 
 
 def main():

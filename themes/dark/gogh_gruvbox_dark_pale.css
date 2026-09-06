@@ -1,83 +1,105 @@
 /**
  * @name Gogh - Gruvbox Dark Pale
  * @author Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
- * @version 1.0.1
+ * @version 1.1.0
  * @description Gogh "Gruvbox Dark Pale" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
-/* PALETTE */
+/* FULL PALETTE - all 16 Gogh colors, exposed for reuse */
 :root, .theme-dark, .theme-light, .theme-darker, .theme-midnight {
-  --gogh-bg: #262626;
-  --gogh-fg: #DAB997;
-  --gogh-accent: #AFAF00;
-  --gogh-red: #D75F5F;
-  --gogh-green: #AFAF00;
-  --gogh-yellow: #FFAF00;
-  --gogh-blue: #83ADAD;
-  --gogh-magenta: #D485AD;
-  --gogh-cyan: #85AD85;
+  --gogh-color-01: #262626; /* background */
+  --gogh-color-02: #D75F5F; /* red */
+  --gogh-color-03: #AFAF00; /* green */
+  --gogh-color-04: #FFAF00; /* yellow */
+  --gogh-color-05: #83ADAD; /* blue */
+  --gogh-color-06: #D485AD; /* magenta */
+  --gogh-color-07: #85AD85; /* cyan */
+  --gogh-color-08: #DAB997; /* white (normal) */
+  --gogh-color-09: #8A8A8A; /* bright black (surface tone) */
+  --gogh-color-10: #D75F5F; /* bright red */
+  --gogh-color-11: #AFAF00; /* bright green */
+  --gogh-color-12: #FFAF00; /* bright yellow */
+  --gogh-color-13: #83ADAD; /* bright blue */
+  --gogh-color-14: #D485AD; /* bright magenta */
+  --gogh-color-15: #85AD85; /* bright cyan */
+  --gogh-color-16: #EBDBB2; /* bright white (text) */
   /* BACKGROUNDS - 2025 visual refresh vars */
-  --background-base-lowest: #242424;
+  --background-base-lowest: #8A8A8A;
   --background-base-lower: #262626;
-  --background-base-lower-alt: #242424;
-  --background-base-low: #232323;
-  --background-base-medium: #232323;
-  --background-base-high: #212121;
-  --background-base-higher: #2d2d2d;
-  --background-base-highest: #333333;
-  --background-nested-floating: #333333;
+  --background-base-lower-alt: #8A8A8A;
+  --background-base-low: #8A8A8A;
+  --background-base-medium: #8A8A8A;
+  --background-base-high: #262626;
+  --background-base-higher: #8A8A8A;
+  --background-base-highest: #8A8A8A;
+  --background-nested-floating: #8A8A8A;
   --bg-overlay-chat: #262626;
-  --bg-overlay-home: #232323;
-  --bg-overlay-home-card: #242424;
-  --bg-overlay-app-frame: #212121;
-  --bg-overlay-1: #212121;
-  --bg-overlay-2: #212121;
-  --bg-overlay-3: #212121;
-  --bg-overlay-4: #242424;
-  --bg-overlay-5: #232323;
-  --bg-overlay-6: #333333;
-  --bg-overlay-color: 38 38 38;
+  --bg-overlay-home: #8A8A8A;
+  --bg-overlay-home-card: #262626;
+  --bg-overlay-app-frame: #262626;
+  --bg-overlay-1: #262626;
+  --bg-overlay-2: #262626;
+  --bg-overlay-3: #262626;
+  --bg-overlay-4: #8A8A8A;
+  --bg-overlay-5: #8A8A8A;
+  --bg-overlay-6: #8A8A8A;
+  --bg-overlay-color: 138 138 138;
   /* BACKGROUNDS - legacy vars */
   --background-primary: #262626;
-  --background-secondary: #242424;
-  --background-secondary-alt: #232323;
-  --background-tertiary: #212121;
-  --background-floating: #333333;
+  --background-secondary: #8A8A8A;
+  --background-secondary-alt: #8A8A8A;
+  --background-tertiary: #8A8A8A;
+  --background-floating: #8A8A8A;
   --background-mobile-primary: #262626;
-  --background-mobile-secondary: #242424;
-  --channeltextarea-background: #242424;
-  --background-message-hover: #312f2d;
-  --background-modifier-hover: #312f2d;
-  --background-modifier-active: #383531;
-  --background-modifier-selected: #3c3834;
-  --background-modifier-accent: #413c37;
-  --scrollbar-thin-thumb: #212121;
-  --scrollbar-auto-thumb: #212121;
-  --scrollbar-auto-track: #242424;
+  --background-mobile-secondary: #8A8A8A;
+  --channeltextarea-background: #8A8A8A;
+  --background-message-hover: #8A8A8A;
+  --background-modifier-hover: #8A8A8A;
+  --background-modifier-active: #8A8A8A;
+  --background-modifier-selected: #8A8A8A;
+  --background-modifier-accent: #8A8A8A;
+  --background-mentioned: #8A8A8A;
+  --background-mentioned-hover: #8A8A8A;
+  --mention-foreground: #AFAF00;
+  --scrollbar-thin-thumb: #8A8A8A;
+  --scrollbar-auto-thumb: #8A8A8A;
+  --scrollbar-auto-track: #262626;
   /* TEXT */
   --text-normal: #DAB997;
   --text-default: #DAB997;
-  --text-muted: #927e6a;
-  --text-low-contrast: #927e6a;
-  --text-link: #AFAF00;
+  --text-muted: #8A8A8A;
+  --text-low-contrast: #8A8A8A;
+  --text-link: #83ADAD;
   --text-brand: #AFAF00;
-  --header-primary: #DAB997;
-  --header-secondary: #927e6a;
-  --interactive-normal: #927e6a;
-  --interactive-hover: #DAB997;
-  --interactive-active: #DAB997;
-  --interactive-muted: #776859;
-  --interactive-text-default: #927e6a;
-  --interactive-text-hover: #DAB997;
-  --interactive-text-active: #DAB997;
+  --text-positive: #AFAF00;
+  --text-positive-hover: #AFAF00;
+  --text-feedback-positive: #AFAF00;
+  --text-danger: #D75F5F;
+  --text-danger-hover: #D75F5F;
+  --text-warning: #FFAF00;
+  --text-warning-hover: #FFAF00;
+  --text-info: #85AD85;
+  --text-info-hover: #85AD85;
+  --header-primary: #EBDBB2;
+  --header-secondary: #8A8A8A;
+  --interactive-normal: #DAB997;
+  --interactive-hover: #EBDBB2;
+  --interactive-active: #EBDBB2;
+  --interactive-muted: #8A8A8A;
+  --interactive-text-default: #8A8A8A;
+  --interactive-text-hover: #EBDBB2;
+  --interactive-text-active: #EBDBB2;
+  --channels-default: #DAB997;
   /* BRAND / ACCENT */
+  --accent: #AFAF00;
   --brand-experiment: #AFAF00;
   --brand-experiment-500: #AFAF00;
-  --brand-experiment-560: #838300;
-  --brand-experiment-600: #838300;
+  --brand-experiment-560: #AFAF00;
+  --brand-experiment-600: #AFAF00;
   --brand-500: #AFAF00;
-  --brand-560: #838300;
-  --brand-600: #838300;
+  --brand-560: #AFAF00;
+  --brand-600: #AFAF00;
+  --brand-700: #AFAF00;
   /* STATUS */
   --online-color: #AFAF00;
   --idle-color: #FFAF00;
@@ -92,5 +114,5 @@
 /* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
 [class*="-baseLayer"] > [class*="-container"],
 nav[class*="guilds"] {
-  background: #212121 !important;
+  background: #262626 !important;
 }

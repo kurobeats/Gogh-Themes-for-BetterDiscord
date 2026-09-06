@@ -44,9 +44,30 @@ Each theme targets both the current (2025 visual refresh) Discord variables
 The app shell (base layer + guild sidebar) is painted directly to cover stock
 colors that don't route through a variable.
 
-Accent color is picked automatically as the most saturated ANSI color from the
-scheme's palette; status colors (online/idle/dnd/streaming) reuse the scheme's
-green/yellow/red/magenta.
+Each theme uses **only the scheme's own palette** — all 16 ANSI colors plus
+`foreground` — no synthesized shades. Terminal roles flip with the variant:
+in dark schemes `color_09` (bright black) is the surface tone, in light
+schemes `color_08`/`color_16` (paper tones) take the surface role and
+`color_01`/`color_09` become text tones.
+
+| Gogh value                  | Discord usage                                                       |
+| --------------------------- | ------------------------------------------------------------------- |
+| `background` / `color_01`   | chat background (dark: chat + shell; light: chat)                   |
+| `color_09` (dark schemes)   | sidebars, textarea, panels, hover states, dividers, scrollbars      |
+| `color_08`/`color_16` (light)| sidebars/textarea (`color_08`), popouts/floating (`color_16`)      |
+| `color_02`–`color_07`       | status dots (red/yellow/green/magenta), `--text-*` semantic colors  |
+| `color_10`–`color_15`       | hover variants of the semantic text colors (danger/warning/info/positive) |
+| `color_08` (dark) / `color_01`, `color_16` | muted text, interactive states, headers |
+| `foreground`                | main text (`--text-normal`, `--text-default`)                       |
+| most saturated of 02–07     | accent / brand color (`--brand-500`, mentions, buttons)             |
+| variant (`dark`/`light`)    | placement in `themes/dark/` or `themes/light/`                      |
+
+All 16 colors are also exposed as `--gogh-color-01` … `--gogh-color-16` for
+custom snippets. Both the current (2025 visual refresh) Discord variables
+(`--background-base-*`, `--bg-overlay-*`, `--text-default`) and the legacy set
+(`--background-primary`, `--text-normal`, ...) are set. The app shell (base
+layer + guild sidebar) is painted directly to cover stock colors that don't
+route through a variable.
 
 ## Regenerating
 

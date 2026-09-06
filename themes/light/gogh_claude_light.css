@@ -1,83 +1,105 @@
 /**
  * @name Gogh - Claude Light
  * @author techfitmaster (https://github.com/techfitmaster/ghostty-claude-theme)
- * @version 1.0.1
+ * @version 1.1.0
  * @description Gogh "Claude Light" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
-/* PALETTE */
+/* FULL PALETTE - all 16 Gogh colors, exposed for reuse */
 :root, .theme-dark, .theme-light, .theme-darker, .theme-midnight {
-  --gogh-bg: #FAF9F5;
-  --gogh-fg: #141413;
-  --gogh-accent: #066049;
-  --gogh-red: #A84B3A;
-  --gogh-green: #2E7C4C;
-  --gogh-yellow: #8A6220;
-  --gogh-blue: #184E95;
-  --gogh-magenta: #882B4D;
-  --gogh-cyan: #066049;
+  --gogh-color-01: #0A0A0A; /* background */
+  --gogh-color-02: #A84B3A; /* red */
+  --gogh-color-03: #2E7C4C; /* green */
+  --gogh-color-04: #8A6220; /* yellow */
+  --gogh-color-05: #184E95; /* blue */
+  --gogh-color-06: #882B4D; /* magenta */
+  --gogh-color-07: #066049; /* cyan */
+  --gogh-color-08: #B6B5AA; /* white (normal) */
+  --gogh-color-09: #51504D; /* bright black (surface tone) */
+  --gogh-color-10: #E34A4A; /* bright red */
+  --gogh-color-11: #639900; /* bright green */
+  --gogh-color-12: #B87700; /* bright yellow */
+  --gogh-color-13: #3886E5; /* bright blue */
+  --gogh-color-14: #D55382; /* bright magenta */
+  --gogh-color-15: #199F70; /* bright cyan */
+  --gogh-color-16: #E2E1DA; /* bright white (text) */
   /* BACKGROUNDS - 2025 visual refresh vars */
-  --background-base-lowest: #f0efeb;
+  --background-base-lowest: #B6B5AA;
   --background-base-lower: #FAF9F5;
-  --background-base-lower-alt: #f0efeb;
-  --background-base-low: #e6e5e1;
-  --background-base-medium: #e6e5e1;
-  --background-base-high: #dcdbd8;
-  --background-base-higher: #fcfcfa;
-  --background-base-highest: #ffffff;
-  --background-nested-floating: #ffffff;
+  --background-base-lower-alt: #B6B5AA;
+  --background-base-low: #B6B5AA;
+  --background-base-medium: #B6B5AA;
+  --background-base-high: #FAF9F5;
+  --background-base-higher: #E2E1DA;
+  --background-base-highest: #E2E1DA;
+  --background-nested-floating: #E2E1DA;
   --bg-overlay-chat: #FAF9F5;
-  --bg-overlay-home: #e6e5e1;
-  --bg-overlay-home-card: #f0efeb;
-  --bg-overlay-app-frame: #dcdbd8;
-  --bg-overlay-1: #dcdbd8;
-  --bg-overlay-2: #dcdbd8;
-  --bg-overlay-3: #dcdbd8;
-  --bg-overlay-4: #f0efeb;
-  --bg-overlay-5: #e6e5e1;
-  --bg-overlay-6: #ffffff;
-  --bg-overlay-color: 250 249 245;
+  --bg-overlay-home: #B6B5AA;
+  --bg-overlay-home-card: #FAF9F5;
+  --bg-overlay-app-frame: #FAF9F5;
+  --bg-overlay-1: #FAF9F5;
+  --bg-overlay-2: #FAF9F5;
+  --bg-overlay-3: #FAF9F5;
+  --bg-overlay-4: #B6B5AA;
+  --bg-overlay-5: #B6B5AA;
+  --bg-overlay-6: #E2E1DA;
+  --bg-overlay-color: 182 181 170;
   /* BACKGROUNDS - legacy vars */
   --background-primary: #FAF9F5;
-  --background-secondary: #f0efeb;
-  --background-secondary-alt: #e6e5e1;
-  --background-tertiary: #dcdbd8;
-  --background-floating: #ffffff;
+  --background-secondary: #B6B5AA;
+  --background-secondary-alt: #B6B5AA;
+  --background-tertiary: #B6B5AA;
+  --background-floating: #E2E1DA;
   --background-mobile-primary: #FAF9F5;
-  --background-mobile-secondary: #f0efeb;
-  --channeltextarea-background: #f0efeb;
-  --background-message-hover: #f0efeb;
-  --background-modifier-hover: #f0efeb;
-  --background-modifier-active: #e8e8e4;
-  --background-modifier-selected: #e4e3df;
-  --background-modifier-accent: #d8d7d3;
-  --scrollbar-thin-thumb: #dcdbd8;
-  --scrollbar-auto-thumb: #dcdbd8;
-  --scrollbar-auto-track: #f0efeb;
+  --background-mobile-secondary: #B6B5AA;
+  --channeltextarea-background: #B6B5AA;
+  --background-message-hover: #B6B5AA;
+  --background-modifier-hover: #B6B5AA;
+  --background-modifier-active: #B6B5AA;
+  --background-modifier-selected: #B6B5AA;
+  --background-modifier-accent: #51504D;
+  --background-mentioned: #B6B5AA;
+  --background-mentioned-hover: #B6B5AA;
+  --mention-foreground: #066049;
+  --scrollbar-thin-thumb: #51504D;
+  --scrollbar-auto-thumb: #51504D;
+  --scrollbar-auto-track: #FAF9F5;
   /* TEXT */
   --text-normal: #141413;
   --text-default: #141413;
-  --text-muted: #70706d;
-  --text-low-contrast: #70706d;
-  --text-link: #066049;
+  --text-muted: #51504D;
+  --text-low-contrast: #51504D;
+  --text-link: #184E95;
   --text-brand: #066049;
-  --header-primary: #141413;
-  --header-secondary: #70706d;
-  --interactive-normal: #70706d;
-  --interactive-hover: #141413;
-  --interactive-active: #141413;
-  --interactive-muted: #92928f;
-  --interactive-text-default: #70706d;
-  --interactive-text-hover: #141413;
-  --interactive-text-active: #141413;
+  --text-positive: #2E7C4C;
+  --text-positive-hover: #639900;
+  --text-feedback-positive: #2E7C4C;
+  --text-danger: #A84B3A;
+  --text-danger-hover: #E34A4A;
+  --text-warning: #8A6220;
+  --text-warning-hover: #B87700;
+  --text-info: #066049;
+  --text-info-hover: #199F70;
+  --header-primary: #0A0A0A;
+  --header-secondary: #51504D;
+  --interactive-normal: #51504D;
+  --interactive-hover: #0A0A0A;
+  --interactive-active: #0A0A0A;
+  --interactive-muted: #51504D;
+  --interactive-text-default: #51504D;
+  --interactive-text-hover: #0A0A0A;
+  --interactive-text-active: #0A0A0A;
+  --channels-default: #51504D;
   /* BRAND / ACCENT */
+  --accent: #066049;
   --brand-experiment: #066049;
   --brand-experiment-500: #066049;
-  --brand-experiment-560: #044837;
-  --brand-experiment-600: #044837;
+  --brand-experiment-560: #066049;
+  --brand-experiment-600: #066049;
   --brand-500: #066049;
-  --brand-560: #044837;
-  --brand-600: #044837;
+  --brand-560: #066049;
+  --brand-600: #066049;
+  --brand-700: #066049;
   /* STATUS */
   --online-color: #2E7C4C;
   --idle-color: #8A6220;
@@ -92,5 +114,5 @@
 /* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
 [class*="-baseLayer"] > [class*="-container"],
 nav[class*="guilds"] {
-  background: #dcdbd8 !important;
+  background: #FAF9F5 !important;
 }

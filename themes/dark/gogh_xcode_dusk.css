@@ -1,83 +1,105 @@
 /**
  * @name Gogh - Xcode Dusk
  * @author Elsa Gonsiorowski (https://github.com/gonsie)
- * @version 1.0.1
+ * @version 1.1.0
  * @description Gogh "Xcode Dusk" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
-/* PALETTE */
+/* FULL PALETTE - all 16 Gogh colors, exposed for reuse */
 :root, .theme-dark, .theme-light, .theme-darker, .theme-midnight {
-  --gogh-bg: #282B35;
-  --gogh-fg: #939599;
-  --gogh-accent: #DF0002;
-  --gogh-red: #B21889;
-  --gogh-green: #DF0002;
-  --gogh-yellow: #438288;
-  --gogh-blue: #790EAD;
-  --gogh-magenta: #B21889;
-  --gogh-cyan: #00A0BE;
+  --gogh-color-01: #282B35; /* background */
+  --gogh-color-02: #B21889; /* red */
+  --gogh-color-03: #DF0002; /* green */
+  --gogh-color-04: #438288; /* yellow */
+  --gogh-color-05: #790EAD; /* blue */
+  --gogh-color-06: #B21889; /* magenta */
+  --gogh-color-07: #00A0BE; /* cyan */
+  --gogh-color-08: #939599; /* white (normal) */
+  --gogh-color-09: #686A71; /* bright black (surface tone) */
+  --gogh-color-10: #B21889; /* bright red */
+  --gogh-color-11: #DF0002; /* bright green */
+  --gogh-color-12: #438288; /* bright yellow */
+  --gogh-color-13: #790EAD; /* bright blue */
+  --gogh-color-14: #B21889; /* bright magenta */
+  --gogh-color-15: #00A0BE; /* bright cyan */
+  --gogh-color-16: #BEBFC2; /* bright white (text) */
   /* BACKGROUNDS - 2025 visual refresh vars */
-  --background-base-lowest: #262933;
+  --background-base-lowest: #686A71;
   --background-base-lower: #282B35;
-  --background-base-lower-alt: #262933;
-  --background-base-low: #252831;
-  --background-base-medium: #252831;
-  --background-base-high: #22252e;
-  --background-base-higher: #2e313b;
-  --background-base-highest: #353841;
-  --background-nested-floating: #353841;
+  --background-base-lower-alt: #686A71;
+  --background-base-low: #686A71;
+  --background-base-medium: #686A71;
+  --background-base-high: #282B35;
+  --background-base-higher: #686A71;
+  --background-base-highest: #686A71;
+  --background-nested-floating: #686A71;
   --bg-overlay-chat: #282B35;
-  --bg-overlay-home: #252831;
-  --bg-overlay-home-card: #262933;
-  --bg-overlay-app-frame: #22252e;
-  --bg-overlay-1: #22252e;
-  --bg-overlay-2: #22252e;
-  --bg-overlay-3: #22252e;
-  --bg-overlay-4: #262933;
-  --bg-overlay-5: #252831;
-  --bg-overlay-6: #353841;
-  --bg-overlay-color: 40 43 53;
+  --bg-overlay-home: #686A71;
+  --bg-overlay-home-card: #282B35;
+  --bg-overlay-app-frame: #282B35;
+  --bg-overlay-1: #282B35;
+  --bg-overlay-2: #282B35;
+  --bg-overlay-3: #282B35;
+  --bg-overlay-4: #686A71;
+  --bg-overlay-5: #686A71;
+  --bg-overlay-6: #686A71;
+  --bg-overlay-color: 104 106 113;
   /* BACKGROUNDS - legacy vars */
   --background-primary: #282B35;
-  --background-secondary: #262933;
-  --background-secondary-alt: #252831;
-  --background-tertiary: #22252e;
-  --background-floating: #353841;
+  --background-secondary: #686A71;
+  --background-secondary-alt: #686A71;
+  --background-tertiary: #686A71;
+  --background-floating: #686A71;
   --background-mobile-primary: #282B35;
-  --background-mobile-secondary: #262933;
-  --channeltextarea-background: #262933;
-  --background-message-hover: #2e313b;
-  --background-modifier-hover: #2e313b;
-  --background-modifier-active: #33363f;
-  --background-modifier-selected: #353841;
-  --background-modifier-accent: #383b44;
-  --scrollbar-thin-thumb: #22252e;
-  --scrollbar-auto-thumb: #22252e;
-  --scrollbar-auto-track: #262933;
+  --background-mobile-secondary: #686A71;
+  --channeltextarea-background: #686A71;
+  --background-message-hover: #686A71;
+  --background-modifier-hover: #686A71;
+  --background-modifier-active: #686A71;
+  --background-modifier-selected: #686A71;
+  --background-modifier-accent: #686A71;
+  --background-mentioned: #686A71;
+  --background-mentioned-hover: #686A71;
+  --mention-foreground: #DF0002;
+  --scrollbar-thin-thumb: #686A71;
+  --scrollbar-auto-thumb: #686A71;
+  --scrollbar-auto-track: #282B35;
   /* TEXT */
   --text-normal: #939599;
   --text-default: #939599;
-  --text-muted: #686b71;
-  --text-low-contrast: #686b71;
-  --text-link: #DF0002;
+  --text-muted: #686A71;
+  --text-low-contrast: #686A71;
+  --text-link: #790EAD;
   --text-brand: #DF0002;
-  --header-primary: #939599;
-  --header-secondary: #686b71;
-  --interactive-normal: #686b71;
-  --interactive-hover: #939599;
-  --interactive-active: #939599;
-  --interactive-muted: #585b62;
-  --interactive-text-default: #686b71;
-  --interactive-text-hover: #939599;
-  --interactive-text-active: #939599;
+  --text-positive: #DF0002;
+  --text-positive-hover: #DF0002;
+  --text-feedback-positive: #DF0002;
+  --text-danger: #B21889;
+  --text-danger-hover: #B21889;
+  --text-warning: #438288;
+  --text-warning-hover: #438288;
+  --text-info: #00A0BE;
+  --text-info-hover: #00A0BE;
+  --header-primary: #BEBFC2;
+  --header-secondary: #686A71;
+  --interactive-normal: #939599;
+  --interactive-hover: #BEBFC2;
+  --interactive-active: #BEBFC2;
+  --interactive-muted: #686A71;
+  --interactive-text-default: #686A71;
+  --interactive-text-hover: #BEBFC2;
+  --interactive-text-active: #BEBFC2;
+  --channels-default: #939599;
   /* BRAND / ACCENT */
+  --accent: #DF0002;
   --brand-experiment: #DF0002;
   --brand-experiment-500: #DF0002;
-  --brand-experiment-560: #a70002;
-  --brand-experiment-600: #a70002;
+  --brand-experiment-560: #DF0002;
+  --brand-experiment-600: #DF0002;
   --brand-500: #DF0002;
-  --brand-560: #a70002;
-  --brand-600: #a70002;
+  --brand-560: #DF0002;
+  --brand-600: #DF0002;
+  --brand-700: #DF0002;
   /* STATUS */
   --online-color: #DF0002;
   --idle-color: #438288;
@@ -92,5 +114,5 @@
 /* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
 [class*="-baseLayer"] > [class*="-container"],
 nav[class*="guilds"] {
-  background: #22252e !important;
+  background: #282B35 !important;
 }
