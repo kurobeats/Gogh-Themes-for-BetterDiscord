@@ -72,6 +72,38 @@ TEMPLATE = """/**
   --bg-overlay-color: {rgb_surface};
   --modal-background: {chat};
   --modal-footer-background: {surface};
+  --background-surface-high: {chat};
+  --background-surface-higher: {higher};
+  --background-surface-highest: {highest};
+  --bg-surface-raised: {surface};
+  --background-gradient-highest: {low};
+  --home-background: {chat};
+  --chat-background: {chat};
+  --chat-background-default: {chat};
+  --chat-text-muted: {text_dim};
+  --chat-border: {lowest};
+  --border-normal: {lowest};
+  --border-strong: {surface};
+  --border-muted: {highest};
+  --border-subtle: {chat};
+  --background-mod-muted: {mod_05};
+  --background-mod-normal: {mod_15};
+  --background-mod-subtle: {mod_25};
+  --background-mod-strong: {mod_45};
+  --background-code: {chat};
+  --input-background-default: {lowest};
+  --input-text-default: {text};
+  --input-placeholder-text-default: {text_dim};
+  --input-border-default: {c09};
+  --channel-text-area-placeholder: {placeholder};
+  --channel-icon: {text_norm};
+  --icon-default: {text};
+  --icon-strong: {text_emph};
+  --icon-subtle: {text_dim};
+  --interactive-icon-default: {text};
+  --interactive-icon-hover: {text_emph};
+  --interactive-icon-active: {text_emph};
+  --message-background-hover: {msg_hover};
   /* BACKGROUNDS - legacy vars */
   --background-primary: {chat};
   --background-secondary: {surface};
@@ -174,6 +206,10 @@ def rgb_triplet(hex_color):
     return " ".join(str(v) for v in to_rgb(hex_color))
 
 
+def rgb_list(hex_color):
+    return ",".join(str(v) for v in to_rgb(hex_color))
+
+
 def luminance(hex_color):
     def chan(v):
         v /= 255
@@ -267,12 +303,17 @@ def build(theme):
         on_accent=on_color(accent),
         on_positive=on_color(colors["c03"]),
         on_danger=on_color(colors["c02"]),
-        msg_hover=f"rgba({rgb_triplet(ladder['lowest'])}, 0.3)",
-        mod_hover=f"rgba({rgb_triplet(colors['c09'])}, 0.10)",
-        mod_active=f"rgba({rgb_triplet(colors['c09'])}, 0.20)",
-        mod_selected=f"rgba({rgb_triplet(colors['c09'])}, 0.30)",
-        mention_bg=f"rgba({rgb_triplet(accent)}, 0.3)",
-        scrollbar=f"rgba({rgb_triplet(colors['c09'])}, 0.4)",
+        msg_hover=f"rgba({rgb_list(ladder['lowest'])}, 0.3)",
+        mod_hover=f"rgba({rgb_list(colors['c09'])}, 0.10)",
+        mod_active=f"rgba({rgb_list(colors['c09'])}, 0.20)",
+        mod_selected=f"rgba({rgb_list(colors['c09'])}, 0.30)",
+        mod_05=f"rgba({rgb_list(colors['c09'])}, 0.05)",
+        mod_15=f"rgba({rgb_list(colors['c09'])}, 0.15)",
+        mod_25=f"rgba({rgb_list(colors['c09'])}, 0.25)",
+        mod_45=f"rgba({rgb_list(colors['c09'])}, 0.45)",
+        placeholder=f"rgba({rgb_list(ladder['text'])}, 0.5)",
+        mention_bg=f"rgba({rgb_list(accent)}, 0.3)",
+        scrollbar=f"rgba({rgb_list(colors['c09'])}, 0.4)",
         rgb_surface=rgb_triplet(ladder["surface"]),
     )
     return TEMPLATE.format(name=theme["name"], author=theme.get("author") or "Gogh",
