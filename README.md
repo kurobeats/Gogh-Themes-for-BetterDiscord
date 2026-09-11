@@ -44,23 +44,32 @@ Each theme targets both the current (2025 visual refresh) Discord variables
 The app shell (base layer + guild sidebar) is painted directly to cover stock
 colors that don't route through a variable.
 
-Each theme uses **only the scheme's own palette** — all 16 ANSI colors plus
-`foreground` — no synthesized shades. Terminal roles flip with the variant:
-in dark schemes `color_09` (bright black) is the surface tone, in light
-schemes `color_08`/`color_16` (paper tones) take the surface role and
-`color_01`/`color_09` become text tones.
+Surfaces follow the [catppuccin/discord](https://github.com/catppuccin/discord)
+principles so text stays readable on any scheme:
 
-| Gogh value                  | Discord usage                                                       |
-| --------------------------- | ------------------------------------------------------------------- |
-| `background` / `color_01`   | chat background (dark: chat + shell; light: chat)                   |
-| `color_09` (dark schemes)   | sidebars, textarea, panels, hover states, dividers, scrollbars      |
-| `color_08`/`color_16` (light)| sidebars/textarea (`color_08`), popouts/floating (`color_16`)      |
-| `color_02`–`color_07`       | status dots (red/yellow/green/magenta), `--text-*` semantic colors  |
-| `color_10`–`color_15`       | hover variants of the semantic text colors (danger/warning/info/positive) |
-| `color_08` (dark) / `color_01`, `color_16` | muted text, interactive states, headers |
-| `foreground`                | main text (`--text-normal`, `--text-default`)                       |
-| most saturated of 02–07     | accent / brand color (`--brand-500`, mentions, buttons)             |
-| variant (`dark`/`light`)    | placement in `themes/dark/` or `themes/light/`                      |
+- **Layered surface ladder** synthesized from the scheme background — the app
+  frame is darkest, sidebars/textarea step subtly away from the chat
+  background, popouts contrast with it (mirrored for light schemes).
+- **Text is never a surface color** — muted text is a blend of the interactive
+  text toward the background, verified readable on every surface it appears on
+  (the generator asserts this for all 1229 themes).
+- **Hover/active/selected are translucent overlays** with escalating alpha on
+  the scheme's surface tone, not opaque bright colors.
+- **Accent has hover/active shades**, and text on accent-colored buttons is
+  auto-contrasted (dark text on light accents).
+- **Mentions are a translucent accent** tint rather than an opaque block.
+
+| Gogh value                          | Discord usage                                                       |
+| ----------------------------------- | ------------------------------------------------------------------- |
+| `background`                        | chat background and base of the whole surface ladder                 |
+| `color_09`                          | overlay tint (hover/selected alphas, scrollbars, dividers)           |
+| `color_02`–`color_07`               | status dots (red/yellow/green/magenta), `--text-*` semantic colors   |
+| `color_10`–`color_15`               | hover variants of the semantic text colors (danger/warning/info/positive) |
+| `color_08` (dark) / `color_09` (light) | normal interactive text (channel names, menus)                    |
+| `color_16` (dark) / `color_01` (light) | emphasized text, headers                                          |
+| `foreground`                        | main text (`--text-normal`, `--text-default`)                        |
+| most saturated of 02–07             | accent / brand color (`--brand-500`, mentions, buttons)              |
+| variant (`dark`/`light`)            | placement in `themes/dark/` or `themes/light/`                       |
 
 All 16 colors are also exposed as `--gogh-color-01` … `--gogh-color-16` for
 custom snippets. Both the current (2025 visual refresh) Discord variables
@@ -80,5 +89,6 @@ Downloads `data/themes-min.json` if missing, then rewrites every theme file.
 ## Credits
 
 - Color schemes: [Gogh](https://gogh.website/) / [Gogh-Co/Gogh](https://github.com/Gogh-Co/Gogh)
+- Surface/mapping principles: [catppuccin/discord](https://github.com/catppuccin/discord)
 - Theme structure follows the standard BetterDiscord theme header format
   (see [ClearVision](https://github.com/ClearVision/ClearVision-v7) for a full-featured example).

@@ -1,7 +1,7 @@
 /**
  * @name Gogh - Liquid Carbon Transparent
  * @author markcho (https://github.com/markcho/iTerm2_LiquidCarbon)
- * @version 1.1.0
+ * @version 1.2.0
  * @description Gogh "Liquid Carbon Transparent" terminal color scheme applied to BetterDiscord.
  * @source https://github.com/Gogh-Co/Gogh
  */
@@ -23,16 +23,18 @@
   --gogh-color-14: #CC69C8; /* bright magenta */
   --gogh-color-15: #7AC4CC; /* bright cyan */
   --gogh-color-16: #BCCCCC; /* bright white (text) */
-  /* BACKGROUNDS - 2025 visual refresh vars */
+  /* SURFACE LADDER - outermost frame darkest, popouts contrast (catppuccin style) */
   --background-base-lowest: #000000;
   --background-base-lower: #000000;
   --background-base-lower-alt: #000000;
   --background-base-low: #000000;
   --background-base-medium: #000000;
   --background-base-high: #000000;
-  --background-base-higher: #000000;
-  --background-base-highest: #000000;
-  --background-nested-floating: #000000;
+  --background-base-higher: #121212;
+  --background-base-highest: #1C1C1C;
+  --background-nested-floating: #1C1C1C;
+  --app-frame-background: #000000;
+  --__header-bar-background: #000000;
   --bg-overlay-chat: #000000;
   --bg-overlay-home: #000000;
   --bg-overlay-home-card: #000000;
@@ -41,34 +43,37 @@
   --bg-overlay-2: #000000;
   --bg-overlay-3: #000000;
   --bg-overlay-4: #000000;
-  --bg-overlay-5: #000000;
-  --bg-overlay-6: #000000;
+  --bg-overlay-5: #1C1C1C;
+  --bg-overlay-6: #1C1C1C;
   --bg-overlay-color: 0 0 0;
+  --modal-background: #000000;
+  --modal-footer-background: #000000;
   /* BACKGROUNDS - legacy vars */
   --background-primary: #000000;
   --background-secondary: #000000;
   --background-secondary-alt: #000000;
   --background-tertiary: #000000;
-  --background-floating: #000000;
+  --background-floating: #1C1C1C;
   --background-mobile-primary: #000000;
   --background-mobile-secondary: #000000;
   --channeltextarea-background: #000000;
-  --background-message-hover: #000000;
-  --background-modifier-hover: #000000;
-  --background-modifier-active: #000000;
-  --background-modifier-selected: #000000;
+  --background-message-hover: rgba(0 0 0, 0.3);
+  --background-modifier-hover: rgba(0 0 0, 0.10);
+  --background-modifier-active: rgba(0 0 0, 0.20);
+  --background-modifier-selected: rgba(0 0 0, 0.30);
   --background-modifier-accent: #000000;
-  --background-mentioned: #000000;
-  --background-mentioned-hover: #000000;
+  --background-mentioned: rgba(204 172 0, 0.3);
+  --background-mentioned-hover: rgba(204 172 0, 0.3);
   --mention-foreground: #CCAC00;
-  --scrollbar-thin-thumb: #000000;
-  --scrollbar-auto-thumb: #000000;
+  --scrollbar-thin-thumb: rgba(0 0 0, 0.4);
+  --scrollbar-auto-thumb: rgba(0 0 0, 0.4);
   --scrollbar-auto-track: #000000;
   /* TEXT */
-  --text-normal: #AFC2C2;
-  --text-default: #AFC2C2;
-  --text-muted: #000000;
-  --text-low-contrast: #000000;
+  --text-normal: #BCCCCC;
+  --text-default: #BCCCCC;
+  --text-strong: #BCCCCC;
+  --text-muted: #8D9999;
+  --text-low-contrast: #8D9999;
   --text-link: #0099CC;
   --text-brand: #CCAC00;
   --text-positive: #559A70;
@@ -81,12 +86,12 @@
   --text-info: #7AC4CC;
   --text-info-hover: #7AC4CC;
   --header-primary: #BCCCCC;
-  --header-secondary: #000000;
+  --header-secondary: #8D9999;
   --interactive-normal: #BCCCCC;
   --interactive-hover: #BCCCCC;
   --interactive-active: #BCCCCC;
-  --interactive-muted: #000000;
-  --interactive-text-default: #000000;
+  --interactive-muted: #8D9999;
+  --interactive-text-default: #BCCCCC;
   --interactive-text-hover: #BCCCCC;
   --interactive-text-active: #BCCCCC;
   --channels-default: #BCCCCC;
@@ -94,12 +99,12 @@
   --accent: #CCAC00;
   --brand-experiment: #CCAC00;
   --brand-experiment-500: #CCAC00;
-  --brand-experiment-560: #CCAC00;
-  --brand-experiment-600: #CCAC00;
+  --brand-experiment-560: #AD9200;
+  --brand-experiment-600: #AD9200;
   --brand-500: #CCAC00;
-  --brand-560: #CCAC00;
-  --brand-600: #CCAC00;
-  --brand-700: #CCAC00;
+  --brand-560: #AD9200;
+  --brand-600: #AD9200;
+  --brand-700: #8F7800;
   /* STATUS */
   --online-color: #559A70;
   --idle-color: #CCAC00;
@@ -110,6 +115,11 @@
   --status-dnd: #FF3030;
   --status-streaming: #CC69C8;
 }
+
+/* ACCENT BUTTONS - text on accent auto-contrasted (dark on light accents) */
+button[class*="lookFilled_"][class*="colorBrand_"] { color: #000000 !important; }
+button[class*="lookFilled_"][class*="colorGreen_"] { color: #000000 !important; }
+button[class*="lookFilled_"][class*="colorRed_"] { color: #000000 !important; }
 
 /* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
 [class*="-baseLayer"] > [class*="-container"],
