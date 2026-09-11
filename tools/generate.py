@@ -161,7 +161,71 @@ TEMPLATE = """/**
   --brand-560: {accent_hover};
   --brand-600: {accent_hover};
   --brand-700: {accent_active};
-  /* STATUS */
+{ramp}
+  /* CONTROLS */
+  --control-primary-background-default: {accent};
+  --control-primary-background-hover: {accent_hover};
+  --control-primary-background-active: {accent_active};
+  --control-secondary-background-default: {c09};
+  --control-secondary-background-hover: {control_hover};
+  --control-secondary-background-active: {control_active};
+  --control-secondary-border-default: {control_border};
+  --control-secondary-text-default: {text};
+  --control-secondary-text-hover: {text};
+  --control-brand-foreground: {accent};
+  --control-brand-foreground-new: {accent};
+  --control-critical-primary-background-default: {c02};
+  --control-critical-primary-background-hover: {c02_hover};
+  --control-critical-primary-background-active: {c02_active};
+  --control-critical-primary-text-default: {on_danger};
+  --control-critical-primary-text-hover: {on_danger};
+  --control-critical-secondary-background-default: transparent;
+  --control-critical-secondary-background-hover: {c02_hover};
+  --control-critical-secondary-background-active: {c02_active};
+  --control-critical-secondary-border-default: {c02};
+  --control-critical-secondary-border-hover: {c02_hover};
+  --control-critical-secondary-border-active: {c02_hover};
+  --control-critical-secondary-text-default: {text};
+  --control-critical-secondary-text-hover: {text};
+  --control-critical-secondary-text-active: {text};
+  --control-connected-background-default: {c03};
+  --control-connected-background-hover: {c03_hover};
+  --control-connected-background-active: {c03_active};
+  --control-connected-border-default: {c03};
+  --control-connected-border-hover: {c03_hover};
+  --control-connected-border-active: {c03_hover};
+  --checkbox-icon-active: {on_accent};
+  --checkbox-border-default: {c09};
+  --radio-thumb-background-active: {on_accent};
+  /* STATUS + FEEDBACK */
+  --white: {text};
+  --white-500: {text};
+  --black-500: {lowest};
+  --primary-100: {text_norm};
+  --primary-200: {text_dim};
+  --primary-300: {text_norm};
+  --primary-400: {text_norm};
+  --primary-630: {highest};
+  --primary-700: {surface};
+  --primary-800: {lowest};
+  --green-360: {c03};
+  --green-300: {c03};
+  --yellow-360: {c04};
+  --yellow-300: {c04};
+  --red-400: {c02};
+  --red-430: {c02_hover};
+  --red-500: {c02_active};
+  --blue-500: {accent_hover};
+  --blue-530: {accent_active};
+  --blurple-50: {accent};
+  --blurple-60: {accent_hover};
+  --status-positive: {c03};
+  --status-positive-background: {c03};
+  --status-positive-text: {on_positive};
+  --status-warning: {c04};
+  --status-warning-background: {c04};
+  --status-warning-text: {on_warning};
+  --status-danger: {c02};
   --online-color: {c03};
   --idle-color: {c04};
   --dnd-color: {c02};
@@ -170,12 +234,109 @@ TEMPLATE = """/**
   --status-idle: {c04};
   --status-dnd: {c02};
   --status-streaming: {c06};
+  --text-status-online: {c03};
+  --text-status-idle: {c04};
+  --text-status-dnd: {c02};
+  --text-status-offline: {text_dim};
+  --icon-status-online: {c03};
+  --icon-status-idle: {c04};
+  --icon-status-dnd: {c02};
+  --icon-status-offline: {text_dim};
+  --icon-muted: {text_dim};
+  --icon-voice-muted: {c02};
+  --badge-notification-background: {c02};
+  --badge-text-brand: {on_accent};
+  --text-feedback-positive: {c03};
+  --text-feedback-critical: {c02};
+  --text-feedback-warning: {c04};
+  --text-feedback-info: {accent};
+  --background-feedback-positive: {feedback_positive};
+  --background-feedback-critical: {feedback_danger};
+  --background-feedback-warning: {feedback_warning};
+  --background-feedback-info: {feedback_info};
+  --background-feedback-notification: {c02};
+  --icon-feedback-positive: {c03};
+  --icon-feedback-critical: {c02};
+  --icon-feedback-warning: {c04};
+  --icon-feedback-info: {accent};
+  --icon-feedback-notification: {c02};
+  --notice-background-critical: {c02};
+  --notice-background-info: {accent};
+  --notice-background-positive: {c03};
+  --notice-background-warning: {c04};
+  --notice-text-critical: {on_danger};
+  --notice-text-info: {on_accent};
+  --notice-text-positive: {on_positive};
+  --notice-text-warning: {on_warning};
+  --mention-background: {mention_bg};
+  --message-reacted-background-default: {mention_bg};
+  --message-reacted-text-default: {accent};
+  --message-mentioned-background-default: {mentioned_msg};
+  --message-mentioned-background-hover: {mentioned_msg};
+  --message-highlight-background-default: {highlight};
+  --message-highlight-background-hover: {highlight};
+  --message-automod-background-default: {automod};
+  --message-automod-background-hover: {automod};
+  --text-subtle: {text_norm};
+  --logo-primary: {text};
+  --textbox-markdown-syntax: {c09};
+  --spoiler-revealed-background: {highest};
+  --spoiler-hidden-background: {c09};
+  --background-accent: {c09};
+  --card-background-default: {highest};
+  --user-profile-overlay-background: {surface};
+  --user-profile-overlay-background-hover: {highest};
+  --custom-channel-members-bg: {surface};
+  --custom-status-bubble-background: {lowest};
+  --custom-status-bubble-background-color: {surface};
+  --plum-23: {chat};
+  --thread-core: {text};
+  --thread-default: {text_norm};
+  --thread-muted: {text_dim};
+  --thread-spine: {c09};
+  --spine-default: {c09};
+  --hidden: {c09};
+  --scrollbar-thin-track: transparent;
+  --interactive-background-hover: {interactive_hover};
+  --interactive-background-selected: {interactive_selected};
+  --interactive-background-active: {interactive_active};
+  --button-outline-primary-text: {text};
+  --button-outline-brand-text: {text};
+  --button-outline-brand-background-hover: {accent_hover};
+  --button-outline-brand-border-active: {accent_hover};
+  --twitch: {c06};
+  --playstation: {c13};
+  --spotify: {c03};
+  --guild-boosting-pink: {c06};
+  --guild-boosting-blue: {accent};
+  --guild-boosting-purple: {boost_purple};
+  --premium-perk-yellow: {c04};
+  --premium-perk-purple: {c06};
+  --premium-perk-dark-blue: {c13};
+  --premium-perk-light-blue: {c15};
+  --premium-perk-blue: {accent};
+  --premium-perk-green: {c03};
+  --premium-perk-pink: {c06};
+  --premium-perk-orange: {perk_orange};
+  --premium-tier-0-blue: {accent};
+  --premium-tier-0-purple: {c06};
+  --premium-tier-1-blue-for-gradients: {c13};
+  --premium-tier-1-dark-blue-for-gradients: {accent};
+  --premium-tier-2-purple-for-gradients: {c06};
+  --premium-tier-2-purple-for-gradients-2: {boost_purple};
+  --premium-tier-2-pink-for-gradients: {c06};
+  --scrollbar-auto-scrollbar-color-thumb: {scrollbar};
+  --scrollbar-auto-scrollbar-color-track: {lowest};
+}}
+
+::selection {{
+  background-color: rgba({rgb_accent}, 0.6);
 }}
 
 /* ACCENT BUTTONS - text on accent auto-contrasted (dark on light accents) */
-button[class*="lookFilled_"][class*="colorBrand_"] {{ color: {on_accent} !important; }}
-button[class*="lookFilled_"][class*="colorGreen_"] {{ color: {on_positive} !important; }}
-button[class*="lookFilled_"][class*="colorRed_"] {{ color: {on_danger} !important; }}
+button[class*="lookFilled_"][class*="colorBrand_"] {{ color: {on_accent} !important; --white: {on_accent}; --white-500: {on_accent}; }}
+button[class*="lookFilled_"][class*="colorGreen_"] {{ color: {on_positive} !important; --white: {on_positive}; }}
+button[class*="lookFilled_"][class*="colorRed_"] {{ color: {on_danger} !important; --white: {on_danger}; }}
 
 /* APP SHELL - refresh base layer + guild sidebar paint over stock colors */
 [class*="-baseLayer"] > [class*="-container"],
@@ -295,6 +456,7 @@ def build(theme):
             text_norm=norm,
             link=colors["c05"],
         )
+    ladder_lowest = ladder["lowest"]
     roles = dict(
         ladder,
         accent=accent,
@@ -303,6 +465,41 @@ def build(theme):
         on_accent=on_color(accent),
         on_positive=on_color(colors["c03"]),
         on_danger=on_color(colors["c02"]),
+        on_warning=on_color(colors["c04"]),
+        c02_hover=mix(colors["c02"], "#000000", 0.15),
+        c02_active=mix(colors["c02"], "#000000", 0.30),
+        c03_hover=mix(colors["c03"], "#000000", 0.15),
+        c03_active=mix(colors["c03"], "#000000", 0.30),
+        control_hover=mix(colors["c09"], bg, 0.25),
+        control_active=mix(colors["c09"], bg, 0.45),
+        control_border=mix(colors["c09"], ladder_lowest, 0.5),
+        feedback_positive=f"rgba({rgb_list(colors['c03'])}, 0.15)",
+        feedback_danger=f"rgba({rgb_list(colors['c02'])}, 0.15)",
+        feedback_warning=f"rgba({rgb_list(colors['c04'])}, 0.15)",
+        feedback_info=f"rgba({rgb_list(accent)}, 0.15)",
+        mentioned_msg=f"rgba({rgb_list(colors['c04'])}, 0.1)",
+        highlight=f"rgba({rgb_list(accent)}, 0.08)",
+        automod=f"rgba({rgb_list(colors['c09'])}, 0.05)",
+        rgb_accent=rgb_triplet(accent),
+        interactive_hover=f"rgba({rgb_list(colors['c09'])}, 0.15)",
+        interactive_selected=f"rgba({rgb_list(colors['c09'])}, 0.25)",
+        interactive_active=f"rgba({rgb_list(ladder['text'])}, 0.17)",
+        boost_purple=mix(colors["c06"], colors["c13"], 0.5),
+        perk_orange=mix(colors["c04"], colors["c02"], 0.4),
+        ramp="\n".join(
+            f"  --brand-{shade}: {mix(accent, '#FFFFFF' if int(shade[0]) <= 4 else '#000000', step)};"
+            for shade, step in [("100", .85), ("130", .78), ("160", .70), ("200", .62),
+                                ("230", .55), ("260", .47), ("300", .38), ("330", .30),
+                                ("360", .20), ("400", .10), ("430", .05), ("460", .03),
+                                ("530", .08), ("630", .22), ("660", .28), ("730", .38),
+                                ("760", .45), ("800", .50), ("830", .58), ("860", .65), ("900", .72)]
+        ) + "\n" + "\n".join(
+            f"  --brand-{a}: rgba({rgb_list(accent)}, {alpha});"
+            for a, alpha in [(f"{n:02d}a", n / 100) for n in range(5, 100, 5)]
+        ) + "\n" + "\n".join(
+            f"  --opacity-blurple-{n}: rgba({rgb_list(accent)}, {alpha});"
+            for n, alpha in [("8", .08), ("16", .16), ("24", .24), ("32", .32), ("60", .60)]
+        ),
         msg_hover=f"rgba({rgb_list(ladder['lowest'])}, 0.3)",
         mod_hover=f"rgba({rgb_list(colors['c09'])}, 0.10)",
         mod_active=f"rgba({rgb_list(colors['c09'])}, 0.20)",
